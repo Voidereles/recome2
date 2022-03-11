@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="styles/mainStyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -23,8 +24,8 @@
         <![endif]-->
     <header class="header">
         <div class="container-fluid">
-            <nav class="header__container d-flex align-items-center">
-                <div class="header__logo me-auto">
+            <nav class="header__container d-flex align-items-center w-100">
+                <div class="header__logo me-auto me-lg-0 d-md-flex align-items-center">
                     <svg width="93" height="37" viewBox="0 0 93 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_287_3936)">
                             <path
@@ -50,42 +51,169 @@
                             </clipPath>
                         </defs>
                     </svg>
-
+                    <a href="#" class="badge-container d-none d-sm-block ms-2"> <span
+                            class="badge bg-darkBrown fontSizeSmallest font-circular text-uppercase ls-01 fw-semibold never-underline px-2 py-2 rounded-pill">PREMIUM</span>
+                    </a>
                 </div>
 
-                <div class="header__nav d-flex align-items-center">
-                    <div class="d-flex">
+                <div class="header__nav d-flex align-items-center ms-lg-4 ms-xl-5 flex-lg-grow-1">
+                    <div class="d-flex align-items-lg-center justify-content-lg-between flex-lg-grow-1 w-100">
+                        <div class="d-flex">
+                            <a href="#add" type="button" title="Dodaj ogłoszenie" class=" btn btn-light w-36 h-36 rounded-circle p-2 bg-white d-flex align-items-center
+                                justify-content-center me-2">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.3335 6.78815C0.664257 6.78815 0.121731 7.33068 0.121731 7.99992C0.121731 8.66916 0.664257 9.21168 1.3335 9.21168V6.78815ZM14.6668 9.21168C15.3361 9.21168 15.8786 8.66916 15.8786 7.99992C15.8786 7.33068 15.3361 6.78815 14.6668 6.78815V9.21168ZM9.21193 1.33325C9.21193 0.664013 8.6694 0.121487 8.00016 0.121487C7.33092 0.121487 6.7884 0.664013 6.7884 1.33325H9.21193ZM6.7884 14.6666C6.7884 15.3358 7.33092 15.8784 8.00016 15.8784C8.6694 15.8784 9.21193 15.3358 9.21193 14.6666H6.7884ZM1.3335 9.21168H14.6668V6.78815H1.3335V9.21168ZM6.7884 1.33325V14.6666H9.21193V1.33325H6.7884Z"
+                                        fill="#242527" />
+                                </svg>
+                            </a>
 
-                        <a href="#"
-                            class="btn btn-light w-36 h-36 rounded-circle p-2 bg-white d-flex align-items-center justify-content-center me-2">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1.3335 6.78815C0.664257 6.78815 0.121731 7.33068 0.121731 7.99992C0.121731 8.66916 0.664257 9.21168 1.3335 9.21168V6.78815ZM14.6668 9.21168C15.3361 9.21168 15.8786 8.66916 15.8786 7.99992C15.8786 7.33068 15.3361 6.78815 14.6668 6.78815V9.21168ZM9.21193 1.33325C9.21193 0.664013 8.6694 0.121487 8.00016 0.121487C7.33092 0.121487 6.7884 0.664013 6.7884 1.33325H9.21193ZM6.7884 14.6666C6.7884 15.3358 7.33092 15.8784 8.00016 15.8784C8.6694 15.8784 9.21193 15.3358 9.21193 14.6666H6.7884ZM1.3335 9.21168H14.6668V6.78815H1.3335V9.21168ZM6.7884 1.33325V14.6666H9.21193V1.33325H6.7884Z"
-                                    fill="#242527" />
-                            </svg>
-                        </a>
+
+                            <a href="#addJob" title="Dodaj zlecenie"
+                                class="btn btn-light position-relative w-36 h-36 rounded-circle p-1 bg-white d-flex align-items-center justify-content-center me-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1 19H0.25C0.25 19.4142 0.585786 19.75 1 19.75L1 19ZM3 19.75C3.41421 19.75 3.75 19.4142 3.75 19C3.75 18.5858 3.41421 18.25 3 18.25V19.75ZM4.18694 14.8523C4.58808 14.7491 4.82957 14.3402 4.72633 13.9391C4.62308 13.5379 4.2142 13.2964 3.81306 13.3997L4.18694 14.8523ZM5.75007 11.5364C6.1406 11.6745 6.5691 11.4698 6.70713 11.0792C6.84516 10.6887 6.64047 10.2602 6.24993 10.1222L5.75007 11.5364ZM6.24993 5.87785C6.64047 5.73981 6.84516 5.31132 6.70713 4.92078C6.5691 4.53024 6.1406 4.32555 5.75007 4.46359L6.24993 5.87785ZM23 19V19.75C23.4142 19.75 23.75 19.4142 23.75 19H23ZM21 18.25C20.5858 18.25 20.25 18.5858 20.25 19C20.25 19.4142 20.5858 19.75 21 19.75V18.25ZM20.1869 13.3997C19.7858 13.2964 19.3769 13.5379 19.2737 13.9391C19.1704 14.3402 19.4119 14.7491 19.8131 14.8523L20.1869 13.3997ZM18.2499 4.46359C17.8594 4.32555 17.4309 4.53024 17.2929 4.92078C17.1548 5.31132 17.3595 5.73981 17.7501 5.87785L18.2499 4.46359ZM17.7501 10.1222C17.3595 10.2602 17.1548 10.6887 17.2929 11.0792C17.4309 11.4698 17.8594 11.6745 18.2499 11.5364L17.7501 10.1222ZM18 19V19.75C18.4142 19.75 18.75 19.4142 18.75 19H18ZM6 19H5.25C5.25 19.4142 5.58579 19.75 6 19.75V19ZM0.25 18V19H1.75V18H0.25ZM1 19.75H3V18.25H1V19.75ZM1.75 18C1.75 16.4866 2.78504 15.2132 4.18694 14.8523L3.81306 13.3997C1.76451 13.9269 0.25 15.7857 0.25 18H1.75ZM3.25 8.00001C3.25 9.63396 4.29459 11.022 5.75007 11.5364L6.24993 10.1222C5.37503 9.81294 4.75 8.9785 4.75 8.00001H3.25ZM5.75007 4.46359C4.29459 4.97802 3.25 6.36606 3.25 8.00001H4.75C4.75 7.02152 5.37503 6.18708 6.24993 5.87785L5.75007 4.46359ZM22.25 18V19H23.75V18H22.25ZM23 18.25H21V19.75H23V18.25ZM23.75 18C23.75 15.7857 22.2355 13.9269 20.1869 13.3997L19.8131 14.8523C21.215 15.2132 22.25 16.4866 22.25 18H23.75ZM17.7501 5.87785C18.625 6.18708 19.25 7.02152 19.25 8.00001H20.75C20.75 6.36606 19.7054 4.97802 18.2499 4.46359L17.7501 5.87785ZM19.25 8.00001C19.25 8.9785 18.625 9.81294 17.7501 10.1222L18.2499 11.5364C19.7054 11.022 20.75 9.63396 20.75 8.00001H19.25ZM10 14.75H14V13.25H10V14.75ZM17.25 18V19H18.75V18H17.25ZM6.75 19V18H5.25V19H6.75ZM14 14.75C15.7949 14.75 17.25 16.2051 17.25 18H18.75C18.75 15.3766 16.6234 13.25 14 13.25V14.75ZM10 13.25C7.37665 13.25 5.25 15.3766 5.25 18H6.75C6.75 16.2051 8.20507 14.75 10 14.75V13.25ZM18 18.25H6V19.75H18V18.25ZM14.25 8C14.25 9.24264 13.2426 10.25 12 10.25V11.75C14.0711 11.75 15.75 10.0711 15.75 8H14.25ZM12 10.25C10.7574 10.25 9.75 9.24264 9.75 8H8.25C8.25 10.0711 9.92893 11.75 12 11.75V10.25ZM9.75 8C9.75 6.75736 10.7574 5.75 12 5.75V4.25C9.92893 4.25 8.25 5.92893 8.25 8H9.75ZM12 5.75C13.2426 5.75 14.25 6.75736 14.25 8H15.75C15.75 5.92893 14.0711 4.25 12 4.25V5.75Z"
+                                        fill="#242527" />
+                                </svg>
+                                <svg class="additional-plus" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.3335 6.78815C0.664257 6.78815 0.121731 7.33068 0.121731 7.99992C0.121731 8.66916 0.664257 9.21168 1.3335 9.21168V6.78815ZM14.6668 9.21168C15.3361 9.21168 15.8786 8.66916 15.8786 7.99992C15.8786 7.33068 15.3361 6.78815 14.6668 6.78815V9.21168ZM9.21193 1.33325C9.21193 0.664013 8.6694 0.121487 8.00016 0.121487C7.33092 0.121487 6.7884 0.664013 6.7884 1.33325H9.21193ZM6.7884 14.6666C6.7884 15.3358 7.33092 15.8784 8.00016 15.8784C8.6694 15.8784 9.21193 15.3358 9.21193 14.6666H6.7884ZM1.3335 9.21168H14.6668V6.78815H1.3335V9.21168ZM6.7884 1.33325V14.6666H9.21193V1.33325H6.7884Z"
+                                        fill="#242527" />
+                                </svg>
+                            </a>
+                        </div>
+                        <form class="search">
+                            <div class="bg-brown2 rounded-pill d-flex">
+                                <div>
+                                    <input type="search" class="form-control search__input" id="searchInput"
+                                        placeholder="Szukaj" required aria-label="Szukaj">
+                                </div>
+
+                                <div>
+                                    <input id="autoComplete" class="autoCompleteCity" type="search" dir="ltr"
+                                        spellcheck=false autocorrect="off" autocomplete="
+                                        off" autocapitalize="off" maxlength="2048" tabindex="1">
+                                    <div class="position-relative"></div>
+                                </div>
 
 
-                        <a href="#"
-                            class="btn btn-light position-relative w-36 h-36 rounded-circle p-1 bg-white d-flex align-items-center justify-content-center me-2">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1 19H0.25C0.25 19.4142 0.585786 19.75 1 19.75L1 19ZM3 19.75C3.41421 19.75 3.75 19.4142 3.75 19C3.75 18.5858 3.41421 18.25 3 18.25V19.75ZM4.18694 14.8523C4.58808 14.7491 4.82957 14.3402 4.72633 13.9391C4.62308 13.5379 4.2142 13.2964 3.81306 13.3997L4.18694 14.8523ZM5.75007 11.5364C6.1406 11.6745 6.5691 11.4698 6.70713 11.0792C6.84516 10.6887 6.64047 10.2602 6.24993 10.1222L5.75007 11.5364ZM6.24993 5.87785C6.64047 5.73981 6.84516 5.31132 6.70713 4.92078C6.5691 4.53024 6.1406 4.32555 5.75007 4.46359L6.24993 5.87785ZM23 19V19.75C23.4142 19.75 23.75 19.4142 23.75 19H23ZM21 18.25C20.5858 18.25 20.25 18.5858 20.25 19C20.25 19.4142 20.5858 19.75 21 19.75V18.25ZM20.1869 13.3997C19.7858 13.2964 19.3769 13.5379 19.2737 13.9391C19.1704 14.3402 19.4119 14.7491 19.8131 14.8523L20.1869 13.3997ZM18.2499 4.46359C17.8594 4.32555 17.4309 4.53024 17.2929 4.92078C17.1548 5.31132 17.3595 5.73981 17.7501 5.87785L18.2499 4.46359ZM17.7501 10.1222C17.3595 10.2602 17.1548 10.6887 17.2929 11.0792C17.4309 11.4698 17.8594 11.6745 18.2499 11.5364L17.7501 10.1222ZM18 19V19.75C18.4142 19.75 18.75 19.4142 18.75 19H18ZM6 19H5.25C5.25 19.4142 5.58579 19.75 6 19.75V19ZM0.25 18V19H1.75V18H0.25ZM1 19.75H3V18.25H1V19.75ZM1.75 18C1.75 16.4866 2.78504 15.2132 4.18694 14.8523L3.81306 13.3997C1.76451 13.9269 0.25 15.7857 0.25 18H1.75ZM3.25 8.00001C3.25 9.63396 4.29459 11.022 5.75007 11.5364L6.24993 10.1222C5.37503 9.81294 4.75 8.9785 4.75 8.00001H3.25ZM5.75007 4.46359C4.29459 4.97802 3.25 6.36606 3.25 8.00001H4.75C4.75 7.02152 5.37503 6.18708 6.24993 5.87785L5.75007 4.46359ZM22.25 18V19H23.75V18H22.25ZM23 18.25H21V19.75H23V18.25ZM23.75 18C23.75 15.7857 22.2355 13.9269 20.1869 13.3997L19.8131 14.8523C21.215 15.2132 22.25 16.4866 22.25 18H23.75ZM17.7501 5.87785C18.625 6.18708 19.25 7.02152 19.25 8.00001H20.75C20.75 6.36606 19.7054 4.97802 18.2499 4.46359L17.7501 5.87785ZM19.25 8.00001C19.25 8.9785 18.625 9.81294 17.7501 10.1222L18.2499 11.5364C19.7054 11.022 20.75 9.63396 20.75 8.00001H19.25ZM10 14.75H14V13.25H10V14.75ZM17.25 18V19H18.75V18H17.25ZM6.75 19V18H5.25V19H6.75ZM14 14.75C15.7949 14.75 17.25 16.2051 17.25 18H18.75C18.75 15.3766 16.6234 13.25 14 13.25V14.75ZM10 13.25C7.37665 13.25 5.25 15.3766 5.25 18H6.75C6.75 16.2051 8.20507 14.75 10 14.75V13.25ZM18 18.25H6V19.75H18V18.25ZM14.25 8C14.25 9.24264 13.2426 10.25 12 10.25V11.75C14.0711 11.75 15.75 10.0711 15.75 8H14.25ZM12 10.25C10.7574 10.25 9.75 9.24264 9.75 8H8.25C8.25 10.0711 9.92893 11.75 12 11.75V10.25ZM9.75 8C9.75 6.75736 10.7574 5.75 12 5.75V4.25C9.92893 4.25 8.25 5.92893 8.25 8H9.75ZM12 5.75C13.2426 5.75 14.25 6.75736 14.25 8H15.75C15.75 5.92893 14.0711 4.25 12 4.25V5.75Z"
-                                    fill="#242527" />
-                            </svg>
-                            <svg class="additional-plus" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M1.3335 6.78815C0.664257 6.78815 0.121731 7.33068 0.121731 7.99992C0.121731 8.66916 0.664257 9.21168 1.3335 9.21168V6.78815ZM14.6668 9.21168C15.3361 9.21168 15.8786 8.66916 15.8786 7.99992C15.8786 7.33068 15.3361 6.78815 14.6668 6.78815V9.21168ZM9.21193 1.33325C9.21193 0.664013 8.6694 0.121487 8.00016 0.121487C7.33092 0.121487 6.7884 0.664013 6.7884 1.33325H9.21193ZM6.7884 14.6666C6.7884 15.3358 7.33092 15.8784 8.00016 15.8784C8.6694 15.8784 9.21193 15.3358 9.21193 14.6666H6.7884ZM1.3335 9.21168H14.6668V6.78815H1.3335V9.21168ZM6.7884 1.33325V14.6666H9.21193V1.33325H6.7884Z"
-                                    fill="#242527" />
-                            </svg>
-                        </a>
 
-                        <div class="search">
+                                <div class="input-group d-flex flex-column select-dropdown__absolute">
+                                    <div class="select-dropdown">
+
+                                        <div
+                                            class="d-flex align-items-center w-100 justify-content-between bg-greyBg1 px-3 py-2 font-grey">
+                                            <span class="select-dropdown__value max-215 max-one-line">
+                                                + 0 km
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                viewBox="0 0 16 16" fill="#242527">
+                                                <path fill-rule="evenodd"
+                                                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </div>
+
+
+                                        <div class="select-dropdown__items" data-scrollbar>
+
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="+0 km" checked>
+                                                <span class="checkmark"></span>
+
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 0 km</span>
+                                            </label>
+                                            <label class="form-check  ">
+                                                <input type="radio" name="condimentum4" value="+5 km">
+                                                <span class="checkmark"></span>
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 5 km</span>
+                                            </label>
+                                            <label class="form-check  ">
+                                                <input type="radio" name="condimentum4" value="+10 km">
+                                                <span class="checkmark"></span>
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 10 km</span>
+                                            </label>
+
+                                            <label class="form-check">
+                                                <input type="radio" name="condimentum4" value="+15 km">
+                                                <span class="checkmark"></span>
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 15 km</span>
+                                            </label>
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="+20 km">
+                                                <span class="checkmark"></span>
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 20 km</span>
+                                            </label>
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="+30 km">
+                                                <span class="checkmark"></span>
+
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 30 km</span>
+                                            </label>
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="+50 km">
+                                                <span class="checkmark"></span>
+
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 50 km</span>
+                                            </label>
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="+100 km">
+                                                <span class="checkmark"></span>
+
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    + 100 km</span>
+                                            </label>
+
+                                            <label class="form-check ">
+                                                <input type="radio" name="condimentum4" value="zdalnie">
+                                                <span class="checkmark"></span>
+
+                                                <span
+                                                    class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                    zdalnie</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button
+                                    class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2 d-none d-lg-block"
+                                    aria-label="search" type="submit">
+                                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.2247 17.6086C16.4688 17.8527 16.8645 17.8527 17.1086 17.6086C17.3527 17.3645 17.3527 16.9688 17.1086 16.7247L16.2247 17.6086ZM13.6114 13.2275C13.3673 12.9834 12.9716 12.9834 12.7275 13.2275C12.4834 13.4716 12.4834 13.8673 12.7275 14.1114L13.6114 13.2275ZM8.75 14.875C5.6434 14.875 3.125 12.3566 3.125 9.25H1.875C1.875 13.047 4.95304 16.125 8.75 16.125V14.875ZM3.125 9.25C3.125 6.1434 5.6434 3.625 8.75 3.625V2.375C4.95304 2.375 1.875 5.45304 1.875 9.25H3.125ZM8.75 3.625C11.8566 3.625 14.375 6.1434 14.375 9.25H15.625C15.625 5.45304 12.547 2.375 8.75 2.375V3.625ZM14.375 9.25C14.375 12.3566 11.8566 14.875 8.75 14.875V16.125C12.547 16.125 15.625 13.047 15.625 9.25H14.375ZM17.1086 16.7247L13.6114 13.2275L12.7275 14.1114L16.2247 17.6086L17.1086 16.7247Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </button>
+                            </div>
                             <button
-                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2"
+                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2 d-lg-none"
                                 aria-label="open search modal" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -95,7 +223,7 @@
                                 </svg>
 
                             </button>
-                        </div>
+                        </form>
 
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
                             aria-hidden="true">
@@ -117,18 +245,634 @@
                             </div>
                         </div>
 
-                        <button
-                            class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center"
-                            aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMenu"
-                            role="button" aria-controls="offcanvasMenu">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4 16.25C3.58579 16.25 3.25 16.5858 3.25 17C3.25 17.4142 3.58579 17.75 4 17.75V16.25ZM20 17.75C20.4142 17.75 20.75 17.4142 20.75 17C20.75 16.5858 20.4142 16.25 20 16.25V17.75ZM4 11.25C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75V11.25ZM20 12.75C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25V12.75ZM4 6.25C3.58579 6.25 3.25 6.58579 3.25 7C3.25 7.41421 3.58579 7.75 4 7.75V6.25ZM20 7.75C20.4142 7.75 20.75 7.41421 20.75 7C20.75 6.58579 20.4142 6.25 20 6.25V7.75ZM4 17.75H20V16.25H4V17.75ZM4 12.75H20V11.25H4V12.75ZM4 7.75H20V6.25H4V7.75Z"
-                                    fill="white" />
-                            </svg>
+                        <div class="d-flex">
+                            <button
+                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent rounded-circle d-flex align-items-center justify-content-center"
+                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasAccountMenu"
+                                role="button" aria-controls="offcanvasAccountMenu">
 
-                        </button>
+                                <img class="rounded-circle w-100 h-100" src="./assets/person-specific.jpg" alt="">
+
+
+                            </button>
+                            <div class="offcanvas offcanvas-end offcanvas-account" tabindex="-1"
+                                id="offcanvasAccountMenu" aria-labelledby="offcanvasAccountMenu">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title d-flex aling-items-center"
+                                        id="offcanvasAccountMenuLabel">
+
+                                        <img class="rounded-circle w-36 h-36" src="./assets/person-specific.jpg" alt="">
+                                        <span class="d-flex flex-column">
+                                            <div class="d-flex align-items-center">
+                                                <span class="fontSizeH5 fw-500 ms-3 my-0">Konto</span>
+
+                                                <span
+                                                    class="badge-container d-none d-sm-flex ms-2 my-0 align-items-center">
+                                                    <span
+                                                        class="badge bg-darkBrown fontSizeSmallest font-circular text-uppercase ls-01 fw-semibold never-underline px-2 py-2 rounded-pill">PREMIUM</span>
+                                                </span>
+                                            </div>
+
+                                        </span>
+
+
+                                    </h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <h6 class="text-darkBrown fontSizeH5">105 rekomendacji</h6>
+                                    <hr>
+                                    <div class="mt-3" role="nav">
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Twoje ogłoszenia
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Twoje zlecenia
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Twoje rekomendacje
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Twoje ulubione
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Twój profil
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Przedłuż konto premium
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Dodaj ogłoszenie
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Zleć usługę innym
+                                        </a>
+                                        <a href="#"
+                                            class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
+                                            Skontaktuj się z recome
+                                        </a>
+                                        <hr class="mt-lg-5">
+                                        <a href="#" class="d-flex fw-500 text-black never-decoration mt-3">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12"
+                                                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="ms-3">
+
+                                                Wyloguj się
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
+                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMessageMenu"
+                                role="button" aria-controls="offcanvasMessageMenu">
+
+                                <img class=" w-100 h-100" src="./assets/message.svg" alt="">
+
+
+                            </button>
+
+
+                            <div class="offcanvas offcanvas-end offcanvas-message" tabindex="-1"
+                                id="offcanvasMessageMenu" aria-labelledby="offcanvasMessageMenu">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title d-flex aling-items-center"
+                                        id="offcanvasMessageMenuLabel">
+
+                                        <img class="w-36 h-36 object-fit-contain" src="./assets/message.svg" alt="">
+                                        <span class="d-flex flex-column">
+                                            <div class="d-flex align-items-center">
+                                                <span class="fontSizeH5 fw-500 ms-3 my-0">Wiadomości</span>
+
+
+                                            </div>
+
+                                        </span>
+
+
+                                    </h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+
+                                    <input type="search"
+                                        class="form-control search__input bg-brown2 rounded-pill searchOnInput search__input--alone"
+                                        id="searchMessages" title="Szukaj po osobie lub nazwie ogłoszenia albo zlecenia"
+                                        placeholder="Szukaj nazwy lub wystawiającego" required
+                                        aria-label="Szukaj po osobie/nazwie ogłoszenia">
+
+
+
+
+                                    <div class="mt-4 messages-list" data-scrollbar>
+                                        <!-- Nazwa wystawiającego ogłoszenie/zlecenie + nazwa ogłoszenia/zlecenia musi
+                                        znaleźć się w data-text, aby możliwe było wyszukiwanie. Sugeruję też by był
+                                        limit np. 10 ostatnich rozmów a reszta w panelu wiadomości, przy czym trzeba dać
+                                        informację użytkownikowi, że więcej wiadomości w panelu wiadomości.
+
+                                        Jeśli wiadomo, że dana wiadomość nie została odczytana przez użytkownika, należy do tagu "a" dodać klasę "not-read" dzięki temu za pomocą brązowego koloru tekstu użytkownik będzie informowany, że tego jeszcze nie przeczytał.
+
+                                        Po kliknięciu na dany "a", użytkownik powinien zostać przekierowany do danej rozmowy w panelu wiadomości. -->
+
+                                        <div data-text="Adam Nowak zlecę wykonanie strony Internetowej salonu z zegarkami"
+                                            class="itemToSearch d-flex justify-content-between align-items-center mb-4">
+                                            <a href="#"
+                                                class="not-read d-flex align-items-center me-4 never-decoration">
+                                                <img class="message__img" src="./assets/catavatar.jpg" loading="lazy"
+                                                    alt="">
+                                                <div class="ms-3 d-flex flex-column">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fontSizeXS fw-500 text-black message__who">Adam
+                                                            Nowak <span class="fw-normal "> · zlecę
+                                                                wykonanie strony Internetowej salonu z zegarkami</span>
+                                                        </span>
+                                                        <span class="d-flex message__content fontSizeXSS mt-1 fw-500">
+                                                            <span class="message__last-words me-1"> Jestem już głodny
+                                                            </span><span> · 1 min</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div data-text="Herbert Kubek lekcje historii"
+                                            class="itemToSearch d-flex justify-content-between align-items-center mb-4">
+
+                                            <a href="#" class=" d-flex align-items-center me-4 never-decoration">
+                                                <img class="message__img" src="./assets/man-coffee.jpg" loading="lazy"
+                                                    alt="">
+                                                <div class="ms-3 d-flex flex-column">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fontSizeXS fw-500 text-black message__who">Herbert
+                                                            Kubek <span class="fw-normal "> · lekcje historii</span>
+                                                        </span>
+                                                        <span class="d-flex message__content fontSizeXSS mt-1 fw-500">
+
+
+                                                            <span class="message__last-words me-1">
+                                                                <svg class="me-1" width="16" height="16"
+                                                                    viewBox="0 0 16 16" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M15.2407 8.11621C15.4793 7.89122 15.4903 7.51544 15.2653 7.27688C15.0403 7.03832 14.6645 7.02732 14.426 7.25231L15.2407 8.11621ZM8.47054 13.6852L8.06316 13.2532L8.06316 13.2532L8.47054 13.6852ZM5.53147 14.8333L5.53147 15.4271L5.53147 14.8333ZM1.375 10.9133H0.78125H1.375ZM2.5924 8.14135L2.99978 8.5733L2.5924 8.14135ZM8.95519 2.14044L8.54781 1.70849L8.54781 1.70849L8.95519 2.14044ZM10.9146 1.375L10.9146 1.96875L10.9146 1.375ZM12.874 5.83632L13.2811 6.26849L13.2813 6.26827L12.874 5.83632ZM6.50424 11.8372L6.09709 11.4051L6.09686 11.4053L6.50424 11.8372ZM4.54486 9.98929L4.13773 9.5571L4.13748 9.55734L4.54486 9.98929ZM10.8301 4.88419C11.0688 4.65934 11.08 4.28356 10.8552 4.04487C10.6303 3.80618 10.2546 3.79496 10.0159 4.01981L10.8301 4.88419ZM14.426 7.25231L8.06316 13.2532L8.87792 14.1171L15.2407 8.11621L14.426 7.25231ZM8.06316 13.2532C7.39733 13.8812 6.48722 14.2396 5.53147 14.2396L5.53147 15.4271C6.78046 15.4271 7.98477 14.9595 8.87792 14.1171L8.06316 13.2532ZM5.53147 14.2396C4.57573 14.2396 3.66561 13.8812 2.99978 13.2532L2.18502 14.1171C3.07817 14.9595 4.28249 15.4271 5.53147 15.4271L5.53147 14.2396ZM2.99978 13.2532C2.33513 12.6264 1.96875 11.7839 1.96875 10.9133H0.78125C0.78125 12.122 1.29069 13.2737 2.18502 14.1171L2.99978 13.2532ZM1.96875 10.9133C1.96875 10.0427 2.33513 9.20015 2.99978 8.5733L2.18502 7.7094C1.29069 8.55286 0.78125 9.70453 0.78125 10.9133H1.96875ZM2.99978 8.5733L9.36257 2.57239L8.54781 1.70849L2.18502 7.7094L2.99978 8.5733ZM9.36257 2.57239C9.76858 2.18948 10.3263 1.96875 10.9146 1.96875L10.9146 0.78125C10.033 0.78125 9.18113 1.11119 8.54781 1.70849L9.36257 2.57239ZM10.9146 1.96875C11.5029 1.96875 12.0606 2.18948 12.4666 2.57239L13.2813 1.70849C12.648 1.11119 11.7961 0.78125 10.9146 0.78125L10.9146 1.96875ZM12.4666 2.57239C12.8714 2.95419 13.0918 3.46433 13.0918 3.98838L14.2793 3.98838C14.2793 3.12621 13.9158 2.3069 13.2813 1.70849L12.4666 2.57239ZM13.0918 3.98838C13.0918 4.51243 12.8714 5.02258 12.4666 5.40437L13.2813 6.26827C13.9158 5.66986 14.2793 4.85056 14.2793 3.98838L13.0918 3.98838ZM12.4668 5.40415L6.09709 11.4051L6.91138 12.2694L13.2811 6.26849L12.4668 5.40415ZM6.09686 11.4053C5.95068 11.5431 5.74538 11.6262 5.52455 11.6262V12.8137C6.03862 12.8137 6.53813 12.6214 6.91162 12.2692L6.09686 11.4053ZM5.52455 11.6262C5.30371 11.6262 5.09841 11.5431 4.95224 11.4053L4.13748 12.2692C4.51097 12.6214 5.01047 12.8137 5.52455 12.8137V11.6262ZM4.95224 11.4053C4.80725 11.2685 4.73281 11.0908 4.73281 10.9133H3.54531C3.54531 11.4289 3.76281 11.9158 4.13748 12.2692L4.95224 11.4053ZM4.73281 10.9133C4.73281 10.7358 4.80725 10.558 4.95224 10.4212L4.13748 9.55734C3.76281 9.9107 3.54531 10.3976 3.54531 10.9133H4.73281ZM4.95199 10.4215L10.8301 4.88419L10.0159 4.01981L4.13773 9.5571L4.95199 10.4215Z"
+                                                                        fill="currentColor" />
+                                                                </svg>
+
+                                                                załącznik
+                                                            </span><span> · 18 godz.</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div data-text="Ewa Maliniak trener retoryki"
+                                            class="itemToSearch d-flex justify-content-between align-items-center mb-4">
+
+                                            <a href="#"
+                                                class="not-read d-flex align-items-center me-4 never-decoration">
+                                                <img class="message__img" src="./assets/person-specific.jpg"
+                                                    loading="lazy" alt="">
+                                                <div class="ms-3 d-flex flex-column">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fontSizeXS fw-500 text-black message__who">
+                                                            Ewa Maliniak <span class="fw-normal "> · trener
+                                                                retoryki</span>
+                                                        </span>
+                                                        <span class="d-flex message__content fontSizeXSS mt-1 fw-500">
+
+
+                                                            <span class="message__last-words me-1">
+                                                                <svg class="me-1" width="16" height="16"
+                                                                    viewBox="0 0 16 16" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M15.2407 8.11621C15.4793 7.89122 15.4903 7.51544 15.2653 7.27688C15.0403 7.03832 14.6645 7.02732 14.426 7.25231L15.2407 8.11621ZM8.47054 13.6852L8.06316 13.2532L8.06316 13.2532L8.47054 13.6852ZM5.53147 14.8333L5.53147 15.4271L5.53147 14.8333ZM1.375 10.9133H0.78125H1.375ZM2.5924 8.14135L2.99978 8.5733L2.5924 8.14135ZM8.95519 2.14044L8.54781 1.70849L8.54781 1.70849L8.95519 2.14044ZM10.9146 1.375L10.9146 1.96875L10.9146 1.375ZM12.874 5.83632L13.2811 6.26849L13.2813 6.26827L12.874 5.83632ZM6.50424 11.8372L6.09709 11.4051L6.09686 11.4053L6.50424 11.8372ZM4.54486 9.98929L4.13773 9.5571L4.13748 9.55734L4.54486 9.98929ZM10.8301 4.88419C11.0688 4.65934 11.08 4.28356 10.8552 4.04487C10.6303 3.80618 10.2546 3.79496 10.0159 4.01981L10.8301 4.88419ZM14.426 7.25231L8.06316 13.2532L8.87792 14.1171L15.2407 8.11621L14.426 7.25231ZM8.06316 13.2532C7.39733 13.8812 6.48722 14.2396 5.53147 14.2396L5.53147 15.4271C6.78046 15.4271 7.98477 14.9595 8.87792 14.1171L8.06316 13.2532ZM5.53147 14.2396C4.57573 14.2396 3.66561 13.8812 2.99978 13.2532L2.18502 14.1171C3.07817 14.9595 4.28249 15.4271 5.53147 15.4271L5.53147 14.2396ZM2.99978 13.2532C2.33513 12.6264 1.96875 11.7839 1.96875 10.9133H0.78125C0.78125 12.122 1.29069 13.2737 2.18502 14.1171L2.99978 13.2532ZM1.96875 10.9133C1.96875 10.0427 2.33513 9.20015 2.99978 8.5733L2.18502 7.7094C1.29069 8.55286 0.78125 9.70453 0.78125 10.9133H1.96875ZM2.99978 8.5733L9.36257 2.57239L8.54781 1.70849L2.18502 7.7094L2.99978 8.5733ZM9.36257 2.57239C9.76858 2.18948 10.3263 1.96875 10.9146 1.96875L10.9146 0.78125C10.033 0.78125 9.18113 1.11119 8.54781 1.70849L9.36257 2.57239ZM10.9146 1.96875C11.5029 1.96875 12.0606 2.18948 12.4666 2.57239L13.2813 1.70849C12.648 1.11119 11.7961 0.78125 10.9146 0.78125L10.9146 1.96875ZM12.4666 2.57239C12.8714 2.95419 13.0918 3.46433 13.0918 3.98838L14.2793 3.98838C14.2793 3.12621 13.9158 2.3069 13.2813 1.70849L12.4666 2.57239ZM13.0918 3.98838C13.0918 4.51243 12.8714 5.02258 12.4666 5.40437L13.2813 6.26827C13.9158 5.66986 14.2793 4.85056 14.2793 3.98838L13.0918 3.98838ZM12.4668 5.40415L6.09709 11.4051L6.91138 12.2694L13.2811 6.26849L12.4668 5.40415ZM6.09686 11.4053C5.95068 11.5431 5.74538 11.6262 5.52455 11.6262V12.8137C6.03862 12.8137 6.53813 12.6214 6.91162 12.2692L6.09686 11.4053ZM5.52455 11.6262C5.30371 11.6262 5.09841 11.5431 4.95224 11.4053L4.13748 12.2692C4.51097 12.6214 5.01047 12.8137 5.52455 12.8137V11.6262ZM4.95224 11.4053C4.80725 11.2685 4.73281 11.0908 4.73281 10.9133H3.54531C3.54531 11.4289 3.76281 11.9158 4.13748 12.2692L4.95224 11.4053ZM4.73281 10.9133C4.73281 10.7358 4.80725 10.558 4.95224 10.4212L4.13748 9.55734C3.76281 9.9107 3.54531 10.3976 3.54531 10.9133H4.73281ZM4.95199 10.4215L10.8301 4.88419L10.0159 4.01981L4.13773 9.5571L4.95199 10.4215Z"
+                                                                        fill="currentColor" />
+                                                                </svg>
+                                                                Ty:
+                                                                załącznik
+                                                            </span><span> · 24.08.2011</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        <div data-text="Herbert Kubek lekcje historii"
+                                            class="itemToSearch d-flex justify-content-between align-items-center mb-4">
+
+                                            <a href="#" class=" d-flex align-items-center me-4 never-decoration">
+                                                <img class="message__img" src="./assets/man-coffee.jpg" loading="lazy"
+                                                    alt="">
+                                                <div class="ms-3 d-flex flex-column">
+                                                    <div class="d-flex flex-column">
+                                                        <span class="fontSizeXS fw-500 text-black message__who">Herbert
+                                                            Kubek <span class="fw-normal "> · lekcje historii</span>
+                                                        </span>
+                                                        <span class="d-flex message__content fontSizeXSS mt-1 fw-500">
+
+
+                                                            <span class="message__last-words me-1">
+                                                                <svg class="me-1" width="16" height="16"
+                                                                    viewBox="0 0 16 16" fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M15.2407 8.11621C15.4793 7.89122 15.4903 7.51544 15.2653 7.27688C15.0403 7.03832 14.6645 7.02732 14.426 7.25231L15.2407 8.11621ZM8.47054 13.6852L8.06316 13.2532L8.06316 13.2532L8.47054 13.6852ZM5.53147 14.8333L5.53147 15.4271L5.53147 14.8333ZM1.375 10.9133H0.78125H1.375ZM2.5924 8.14135L2.99978 8.5733L2.5924 8.14135ZM8.95519 2.14044L8.54781 1.70849L8.54781 1.70849L8.95519 2.14044ZM10.9146 1.375L10.9146 1.96875L10.9146 1.375ZM12.874 5.83632L13.2811 6.26849L13.2813 6.26827L12.874 5.83632ZM6.50424 11.8372L6.09709 11.4051L6.09686 11.4053L6.50424 11.8372ZM4.54486 9.98929L4.13773 9.5571L4.13748 9.55734L4.54486 9.98929ZM10.8301 4.88419C11.0688 4.65934 11.08 4.28356 10.8552 4.04487C10.6303 3.80618 10.2546 3.79496 10.0159 4.01981L10.8301 4.88419ZM14.426 7.25231L8.06316 13.2532L8.87792 14.1171L15.2407 8.11621L14.426 7.25231ZM8.06316 13.2532C7.39733 13.8812 6.48722 14.2396 5.53147 14.2396L5.53147 15.4271C6.78046 15.4271 7.98477 14.9595 8.87792 14.1171L8.06316 13.2532ZM5.53147 14.2396C4.57573 14.2396 3.66561 13.8812 2.99978 13.2532L2.18502 14.1171C3.07817 14.9595 4.28249 15.4271 5.53147 15.4271L5.53147 14.2396ZM2.99978 13.2532C2.33513 12.6264 1.96875 11.7839 1.96875 10.9133H0.78125C0.78125 12.122 1.29069 13.2737 2.18502 14.1171L2.99978 13.2532ZM1.96875 10.9133C1.96875 10.0427 2.33513 9.20015 2.99978 8.5733L2.18502 7.7094C1.29069 8.55286 0.78125 9.70453 0.78125 10.9133H1.96875ZM2.99978 8.5733L9.36257 2.57239L8.54781 1.70849L2.18502 7.7094L2.99978 8.5733ZM9.36257 2.57239C9.76858 2.18948 10.3263 1.96875 10.9146 1.96875L10.9146 0.78125C10.033 0.78125 9.18113 1.11119 8.54781 1.70849L9.36257 2.57239ZM10.9146 1.96875C11.5029 1.96875 12.0606 2.18948 12.4666 2.57239L13.2813 1.70849C12.648 1.11119 11.7961 0.78125 10.9146 0.78125L10.9146 1.96875ZM12.4666 2.57239C12.8714 2.95419 13.0918 3.46433 13.0918 3.98838L14.2793 3.98838C14.2793 3.12621 13.9158 2.3069 13.2813 1.70849L12.4666 2.57239ZM13.0918 3.98838C13.0918 4.51243 12.8714 5.02258 12.4666 5.40437L13.2813 6.26827C13.9158 5.66986 14.2793 4.85056 14.2793 3.98838L13.0918 3.98838ZM12.4668 5.40415L6.09709 11.4051L6.91138 12.2694L13.2811 6.26849L12.4668 5.40415ZM6.09686 11.4053C5.95068 11.5431 5.74538 11.6262 5.52455 11.6262V12.8137C6.03862 12.8137 6.53813 12.6214 6.91162 12.2692L6.09686 11.4053ZM5.52455 11.6262C5.30371 11.6262 5.09841 11.5431 4.95224 11.4053L4.13748 12.2692C4.51097 12.6214 5.01047 12.8137 5.52455 12.8137V11.6262ZM4.95224 11.4053C4.80725 11.2685 4.73281 11.0908 4.73281 10.9133H3.54531C3.54531 11.4289 3.76281 11.9158 4.13748 12.2692L4.95224 11.4053ZM4.73281 10.9133C4.73281 10.7358 4.80725 10.558 4.95224 10.4212L4.13748 9.55734C3.76281 9.9107 3.54531 10.3976 3.54531 10.9133H4.73281ZM4.95199 10.4215L10.8301 4.88419L10.0159 4.01981L4.13773 9.5571L4.95199 10.4215Z"
+                                                                        fill="currentColor" />
+                                                                </svg>
+
+                                                                załącznik
+                                                            </span><span> · 18 godz.</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="my-3 fontSizeXS text-grey text-center">
+                                        Aby zobaczyć starsze wiadomości, przejdź do panelu wiadomości.
+                                    </div>
+
+                                    <hr class="my-3">
+
+                                    <div class="d-flex justify-content-center">
+                                        <a href="#"
+                                            class="text-darkBrown py-2 never-decoration align-items-center text-center d-flex fw-bold fontSizeM">
+                                            <span class="me-2">
+                                                Przejdź do wiadomości</span>
+                                            <svg width="26" height="28" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5"
+                                                    stroke="currentColor" stroke-width="1.66667" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <button
+                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
+                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas"
+                                href="#offcanvasFavouritesMenu" role="button" aria-controls="offcanvasFavouritesMenu">
+
+                                <img class=" w-100 h-100 object-fit-contain" src="./assets/heart.svg" alt="">
+
+
+                            </button>
+
+
+                            <div class="offcanvas offcanvas-end offcanvas-favourite" tabindex="-1"
+                                id="offcanvasFavouritesMenu" aria-labelledby="offcanvasFavouritesMenu">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title d-flex aling-items-center"
+                                        id="offcanvasFavouritesMenuLabel">
+
+                                        <img class="rounded-circle w-36 h-36" src="./assets/heart.svg" alt="">
+                                        <span class="d-flex flex-column">
+                                            <div class="d-flex align-items-center">
+                                                <span class="fontSizeH5 fw-500 ms-3 my-0">Ulubione</span>
+
+
+                                            </div>
+
+                                        </span>
+
+
+                                    </h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+
+                                    <input type="search"
+                                        class="form-control search__input bg-brown2 rounded-pill  searchOnInput search__input--alone"
+                                        id="searchFavourite" placeholder="Szukaj w ulubionych" required
+                                        aria-label="Szukaj w ulubionych">
+
+
+
+
+                                    <div class="mt-4">
+                                        <div data-text="Lekcje angielskiego"
+                                            class="favourites-item itemToSearch d-flex justify-content-between align-items-center">
+                                            <a href="#" class="d-flex align-items-center me-4 flex-grow-1">
+                                                <img src="./assets/favourites-img.jpg"
+                                                    class="img-fluid favourites-item__img" loading="lazy" alt="">
+                                                <div class="ms-3 max-three-lines">
+                                                    Lekcje angielskiego
+                                                </div>
+                                            </a>
+                                            <button class="btn btn-favourite-heart">
+                                                <svg width="36" height="32" viewBox="0 0 36 32" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.57995 16.0829L18 30L31.42 16.0829C32.9119 14.5358 33.75 12.4375 33.75 10.2496C33.75 5.69346 30.1884 2 25.795 2C23.6853 2 21.6619 2.86915 20.17 4.41624L18 6.66667L15.83 4.41625C14.3381 2.86915 12.3147 2 10.205 2C5.81155 2 2.25 5.69346 2.25 10.2496C2.25 12.4375 3.08811 14.5358 4.57995 16.0829Z"
+                                                        fill="#901111" stroke="#901111" stroke-width="2.625"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+
+
+                                            </button>
+                                        </div>
+
+                                        <div data-text="Hydraulik potrzebny"
+                                            class="favourites-item itemToSearch d-flex justify-content-between align-items-center">
+                                            <a href="#" class="d-flex align-items-center me-4 flex-grow-1">
+                                                <img src="./assets/slider-image.jpg"
+                                                    class="img-fluid favourites-item__img" loading="lazy" alt="">
+                                                <div class="ms-3 max-three-lines flex-grow-1">
+                                                    Hydraulik potrzebny Lorem ipsum dolor sit amet consectetur,
+                                                    adipisicing elit. Pariatur dignissimos doloribus quas explicabo
+                                                    accusantium ea, dolores perferendis tempora porro quis repellendus
+                                                    eius temporibus enim fugit consectetur in, officia recusandae ipsam?
+                                                </div>
+                                            </a>
+                                            <button class="btn btn-favourite-heart checked">
+                                                <svg width="36" height="32" viewBox="0 0 36 32" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.57995 16.0829L18 30L31.42 16.0829C32.9119 14.5358 33.75 12.4375 33.75 10.2496C33.75 5.69346 30.1884 2 25.795 2C23.6853 2 21.6619 2.86915 20.17 4.41624L18 6.66667L15.83 4.41625C14.3381 2.86915 12.3147 2 10.205 2C5.81155 2 2.25 5.69346 2.25 10.2496C2.25 12.4375 3.08811 14.5358 4.57995 16.0829Z"
+                                                        fill="#901111" stroke="#901111" stroke-width="2.625"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+
+                                            </button>
+                                        </div>
+
+                                        <div data-text="Szukam fryzjera na ślub 27 lipca i jeszcze coś tekstu dla przykładu"
+                                            class="favourites-item itemToSearch favourite d-flex justify-content-between align-items-center">
+                                            <a href="#" class="d-flex align-items-center me-4 flex-grow-1">
+                                                <img src="./assets/favourites-img.jpg"
+                                                    class="img-fluid favourites-item__img" loading="lazy" alt="">
+                                                <div class="ms-3 max-three-lines">
+                                                    Szukam fryzjera na ślub 27 lipca i jeszcze coś tekstu dla przykładu
+                                                </div>
+                                            </a>
+                                            <button class="btn btn-favourite-heart">
+                                                <svg width="36" height="32" viewBox="0 0 36 32" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M4.57995 16.0829L18 30L31.42 16.0829C32.9119 14.5358 33.75 12.4375 33.75 10.2496C33.75 5.69346 30.1884 2 25.795 2C23.6853 2 21.6619 2.86915 20.17 4.41624L18 6.66667L15.83 4.41625C14.3381 2.86915 12.3147 2 10.205 2C5.81155 2 2.25 5.69346 2.25 10.2496C2.25 12.4375 3.08811 14.5358 4.57995 16.0829Z"
+                                                        fill="#901111" stroke="#901111" stroke-width="2.625"
+                                                        stroke-linecap="round" stroke-linejoin="round" />
+                                                </svg>
+
+
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button
+                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
+                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas"
+                                href="#offcanvasSettingsMenu" role="button" aria-controls="offcanvasSettingsMenu">
+
+                                <img class=" w-100 h-100 object-fit-contain" src="./assets/settingg2.svg" alt="">
+
+
+                            </button>
+
+
+
+                            <div class="offcanvas offcanvas-end offcanvas-settings" tabindex="-1"
+                                id="offcanvasSettingsMenu" aria-labelledby="offcanvasSettingsMenu">
+                                <div class="offcanvas-header">
+                                    <h5 class="offcanvas-title d-flex aling-items-center"
+                                        id="offcanvasSettingsMenuLabel">
+                                        <img class=" w-100 h-100 object-fit-contain" src="./assets/settingg2.svg"
+                                            alt="">
+                                        <span class="d-flex flex-column">
+                                            <div class="d-flex align-items-center">
+                                                <span class="fontSizeH5 fw-500 ms-3 my-0">Ustawienia</span>
+
+
+                                            </div>
+
+                                        </span>
+
+
+                                    </h5>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div class="accordion accordion-flush" id="settingsAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="orderHeading">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#order"
+                                                    aria-expanded="false" aria-controls="order">
+                                                    Przeciągnij kolejność wyświetlania sekcji
+                                                </button>
+                                            </h2>
+                                            <div id="order" class="accordion-collapse collapse"
+                                                aria-labelledby="orderHeading" data-bs-parent="#settingsAccordion">
+                                                <div class="accordion-body">
+                                                    Robert jak tu wrzucisz kolejność to dopiero będę to stylował.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="advertisementsSettingsHeading">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#advertisementsSettings"
+                                                    aria-expanded="false" aria-controls="advertisementsSettings">
+                                                    Sposób wyświetlania ogłoszeń
+                                                </button>
+                                            </h2>
+                                            <div id="advertisementsSettings" class="accordion-collapse collapse"
+                                                aria-labelledby="advertisementsSettingsHeading"
+                                                data-bs-parent="#settingsAccordion">
+                                                <div class="accordion-body">
+                                                    <div>
+                                                        <input id="autoCompleteAdvertisementsSettings"
+                                                            class="autoCompleteCity" type="search" dir="ltr"
+                                                            spellcheck=false autocorrect="off" autocomplete="
+                                                            off" autocapitalize="off" maxlength="2048" tabindex="1">
+                                                        <div class="position-relative"></div>
+                                                    </div>
+
+
+
+                                                    <div
+                                                        class="input-group d-flex flex-column select-dropdown__absolute">
+                                                        <div class="select-dropdown">
+
+                                                            <div
+                                                                class="d-flex align-items-center w-100 justify-content-between bg-greyBg1 px-3 py-2 font-grey">
+                                                                <span
+                                                                    class="select-dropdown__value max-215 max-one-line">
+                                                                    + 0 km
+                                                                </span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                                    height="14" viewBox="0 0 16 16" fill="#242527">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                                                </svg>
+                                                            </div>
+
+
+                                                            <div class="select-dropdown__items" data-scrollbar>
+
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+0 km" checked>
+                                                                    <span class="checkmark"></span>
+
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 0 km</span>
+                                                                </label>
+                                                                <label class="form-check  ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+5 km">
+                                                                    <span class="checkmark"></span>
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 5 km</span>
+                                                                </label>
+                                                                <label class="form-check  ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+10 km">
+                                                                    <span class="checkmark"></span>
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 10 km</span>
+                                                                </label>
+
+                                                                <label class="form-check">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+15 km">
+                                                                    <span class="checkmark"></span>
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 15 km</span>
+                                                                </label>
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+20 km">
+                                                                    <span class="checkmark"></span>
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 20 km</span>
+                                                                </label>
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+30 km">
+                                                                    <span class="checkmark"></span>
+
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 30 km</span>
+                                                                </label>
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+50 km">
+                                                                    <span class="checkmark"></span>
+
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 50 km</span>
+                                                                </label>
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="+100 km">
+                                                                    <span class="checkmark"></span>
+
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        + 100 km</span>
+                                                                </label>
+
+                                                                <label class="form-check ">
+                                                                    <input type="radio" name="advertisementsDistance"
+                                                                        value="zdalnie">
+                                                                    <span class="checkmark"></span>
+
+                                                                    <span
+                                                                        class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                        zdalnie</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingThree">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                                    aria-expanded="false" aria-controls="flush-collapseThree">
+                                                    Accordion Item #3
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="flush-headingThree"
+                                                data-bs-parent="#settingsAccordion">
+                                                <div class="accordion-body">Placeholder content for this accordion,
+                                                    which is intended to demonstrate the <code>.accordion-flush</code>
+                                                    class. This is the third item's accordion body. Nothing more
+                                                    exciting happening here in terms of content, but just filling up the
+                                                    space to make it look, at least at first glance, a bit more
+                                                    representative of how this would look in a real-world application.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button
+                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center d-lg-none"
+                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMenu"
+                                role="button" aria-controls="offcanvasMenu">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 16.25C3.58579 16.25 3.25 16.5858 3.25 17C3.25 17.4142 3.58579 17.75 4 17.75V16.25ZM20 17.75C20.4142 17.75 20.75 17.4142 20.75 17C20.75 16.5858 20.4142 16.25 20 16.25V17.75ZM4 11.25C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75V11.25ZM20 12.75C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25V12.75ZM4 6.25C3.58579 6.25 3.25 6.58579 3.25 7C3.25 7.41421 3.58579 7.75 4 7.75V6.25ZM20 7.75C20.4142 7.75 20.75 7.41421 20.75 7C20.75 6.58579 20.4142 6.25 20 6.25V7.75ZM4 17.75H20V16.25H4V17.75ZM4 12.75H20V11.25H4V12.75ZM4 7.75H20V6.25H4V7.75Z"
+                                        fill="white" />
+                                </svg>
+
+                            </button>
+                        </div>
+
+
 
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu"
                             aria-labelledby="offcanvasMenuLabel">
@@ -178,35 +922,31 @@
                         </div>
 
                     </div>
-                    <div class="hero__categories-all mt-4">
+                    <div class="hero__categories-all mt-4 pb-5">
                         <p class="fw-bold mb-1">Kategorie</p>
                         <div>
 
                             <div class="accordion-item">
-                                <a class="hero__category-link" data-bs-toggle="collapse"
+                                <a class="hero__category-link collapsed" data-bs-toggle="collapse"
                                     data-bs-target="#fizjoterapiaCollapse" aria-expanded="true"
                                     aria-controls="fizjoterapiaCollapse">
                                     <span> Bardzo długa nazwa kategorii</span>
                                 </a>
                                 <div id="fizjoterapiaCollapse" class="accordion-collapse collapse">
                                     <ul class="hero__inner-categories">
-                                        <li class="hero__inner-categories-link"> <a href="#"
-                                                class="hero__category-link">
+                                        <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
                                                 <span>Fizjoterapia</span>
 
                                             </a></li>
-                                        <li class="hero__inner-categories-link"> <a href="#"
-                                                class="hero__category-link">
+                                        <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
                                                 <span>Długa nazwa kategorii</span>
 
                                             </a></li>
-                                        <li class="hero__inner-categories-link"> <a href="#"
-                                                class="hero__category-link">
+                                        <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
                                                 <span>subFizjoterapia2</span>
 
                                             </a></li>
-                                        <li class="hero__inner-categories-link"> <a href="#"
-                                                class="hero__category-link">
+                                        <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
                                                 <span>subFizjoterapia3</span>
 
                                             </a></li>
@@ -214,8 +954,8 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <a class="hero__category-link" data-bs-toggle="collapse" data-bs-target="#naukaCollapse"
-                                    aria-expanded="true" aria-controls="naukaCollapse">
+                                <a class="hero__category-link  collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#naukaCollapse" aria-expanded="true" aria-controls="naukaCollapse">
                                     <span> Nauka</span>
                                 </a>
                                 <div id="naukaCollapse" class="accordion-collapse collapse">
@@ -389,14 +1129,54 @@
 
         </div>
 
+        <div class="categories bg-textBlack py-2 my-5 d-md-none">
+            <div class="container-fluid">
+
+                <div class="fontSizeM fw-bold text-darkBrown my-3 ">Najpopularniejsze kategorie</div>
+            </div>
+            <div id="categoriesSwiper" class="categories__swiper">
+                <div class="swiper-wrapper">
+                    <div class="categories__slide swiper-slide">
+                        <a href="#"> <span>Usługi fotograficzne</span> </a>
+                    </div>
+                    <div class="categories__slide swiper-slide">
+                        <a href="#"> <span>Usługi fotograficzne</span> </a>
+                    </div>
+                    <div class="categories__slide swiper-slide">
+                        <a href="#"> <span>Usługi fotograficzne</span> </a>
+                    </div>
+                    <div class="categories__slide swiper-slide">
+                        <a href="#"> <span>Usługi fotograficzne</span> </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="d-flex justify-content-end mt-2 mb-3">
+                    <a href="#"
+                        class="fontSizeXS fw-bold text-darkBrown text-white never-decoration d-flex align-items-center">
+                        <span class="me-2">zobacz wszystkie kategorie</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5" stroke="#EEEBE8"
+                                stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
         <section>
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h2 class="fw-semibold text-darkBrown my-0">Najnowsze ogłoszenia</h2>
-                    <button class="btn btn-display-settings" aria-label="open display settings one offcanvas"
-                        data-bs-toggle="offcanvas" href="#offcanvasDisplaySettingsOne" role="button"
-                        aria-controls="offcanvasDisplaySettingsOne">
-
+                    <button
+                        class="btn btn-display-settings d-md-flex  flex-md-row-reverse align-items-center px-md-3 py-md-2"
+                        aria-label="open display settings one offcanvas" data-bs-toggle="offcanvas"
+                        href="#offcanvasDisplaySettingsOne" role="button" aria-controls="offcanvasDisplaySettingsOne">
+                        <span class="background"></span>
+                        <span class="d-none d-md-inline ms-2">Ustawienia wyświetlania</span>
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.5 3.71875C3.13756 3.71875 2.84375 4.01256 2.84375 4.375C2.84375 4.73744 3.13756 5.03125 3.5 5.03125L3.5 3.71875ZM8.75 4.375L9.40625 4.375L8.75 4.375ZM17.5 5.03125C17.8624 5.03125 18.1563 4.73744 18.1563 4.375C18.1563 4.01256 17.8624 3.71875 17.5 3.71875L17.5 5.03125ZM3.5 9.84375C3.13756 9.84375 2.84375 10.1376 2.84375 10.5C2.84375 10.8624 3.13756 11.1563 3.5 11.1563V9.84375ZM14 10.5L14.6563 10.5L14 10.5ZM17.5 17.2813C17.8624 17.2813 18.1563 16.9874 18.1563 16.625C18.1563 16.2626 17.8624 15.9688 17.5 15.9688V17.2813ZM5.25 14.875L5.25 15.5313L5.25 14.875ZM5.25 18.375L5.25 19.0313L5.25 18.375ZM3.5 16.625L4.15625 16.625L3.5 16.625ZM15.75 8.75L15.75 9.40625L15.75 8.75ZM17.5 10.5L18.1563 10.5L17.5 10.5ZM15.75 12.25L15.75 12.9063L15.75 12.25ZM10.5 2.625L10.5 3.28125L10.5 2.625ZM10.5 6.125L10.5 6.78125L10.5 6.125ZM3.5 5.03125L8.75 5.03125L8.75 3.71875L3.5 3.71875L3.5 5.03125ZM12.25 5.03125L17.5 5.03125L17.5 3.71875L12.25 3.71875L12.25 5.03125ZM3.5 11.1563H14V9.84375H3.5V11.1563ZM7 17.2813H17.5V15.9688H7V17.2813ZM5.25 15.5313C5.85406 15.5313 6.34375 16.0209 6.34375 16.625L7.65625 16.625C7.65625 15.2961 6.57894 14.2188 5.25 14.2188L5.25 15.5313ZM6.34375 16.625C6.34375 17.2291 5.85406 17.7188 5.25 17.7188L5.25 19.0313C6.57894 19.0313 7.65625 17.9539 7.65625 16.625L6.34375 16.625ZM5.25 17.7188C4.64594 17.7188 4.15625 17.2291 4.15625 16.625L2.84375 16.625C2.84375 17.9539 3.92106 19.0313 5.25 19.0313L5.25 17.7188ZM4.15625 16.625C4.15625 16.0209 4.64594 15.5313 5.25 15.5313L5.25 14.2188C3.92106 14.2188 2.84375 15.2961 2.84375 16.625L4.15625 16.625ZM15.75 9.40625C16.3541 9.40625 16.8438 9.89594 16.8438 10.5L18.1563 10.5C18.1563 9.17107 17.0789 8.09375 15.75 8.09375L15.75 9.40625ZM16.8438 10.5C16.8438 11.1041 16.3541 11.5938 15.75 11.5938L15.75 12.9063C17.0789 12.9063 18.1563 11.8289 18.1563 10.5L16.8438 10.5ZM15.75 11.5938C15.1459 11.5938 14.6563 11.1041 14.6563 10.5L13.3438 10.5C13.3438 11.8289 14.4211 12.9063 15.75 12.9063L15.75 11.5938ZM14.6563 10.5C14.6563 9.89594 15.1459 9.40625 15.75 9.40625L15.75 8.09375C14.4211 8.09375 13.3438 9.17107 13.3438 10.5L14.6563 10.5ZM10.5 3.28125C11.1041 3.28125 11.5938 3.77094 11.5938 4.375L12.9063 4.375C12.9063 3.04607 11.8289 1.96875 10.5 1.96875L10.5 3.28125ZM11.5938 4.375C11.5938 4.97906 11.1041 5.46875 10.5 5.46875L10.5 6.78125C11.8289 6.78125 12.9063 5.70394 12.9063 4.375L11.5938 4.375ZM10.5 5.46875C9.89594 5.46875 9.40625 4.97906 9.40625 4.375L8.09375 4.375C8.09375 5.70394 9.17107 6.78125 10.5 6.78125L10.5 5.46875ZM9.40625 4.375C9.40625 3.77094 9.89594 3.28125 10.5 3.28125L10.5 1.96875C9.17106 1.96875 8.09375 3.04607 8.09375 4.375L9.40625 4.375Z"
@@ -709,7 +1489,8 @@
 
                             <div class="text-light fontSizeXSS fw-semibold lh-md">
                                 Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie ma
+                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
+                                ma
                                 nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
                                 fachu! Polecam z czystym sumieniem!
                             </div>
@@ -742,7 +1523,8 @@
 
                             <div class="text-light fontSizeXSS fw-semibold lh-md">
                                 Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie ma
+                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
+                                ma
                                 nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
                                 fachu! Polecam z czystym sumieniem!
                             </div>
@@ -775,7 +1557,8 @@
 
                             <div class="text-light fontSizeXSS fw-semibold lh-md">
                                 Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie ma
+                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
+                                ma
                                 nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
                                 fachu! Polecam z czystym sumieniem!
                             </div>
@@ -808,7 +1591,8 @@
 
                             <div class="text-light fontSizeXSS fw-semibold lh-md">
                                 Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie ma
+                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
+                                ma
                                 nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
                                 fachu! Polecam z czystym sumieniem!
                             </div>
@@ -1134,15 +1918,19 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <h3 class="font-circular text-gradient-black-to-brown about__heading mt-5 pt-4">recommend me!
+                        <h3 class="font-circular text-gradient-black-to-brown about__heading mt-5 pt-4">recommend
+                            me!
                         </h3>
                         <p>
-                            <strong>recome</strong> to nowa, rewolucyjna usługa opierająca się na ilości rekomendacji
-                            realnych użytkowników. Codziennie dbamy o to, aby wyszukiwarka dostarczała tylko sprawdzone
+                            <strong>recome</strong> to nowa, rewolucyjna usługa opierająca się na ilości
+                            rekomendacji
+                            realnych użytkowników. Codziennie dbamy o to, aby wyszukiwarka dostarczała tylko
+                            sprawdzone
                             informacje.
                         </p>
                         <p>
-                            Dzięki recome za darmo ogłosisz chęć zlecenia usługi innym a także znajdziesz klientów na
+                            Dzięki recome za darmo ogłosisz chęć zlecenia usługi innym a także znajdziesz klientów
+                            na
                             swoje usługi, rozwijając firmę i zwiększając swoje zasięgi.
                         </p>
                         <div>
@@ -1284,7 +2072,8 @@
                                         przedsiębiorstwo</h5>
                                     <p class="blog-section__card-subtext fontSizeXSS fw-light">
                                         Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia, niezbędne
+                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                        niezbędne
                                         do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
                                     </p>
                                 </div>
@@ -1321,7 +2110,8 @@
                                         przedsiębiorstwo</h5>
                                     <p class="blog-section__card-subtext fontSizeXSS fw-light">
                                         Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia, niezbędne
+                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                        niezbędne
                                         do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
                                     </p>
                                 </div>
@@ -1358,7 +2148,8 @@
                                         przedsiębiorstwo</h5>
                                     <p class="blog-section__card-subtext fontSizeXSS fw-light">
                                         Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia, niezbędne
+                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                        niezbędne
                                         do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
                                     </p>
                                 </div>
