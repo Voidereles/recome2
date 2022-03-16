@@ -25,7 +25,7 @@
     <header class="header">
         <div class="container-fluid">
             <nav class="header__container d-flex align-items-center w-100">
-                <div class="header__logo me-auto me-lg-0 d-md-flex align-items-center">
+                <div class="header__logo me-auto me-lg-0 d-flex align-items-center">
                     <svg width="93" height="37" viewBox="0 0 93 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_287_3936)">
                             <path
@@ -51,13 +51,13 @@
                             </clipPath>
                         </defs>
                     </svg>
-                    <a href="#" class="badge-container d-none d-sm-block ms-2"> <span
+                    <a href="#" class="badge-container ms-2"> <span
                             class="badge bg-darkBrown fontSizeSmallest font-circular text-uppercase ls-01 fw-semibold never-underline px-2 py-2 rounded-pill">PREMIUM</span>
                     </a>
                 </div>
 
-                <div class="header__nav d-flex align-items-center ms-lg-4 ms-xl-5 flex-lg-grow-1">
-                    <div class="d-flex align-items-lg-center justify-content-lg-between flex-lg-grow-1 w-100">
+                <div class="header__nav d-flex align-items-center ms-md-4 ms-xl-5 flex-md-grow-1">
+                    <div class="d-flex align-items-md-center justify-content-md-between flex-md-grow-1 w-100">
                         <div class="d-flex">
                             <a href="#add" type="button" title="Dodaj ogłoszenie" class=" btn btn-light w-36 h-36 rounded-circle p-2 bg-white d-flex align-items-center
                                 justify-content-center me-2">
@@ -86,15 +86,16 @@
                                 </svg>
                             </a>
                         </div>
-                        <form class="search">
-                            <div class="bg-brown2 rounded-pill d-flex">
+
+                        <form class="search d-none d-lg-block">
+                            <div class="rounded-pill d-flex flex-wrap flex-lg-nowrap">
                                 <div>
                                     <input type="search" class="form-control search__input" id="searchInput"
                                         placeholder="Szukaj" required aria-label="Szukaj">
                                 </div>
 
                                 <div>
-                                    <input id="autoComplete" class="autoCompleteCity" type="search" dir="ltr"
+                                    <input id="autoCompleteMainSearch" class="autoCompleteCity" type="search" dir="ltr"
                                         spellcheck=false autocorrect="off" autocomplete="
                                         off" autocapitalize="off" maxlength="2048" tabindex="1">
                                     <div class="position-relative"></div>
@@ -201,7 +202,7 @@
 
 
                                 <button
-                                    class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2 d-none d-lg-block"
+                                    class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2"
                                     aria-label="search" type="submit">
                                     <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -212,18 +213,9 @@
 
                                 </button>
                             </div>
-                            <button
-                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2 d-lg-none"
-                                aria-label="open search modal" data-bs-toggle="modal" data-bs-target="#searchModal">
-                                <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16.2247 17.6086C16.4688 17.8527 16.8645 17.8527 17.1086 17.6086C17.3527 17.3645 17.3527 16.9688 17.1086 16.7247L16.2247 17.6086ZM13.6114 13.2275C13.3673 12.9834 12.9716 12.9834 12.7275 13.2275C12.4834 13.4716 12.4834 13.8673 12.7275 14.1114L13.6114 13.2275ZM8.75 14.875C5.6434 14.875 3.125 12.3566 3.125 9.25H1.875C1.875 13.047 4.95304 16.125 8.75 16.125V14.875ZM3.125 9.25C3.125 6.1434 5.6434 3.625 8.75 3.625V2.375C4.95304 2.375 1.875 5.45304 1.875 9.25H3.125ZM8.75 3.625C11.8566 3.625 14.375 6.1434 14.375 9.25H15.625C15.625 5.45304 12.547 2.375 8.75 2.375V3.625ZM14.375 9.25C14.375 12.3566 11.8566 14.875 8.75 14.875V16.125C12.547 16.125 15.625 13.047 15.625 9.25H14.375ZM17.1086 16.7247L13.6114 13.2275L12.7275 14.1114L16.2247 17.6086L17.1086 16.7247Z"
-                                        fill="white" />
-                                </svg>
 
-                            </button>
                         </form>
+
 
                         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel"
                             aria-hidden="true">
@@ -235,19 +227,30 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        ...
+                                        <!-- Tutaj przyjdzie szukajka javascriptem -->
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary py-1 px-3 rounded-pill"
+                                            data-bs-dismiss="modal">Zamknij</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button
+                            class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center me-2 ms-auto d-lg-none"
+                            aria-label="open search modal" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.2247 17.6086C16.4688 17.8527 16.8645 17.8527 17.1086 17.6086C17.3527 17.3645 17.3527 16.9688 17.1086 16.7247L16.2247 17.6086ZM13.6114 13.2275C13.3673 12.9834 12.9716 12.9834 12.7275 13.2275C12.4834 13.4716 12.4834 13.8673 12.7275 14.1114L13.6114 13.2275ZM8.75 14.875C5.6434 14.875 3.125 12.3566 3.125 9.25H1.875C1.875 13.047 4.95304 16.125 8.75 16.125V14.875ZM3.125 9.25C3.125 6.1434 5.6434 3.625 8.75 3.625V2.375C4.95304 2.375 1.875 5.45304 1.875 9.25H3.125ZM8.75 3.625C11.8566 3.625 14.375 6.1434 14.375 9.25H15.625C15.625 5.45304 12.547 2.375 8.75 2.375V3.625ZM14.375 9.25C14.375 12.3566 11.8566 14.875 8.75 14.875V16.125C12.547 16.125 15.625 13.047 15.625 9.25H14.375ZM17.1086 16.7247L13.6114 13.2275L12.7275 14.1114L16.2247 17.6086L17.1086 16.7247Z"
+                                    fill="white" />
+                            </svg>
 
-                        <div class="d-flex">
+                        </button>
+                        <div class="header__right-buttons d-none d-md-flex">
+
                             <button
-                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent rounded-circle d-flex align-items-center justify-content-center"
+                                class="btn btn-secondary w-36 h-36 me-md-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent rounded-circle d-flex align-items-center justify-content-center"
                                 aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasAccountMenu"
                                 role="button" aria-controls="offcanvasAccountMenu">
 
@@ -339,7 +342,7 @@
                             </div>
 
                             <button
-                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
+                                class="btn btn-secondary w-36 h-36 me-md-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
                                 aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMessageMenu"
                                 role="button" aria-controls="offcanvasMessageMenu">
 
@@ -536,7 +539,7 @@
 
 
                             <button
-                                class="btn btn-secondary w-36 h-36 me-lg-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
+                                class="btn btn-secondary w-36 h-36 me-md-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent d-flex align-items-center justify-content-center"
                                 aria-label="open menu offcanvas" data-bs-toggle="offcanvas"
                                 href="#offcanvasFavouritesMenu" role="button" aria-controls="offcanvasFavouritesMenu">
 
@@ -603,6 +606,7 @@
                                         <div data-text="Hydraulik potrzebny"
                                             class="favourites-item itemToSearch d-flex justify-content-between align-items-center">
                                             <a href="#" class="d-flex align-items-center me-4 flex-grow-1">
+
                                                 <img src="./assets/slider-image.jpg"
                                                     class="img-fluid favourites-item__img" loading="lazy" alt="">
                                                 <div class="ms-3 max-three-lines flex-grow-1">
@@ -660,8 +664,6 @@
 
                             </button>
 
-
-
                             <div class="offcanvas offcanvas-end offcanvas-settings" tabindex="-1"
                                 id="offcanvasSettingsMenu" aria-labelledby="offcanvasSettingsMenu">
                                 <div class="offcanvas-header">
@@ -684,22 +686,41 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
+                                    <p class="fontSizeXS bg-brown2 p-3 rounded-4"><strong class="fw-600"> W recome każdy
+                                            może
+                                            dostosować
+                                            stronę główną</strong>
+                                        tak,
+                                        aby była dla niego najbardziej
+                                        użyteczna! Zmieniaj kolejność sekcji i sposób wyświetlania zleceń i ogłoszeń
+                                        dzięki ustawieniom. Zamiast wyświetlania najnowszych ogłoszeń z całej Polski,
+                                        możesz ustawić, aby wyświetlały się tylko te ogłoszenia i zlecenia, które
+                                        wystawione zostały na danym obszarze i z konkretnym słowem w tytule.</p>
                                     <div class="accordion accordion-flush" id="settingsAccordion">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="orderHeading">
                                                 <button class="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse" data-bs-target="#order"
                                                     aria-expanded="false" aria-controls="order">
-                                                    Przeciągnij kolejność wyświetlania sekcji
+                                                    Kolejność wyświetlania sekcji
                                                 </button>
                                             </h2>
                                             <div id="order" class="accordion-collapse collapse"
                                                 aria-labelledby="orderHeading" data-bs-parent="#settingsAccordion">
                                                 <div class="accordion-body">
-                                                    Robert jak tu wrzucisz kolejność to dopiero będę to stylował.
+                                                    <div>Przeciągnij aby zmienić kolejność wyświetlania.</div>
+
+                                                    <a href="#" class="text-darkerBrown my-2">
+
+                                                        Resetuj kolejność
+                                                    </a>
+                                                    <p>
+                                                        Robert jak tu wrzucisz kolejność to dopiero będę to stylował.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="advertisementsSettingsHeading">
                                                 <button class="accordion-button collapsed" type="button"
@@ -711,19 +732,218 @@
                                             <div id="advertisementsSettings" class="accordion-collapse collapse"
                                                 aria-labelledby="advertisementsSettingsHeading"
                                                 data-bs-parent="#settingsAccordion">
-                                                <div class="accordion-body">
-                                                    <div>
+                                                <div class="accordion-body my-3">
+
+                                                    <div id="advSettingsNewOrRec" class="mb-2 d-flex flex-wrap ">
+                                                        <label
+                                                            class="form-check d-flex justify-content-start  me-3 my-2">
+                                                            <input type="radio" name="advSettings" checked>
+                                                            <div class="checkmark"></div>
+
+                                                            <span class="fontSizeXS">
+                                                                Rekomendowane</span>
+                                                        </label>
+                                                        <label class="form-check d-flex justify-content-start my-2">
+                                                            <input type="radio" name="advSettings">
+                                                            <div class="checkmark"></div>
+
+                                                            <span class="fontSizeXS">
+                                                                Najnowsze
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="d-flex flex-column flex-md-row">
+
                                                         <input id="autoCompleteAdvertisementsSettings"
                                                             class="autoCompleteCity" type="search" dir="ltr"
                                                             spellcheck=false autocorrect="off" autocomplete="
-                                                            off" autocapitalize="off" maxlength="2048" tabindex="1">
-                                                        <div class="position-relative"></div>
+                                                        off" autocapitalize="off" maxlength="128" tabindex="1">
+
+
+
+                                                        <div
+                                                            class="ms-2 input-group d-flex flex-column select-dropdown__absolute">
+                                                            <div class="select-dropdown">
+
+                                                                <div
+                                                                    class="d-flex align-items-center w-100 justify-content-between bg-greyBg1 px-3 py-2 font-grey">
+                                                                    <span
+                                                                        class="select-dropdown__value max-215 max-one-line">
+                                                                        + 0 km
+                                                                    </span>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                                        height="14" viewBox="0 0 16 16" fill="#242527">
+                                                                        <path fill-rule="evenodd"
+                                                                            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                                                    </svg>
+                                                                </div>
+
+
+                                                                <div class="select-dropdown__items" data-scrollbar>
+
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+0 km" checked>
+                                                                        <span class="checkmark"></span>
+
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 0 km</span>
+                                                                    </label>
+                                                                    <label class="form-check  ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+5 km">
+                                                                        <span class="checkmark"></span>
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 5 km</span>
+                                                                    </label>
+                                                                    <label class="form-check  ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+10 km">
+                                                                        <span class="checkmark"></span>
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 10 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+15 km">
+                                                                        <span class="checkmark"></span>
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 15 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+20 km">
+                                                                        <span class="checkmark"></span>
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 20 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+30 km">
+                                                                        <span class="checkmark"></span>
+
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 30 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+50 km">
+                                                                        <span class="checkmark"></span>
+
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 50 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="+100 km">
+                                                                        <span class="checkmark"></span>
+
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            + 100 km</span>
+                                                                    </label>
+
+                                                                    <label class="form-check ">
+                                                                        <input type="radio" name="condimentum4"
+                                                                            value="zdalnie">
+                                                                        <span class="checkmark"></span>
+
+                                                                        <span
+                                                                            class="fontSizeXS select-dropdown__item-value max-215 max-one-line">
+                                                                            zdalnie</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                    <div class="d-flex align-items-center mt-2">
+
+                                                        <input id="autoCompleteAdvertisementsSettingsCategory"
+                                                            class="autoCompleteCategory" type="search" dir="ltr"
+                                                            spellcheck=false autocorrect="off" autocomplete="
+                                                        off" autocapitalize="off" maxlength="128" tabindex="1">
+                                                        <a href="#"
+                                                            class="ms-2 btn btn-nice btn-dark rounded-pill fontSizeXS d-inline-flex justify-content-center flex-grow-1 align-items-center py-1 px-3">
+                                                            <span class="background"></span>
+                                                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M14.2873 4.20396L13.8012 4.6901L13.8012 4.6901L14.2873 4.20396ZM17.7967 7.71336L18.2828 7.22722L18.2828 7.22722L17.7967 7.71336ZM8.25033 13.7503V13.0628C7.87063 13.0628 7.56283 13.3706 7.56283 13.7503H8.25033ZM13.7503 13.7503H14.4378C14.4378 13.3706 14.13 13.0628 13.7503 13.0628V13.7503ZM13.0628 18.3337C13.0628 18.7134 13.3706 19.0212 13.7503 19.0212C14.13 19.0212 14.4378 18.7134 14.4378 18.3337H13.0628ZM7.56283 18.3337C7.56283 18.7134 7.87063 19.0212 8.25033 19.0212C8.63002 19.0212 8.93783 18.7134 8.93783 18.3337H7.56283ZM16.5003 17.6462H5.50033V19.0212H16.5003V17.6462ZM4.35449 16.5003V5.50033H2.97949V16.5003H4.35449ZM5.50033 4.35449H12.9909V2.97949H5.50033V4.35449ZM17.6462 9.00972V16.5003H19.0212V9.00972H17.6462ZM13.8012 4.6901L17.3106 8.19949L18.2828 7.22722L14.7734 3.71783L13.8012 4.6901ZM19.0212 9.00972C19.0212 8.34115 18.7556 7.69997 18.2828 7.22722L17.3106 8.19949C17.5254 8.41438 17.6462 8.70582 17.6462 9.00972H19.0212ZM12.9909 4.35449C13.2948 4.35449 13.5863 4.47521 13.8012 4.6901L14.7734 3.71783C14.3007 3.24508 13.6595 2.97949 12.9909 2.97949V4.35449ZM5.50033 17.6462C4.8675 17.6462 4.35449 17.1332 4.35449 16.5003H2.97949C2.97949 17.8925 4.10811 19.0212 5.50033 19.0212V17.6462ZM16.5003 19.0212C17.8925 19.0212 19.0212 17.8925 19.0212 16.5003H17.6462C17.6462 17.1332 17.1332 17.6462 16.5003 17.6462V19.0212ZM4.35449 5.50033C4.35449 4.8675 4.8675 4.35449 5.50033 4.35449V2.97949C4.10811 2.97949 2.97949 4.10811 2.97949 5.50033H4.35449ZM8.25033 14.4378H13.7503V13.0628H8.25033V14.4378ZM13.0628 13.7503V18.3337H14.4378V13.7503H13.0628ZM8.93783 18.3337V13.7503H7.56283V18.3337H8.93783Z"
+                                                                    fill="#ECEAE7" />
+                                                            </svg>
+
+
+
+                                                            <span class="ms-2"> Zapisz</span>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="my-3">
+                                                        <a href="#" class="text-darkerBrown">
+
+                                                            Resetuj
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="orderSettingsHeading">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#orderSettings"
+                                                aria-expanded="false" aria-controls="orderSettings">
+                                                Sposób wyświetlania zleceń
+                                            </button>
+                                        </h2>
+                                        <div id="orderSettings" class="accordion-collapse collapse"
+                                            aria-labelledby="orderSettingsHeading" data-bs-parent="#settingsAccordion">
+                                            <div class="accordion-body my-3">
+
+                                                <div id="orderSettingsNewOrRec" class="mb-2 d-flex flex-wrap ">
+                                                    <label class="form-check d-flex justify-content-start  me-3 my-2">
+                                                        <input type="radio" name="orderSettings" checked>
+                                                        <div class="checkmark"></div>
+
+                                                        <span class="fontSizeXS">
+                                                            Rekomendowane</span>
+                                                    </label>
+                                                    <label class="form-check d-flex justify-content-start my-2">
+                                                        <input type="radio" name="orderSettings">
+                                                        <div class="checkmark"></div>
+
+                                                        <span class="fontSizeXS">
+                                                            Najnowsze
+                                                        </span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="d-flex flex-column flex-md-row">
+
+                                                    <input id="autoCompleteOrderSettings" class="autoCompleteCity"
+                                                        type="search" dir="ltr" spellcheck=false autocorrect="off"
+                                                        autocomplete="
+                                                    off" autocapitalize="off" maxlength="128" tabindex="1">
 
 
 
                                                     <div
-                                                        class="input-group d-flex flex-column select-dropdown__absolute">
+                                                        class="ms-2 input-group d-flex flex-column select-dropdown__absolute">
                                                         <div class="select-dropdown">
 
                                                             <div
@@ -744,7 +964,7 @@
 
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+0 km" checked>
                                                                     <span class="checkmark"></span>
 
@@ -753,7 +973,7 @@
                                                                         + 0 km</span>
                                                                 </label>
                                                                 <label class="form-check  ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+5 km">
                                                                     <span class="checkmark"></span>
                                                                     <span
@@ -761,7 +981,7 @@
                                                                         + 5 km</span>
                                                                 </label>
                                                                 <label class="form-check  ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+10 km">
                                                                     <span class="checkmark"></span>
                                                                     <span
@@ -770,7 +990,7 @@
                                                                 </label>
 
                                                                 <label class="form-check">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+15 km">
                                                                     <span class="checkmark"></span>
                                                                     <span
@@ -779,7 +999,7 @@
                                                                 </label>
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+20 km">
                                                                     <span class="checkmark"></span>
                                                                     <span
@@ -788,7 +1008,7 @@
                                                                 </label>
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+30 km">
                                                                     <span class="checkmark"></span>
 
@@ -798,7 +1018,7 @@
                                                                 </label>
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+50 km">
                                                                     <span class="checkmark"></span>
 
@@ -808,7 +1028,7 @@
                                                                 </label>
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="+100 km">
                                                                     <span class="checkmark"></span>
 
@@ -818,7 +1038,7 @@
                                                                 </label>
 
                                                                 <label class="form-check ">
-                                                                    <input type="radio" name="advertisementsDistance"
+                                                                    <input type="radio" name="orderSettingsRadio"
                                                                         value="zdalnie">
                                                                     <span class="checkmark"></span>
 
@@ -829,80 +1049,75 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingThree">
-                                                <button class="accordion-button collapsed" type="button"
-                                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                                    aria-expanded="false" aria-controls="flush-collapseThree">
-                                                    Accordion Item #3
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                                aria-labelledby="flush-headingThree"
-                                                data-bs-parent="#settingsAccordion">
-                                                <div class="accordion-body">Placeholder content for this accordion,
-                                                    which is intended to demonstrate the <code>.accordion-flush</code>
-                                                    class. This is the third item's accordion body. Nothing more
-                                                    exciting happening here in terms of content, but just filling up the
-                                                    space to make it look, at least at first glance, a bit more
-                                                    representative of how this would look in a real-world application.
+                                                <div class="d-flex align-items-center mt-2">
+
+                                                    <input id="autoCompleteOrderSettingsCategory"
+                                                        class="autoCompleteCategory" type="search" dir="ltr"
+                                                        spellcheck=false autocorrect="off" autocomplete="
+                                                    off" autocapitalize="off" maxlength="128" tabindex="1">
+                                                    <button type="submit"
+                                                        class="ms-2 btn btn-nice btn-dark rounded-pill fontSizeXS d-inline-flex justify-content-center flex-grow-1 align-items-center py-1 px-3">
+                                                        <span class="background"></span>
+                                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M14.2873 4.20396L13.8012 4.6901L13.8012 4.6901L14.2873 4.20396ZM17.7967 7.71336L18.2828 7.22722L18.2828 7.22722L17.7967 7.71336ZM8.25033 13.7503V13.0628C7.87063 13.0628 7.56283 13.3706 7.56283 13.7503H8.25033ZM13.7503 13.7503H14.4378C14.4378 13.3706 14.13 13.0628 13.7503 13.0628V13.7503ZM13.0628 18.3337C13.0628 18.7134 13.3706 19.0212 13.7503 19.0212C14.13 19.0212 14.4378 18.7134 14.4378 18.3337H13.0628ZM7.56283 18.3337C7.56283 18.7134 7.87063 19.0212 8.25033 19.0212C8.63002 19.0212 8.93783 18.7134 8.93783 18.3337H7.56283ZM16.5003 17.6462H5.50033V19.0212H16.5003V17.6462ZM4.35449 16.5003V5.50033H2.97949V16.5003H4.35449ZM5.50033 4.35449H12.9909V2.97949H5.50033V4.35449ZM17.6462 9.00972V16.5003H19.0212V9.00972H17.6462ZM13.8012 4.6901L17.3106 8.19949L18.2828 7.22722L14.7734 3.71783L13.8012 4.6901ZM19.0212 9.00972C19.0212 8.34115 18.7556 7.69997 18.2828 7.22722L17.3106 8.19949C17.5254 8.41438 17.6462 8.70582 17.6462 9.00972H19.0212ZM12.9909 4.35449C13.2948 4.35449 13.5863 4.47521 13.8012 4.6901L14.7734 3.71783C14.3007 3.24508 13.6595 2.97949 12.9909 2.97949V4.35449ZM5.50033 17.6462C4.8675 17.6462 4.35449 17.1332 4.35449 16.5003H2.97949C2.97949 17.8925 4.10811 19.0212 5.50033 19.0212V17.6462ZM16.5003 19.0212C17.8925 19.0212 19.0212 17.8925 19.0212 16.5003H17.6462C17.6462 17.1332 17.1332 17.6462 16.5003 17.6462V19.0212ZM4.35449 5.50033C4.35449 4.8675 4.8675 4.35449 5.50033 4.35449V2.97949C4.10811 2.97949 2.97949 4.10811 2.97949 5.50033H4.35449ZM8.25033 14.4378H13.7503V13.0628H8.25033V14.4378ZM13.0628 13.7503V18.3337H14.4378V13.7503H13.0628ZM8.93783 18.3337V13.7503H7.56283V18.3337H8.93783Z"
+                                                                fill="#ECEAE7" />
+                                                        </svg>
+
+
+
+                                                        <span class="ms-2"> Zapisz</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="my-3">
+                                                    <a href="#" class="text-darkerBrown">
+
+                                                        Resetuj
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-
-                            <button
-                                class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center d-lg-none"
-                                aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMenu"
-                                role="button" aria-controls="offcanvasMenu">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4 16.25C3.58579 16.25 3.25 16.5858 3.25 17C3.25 17.4142 3.58579 17.75 4 17.75V16.25ZM20 17.75C20.4142 17.75 20.75 17.4142 20.75 17C20.75 16.5858 20.4142 16.25 20 16.25V17.75ZM4 11.25C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75V11.25ZM20 12.75C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25V12.75ZM4 6.25C3.58579 6.25 3.25 6.58579 3.25 7C3.25 7.41421 3.58579 7.75 4 7.75V6.25ZM20 7.75C20.4142 7.75 20.75 7.41421 20.75 7C20.75 6.58579 20.4142 6.25 20 6.25V7.75ZM4 17.75H20V16.25H4V17.75ZM4 12.75H20V11.25H4V12.75ZM4 7.75H20V6.25H4V7.75Z"
-                                        fill="white" />
-                                </svg>
-
-                            </button>
-                        </div>
-
-
-
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu"
-                            aria-labelledby="offcanvasMenuLabel">
-                            <div class="offcanvas-header">
-                                <h5 class="offcanvas-title" id="offcanvasMenuLabel">Offcanvas Menu</h5>
-                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body">
-                                <div>
-                                    Some text as placeholder. In real life you can have the elements you have chosen.
-                                    Like, text, images, lists, etc.
-                                </div>
-                                <div class="dropdown mt-3">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                        id="dropdownMenuButton" data-bs-toggle="dropdown">
-                                        Dropdown button
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                    </ul>
-                                </div>
                             </div>
                         </div>
 
+
+                        <button
+                            class="btn btn-secondary w-36 h-36 p-0 bg-searchBackground rounded-circle d-flex align-items-center justify-content-center d-md-none"
+                            aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasMenu"
+                            role="button" aria-controls="offcanvasMenu">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M4 16.25C3.58579 16.25 3.25 16.5858 3.25 17C3.25 17.4142 3.58579 17.75 4 17.75V16.25ZM20 17.75C20.4142 17.75 20.75 17.4142 20.75 17C20.75 16.5858 20.4142 16.25 20 16.25V17.75ZM4 11.25C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75V11.25ZM20 12.75C20.4142 12.75 20.75 12.4142 20.75 12C20.75 11.5858 20.4142 11.25 20 11.25V12.75ZM4 6.25C3.58579 6.25 3.25 6.58579 3.25 7C3.25 7.41421 3.58579 7.75 4 7.75V6.25ZM20 7.75C20.4142 7.75 20.75 7.41421 20.75 7C20.75 6.58579 20.4142 6.25 20 6.25V7.75ZM4 17.75H20V16.25H4V17.75ZM4 12.75H20V11.25H4V12.75ZM4 7.75H20V6.25H4V7.75Z"
+                                    fill="white" />
+                            </svg>
+
+                        </button>
                     </div>
+
+
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu"
+                        aria-labelledby="offcanvasMenuLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasMenuLabel">Offcanvas Menu</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+
+                        </div>
+                    </div>
+
                 </div>
-            </nav>
+        </div>
+        </nav>
         </div>
     </header>
 
@@ -1016,23 +1231,27 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <picture>
+                                <source media="(min-width: 1200px)" srcset="./assets/slider1.jpg" sizes="">
                                 <img class="img-fluid d-block w-100" src="./assets/slider-image.jpg" alt="First slide">
                             </picture>
 
                             <div class="container-fluid">
-                                <div class="bg-lightBrown p-3 rounded-4">
-                                    <h2 class="text-uppercase fontSizeXS my-2 text-dark opacity-50 fw-bold lp-small">
+                                <div class="bg-lightBrown p-3 rounded-4 p-xl-4 px-xxl-5">
+                                    <h2
+                                        class="text-uppercase fontSizeXS my-2 text-dark opacity-50 fw-bold lp-small mt-xl-4">
                                         Zwiększ
                                         zasięg
                                         swojej
                                         firmy
                                     </h2>
-                                    <p class="text-dark fontSizeXS lh-1_7">Już teraz zacznij wystawiać ogłoszenia o
+                                    <p class="text-dark fontSizeXS xl-fontSizeS mb-xl-4 lh-1_7">Już teraz zacznij
+                                        wystawiać
+                                        ogłoszenia<br> o
                                         swoich
                                         usługach, zupełnie
                                         za darmo!</p>
                                     <a href="#"
-                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-1 px-3">
+                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-1 px-3 mb-xl-3 py-xl-2">
                                         <span class="background"></span>
                                         <svg class="me-2" width="10" height="10" viewBox="0 0 16 16" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -1049,6 +1268,7 @@
                         </div>
                         <div class="carousel-item ">
                             <picture>
+                                <source media="(min-width: 1200px)" srcset="./assets/slider1.jpg" sizes="">
                                 <img class="img-fluid d-block w-100" src="./assets/slider-image.jpg" alt="First slide">
                             </picture>
 
@@ -1083,6 +1303,7 @@
                         </div>
                         <div class="carousel-item">
                             <picture>
+                                <source media="(min-width: 1200px)" srcset="./assets/slider1.jpg" sizes="">
                                 <img class="img-fluid d-block w-100" src="./assets/slider-image.jpg" alt="First slide">
                             </picture>
 
@@ -1129,7 +1350,7 @@
 
         </div>
 
-        <div class="categories bg-textBlack py-2 my-5 d-md-none">
+        <div class="categories bg-textBlack py-2 my-5 d-md-none overflow-hidden">
             <div class="container-fluid">
 
                 <div class="fontSizeM fw-bold text-darkBrown my-3 ">Najpopularniejsze kategorie</div>
@@ -1170,55 +1391,29 @@
         <section>
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="fw-semibold text-darkBrown my-0">Najnowsze ogłoszenia</h2>
-                    <button
-                        class="btn btn-display-settings d-md-flex  flex-md-row-reverse align-items-center px-md-3 py-md-2"
+                    <h2 class="fw-semibold text-darkBrown my-0 p-3 bg-textBlack w-100 ">Najnowsze ogłoszenia
+                    </h2>
+                    <!-- <button
+                        class="btn btn-display-settings d-md-flex  flex-md-row-reverse align-items-center px-md-3 py-md-2 d-lg-none"
                         aria-label="open display settings one offcanvas" data-bs-toggle="offcanvas"
-                        href="#offcanvasDisplaySettingsOne" role="button" aria-controls="offcanvasDisplaySettingsOne">
+                        href="#offcanvasSettingsMenu" role="button" aria-controls="offcanvasSettingsMenu">
                         <span class="background"></span>
-                        <span class="d-none d-md-inline ms-2">Ustawienia wyświetlania</span>
+                        <span class="d-none d-md-inline ms-2">Ustawienia</span>
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.5 3.71875C3.13756 3.71875 2.84375 4.01256 2.84375 4.375C2.84375 4.73744 3.13756 5.03125 3.5 5.03125L3.5 3.71875ZM8.75 4.375L9.40625 4.375L8.75 4.375ZM17.5 5.03125C17.8624 5.03125 18.1563 4.73744 18.1563 4.375C18.1563 4.01256 17.8624 3.71875 17.5 3.71875L17.5 5.03125ZM3.5 9.84375C3.13756 9.84375 2.84375 10.1376 2.84375 10.5C2.84375 10.8624 3.13756 11.1563 3.5 11.1563V9.84375ZM14 10.5L14.6563 10.5L14 10.5ZM17.5 17.2813C17.8624 17.2813 18.1563 16.9874 18.1563 16.625C18.1563 16.2626 17.8624 15.9688 17.5 15.9688V17.2813ZM5.25 14.875L5.25 15.5313L5.25 14.875ZM5.25 18.375L5.25 19.0313L5.25 18.375ZM3.5 16.625L4.15625 16.625L3.5 16.625ZM15.75 8.75L15.75 9.40625L15.75 8.75ZM17.5 10.5L18.1563 10.5L17.5 10.5ZM15.75 12.25L15.75 12.9063L15.75 12.25ZM10.5 2.625L10.5 3.28125L10.5 2.625ZM10.5 6.125L10.5 6.78125L10.5 6.125ZM3.5 5.03125L8.75 5.03125L8.75 3.71875L3.5 3.71875L3.5 5.03125ZM12.25 5.03125L17.5 5.03125L17.5 3.71875L12.25 3.71875L12.25 5.03125ZM3.5 11.1563H14V9.84375H3.5V11.1563ZM7 17.2813H17.5V15.9688H7V17.2813ZM5.25 15.5313C5.85406 15.5313 6.34375 16.0209 6.34375 16.625L7.65625 16.625C7.65625 15.2961 6.57894 14.2188 5.25 14.2188L5.25 15.5313ZM6.34375 16.625C6.34375 17.2291 5.85406 17.7188 5.25 17.7188L5.25 19.0313C6.57894 19.0313 7.65625 17.9539 7.65625 16.625L6.34375 16.625ZM5.25 17.7188C4.64594 17.7188 4.15625 17.2291 4.15625 16.625L2.84375 16.625C2.84375 17.9539 3.92106 19.0313 5.25 19.0313L5.25 17.7188ZM4.15625 16.625C4.15625 16.0209 4.64594 15.5313 5.25 15.5313L5.25 14.2188C3.92106 14.2188 2.84375 15.2961 2.84375 16.625L4.15625 16.625ZM15.75 9.40625C16.3541 9.40625 16.8438 9.89594 16.8438 10.5L18.1563 10.5C18.1563 9.17107 17.0789 8.09375 15.75 8.09375L15.75 9.40625ZM16.8438 10.5C16.8438 11.1041 16.3541 11.5938 15.75 11.5938L15.75 12.9063C17.0789 12.9063 18.1563 11.8289 18.1563 10.5L16.8438 10.5ZM15.75 11.5938C15.1459 11.5938 14.6563 11.1041 14.6563 10.5L13.3438 10.5C13.3438 11.8289 14.4211 12.9063 15.75 12.9063L15.75 11.5938ZM14.6563 10.5C14.6563 9.89594 15.1459 9.40625 15.75 9.40625L15.75 8.09375C14.4211 8.09375 13.3438 9.17107 13.3438 10.5L14.6563 10.5ZM10.5 3.28125C11.1041 3.28125 11.5938 3.77094 11.5938 4.375L12.9063 4.375C12.9063 3.04607 11.8289 1.96875 10.5 1.96875L10.5 3.28125ZM11.5938 4.375C11.5938 4.97906 11.1041 5.46875 10.5 5.46875L10.5 6.78125C11.8289 6.78125 12.9063 5.70394 12.9063 4.375L11.5938 4.375ZM10.5 5.46875C9.89594 5.46875 9.40625 4.97906 9.40625 4.375L8.09375 4.375C8.09375 5.70394 9.17107 6.78125 10.5 6.78125L10.5 5.46875ZM9.40625 4.375C9.40625 3.77094 9.89594 3.28125 10.5 3.28125L10.5 1.96875C9.17106 1.96875 8.09375 3.04607 8.09375 4.375L9.40625 4.375Z"
                                 fill="#BCA37B" />
                         </svg>
 
-                    </button>
-
-
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDisplaySettingsOne"
-                        aria-labelledby="offcanvasDisplaySettingsOneLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasDisplaySettingsOneLabel">Ustawienia jeden</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div>
-                                Some text as placeholder. In real life you can have the elements you have chosen.
-                                Like, text, images, lists, etc.
-                            </div>
-                            <div class="dropdown mt-3">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown">
-                                    Dropdown button
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </button> -->
                 </div>
 
 
-                <div class="d-flex flex-wrap mx-0 my-4 column-gap-half-rem ">
+                <div class="d-flex flex-wrap mx-0 my-4 mt-xl-0 column-gap-half-rem ">
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
-                        <span class="me-2"> +15 km</span>
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        <span class="me-2"> +100 km</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1232,7 +1427,7 @@
                     </div>
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
                         <span class="me-2">Trener personalny</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -1247,7 +1442,7 @@
                     </div>
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
                         <span class="me-2"> Lublin</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -1264,21 +1459,22 @@
 
                 </div>
 
-                <div class="row row-cols-1 g-3 list">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-3 list">
                     <div class="col ">
-                        <a href="#" class="d-flex list__item">
+                        <a href="#" class="d-flex flex-lg-column list__item">
                             <div class="list__img-container" data-reco-number="18">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/mudzin.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column overflow-hidden p-3">
+                            <div class="d-flex flex-column overflow-hidden p-3 list__content">
 
                                 <h3 class="fw-semibold fontSizeXS lh-md">1Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1289,12 +1485,12 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1312,18 +1508,19 @@
                     </div>
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--featured">
+                        <a href="#" class="d-flex flex-lg-column  list__item list__item--featured">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1334,12 +1531,12 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1357,18 +1554,19 @@
 
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--new">
+                        <a href="#" class="d-flex  flex-lg-column   list__item list__item--new">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1379,12 +1577,12 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1403,18 +1601,19 @@
 
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--ending">
+                        <a href="#" class="d-flex flex-lg-column  list__item list__item--ending">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1429,8 +1628,8 @@
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1449,219 +1648,245 @@
 
                 <div class="d-flex justify-content-center my-4">
                     <a href="#"
-                        class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS">
+                        class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS lg-fontSizeM">
                         <span class="me-2">
                             Pokaż więcej</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="d-lg-none" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5"
                                 stroke="currentColor" stroke-width="1.66667" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-
+                        <svg class="d-none d-lg-inline" width="27" height="27" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5"
+                                stroke="currentColor" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
                     </a>
                 </div>
             </div>
         </section>
         <section class="recommendations bg-textBlack py-5  my-5">
-            <div class="container-fluid">
+            <div class="container-fluid position-relative">
+                <svg class="d-none d-xl-block recommendations__message-decoration" width="427" height="427"
+                    viewBox="0 0 427 427" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M142.333 155.677C134.964 155.677 128.99 161.651 128.99 169.021C128.99 176.39 134.964 182.365 142.333 182.365V155.677ZM266.875 182.365C274.245 182.365 280.219 176.39 280.219 169.021C280.219 161.651 274.245 155.677 266.875 155.677V182.365ZM142.333 226.844C134.964 226.844 128.99 232.818 128.99 240.187C128.99 247.557 134.964 253.531 142.333 253.531V226.844ZM231.292 253.531C238.661 253.531 244.635 247.557 244.635 240.187C244.635 232.818 238.661 226.844 231.292 226.844V253.531ZM272.213 339.822L276.433 327.163C272.306 325.787 267.768 326.509 264.272 329.098L272.213 339.822ZM373.625 373.626L369.406 386.285C374.201 387.883 379.487 386.635 383.061 383.061C386.635 379.487 387.883 374.201 386.284 369.406L373.625 373.626ZM339.821 272.213L328.85 264.618C326.459 268.071 325.834 272.449 327.162 276.433L339.821 272.213ZM142.333 182.365H266.875V155.677H142.333V182.365ZM142.333 253.531H231.292V226.844H142.333V253.531ZM267.993 352.481L369.406 386.285L377.845 360.967L276.433 327.163L267.993 352.481ZM386.284 369.406L352.48 267.994L327.162 276.433L360.966 377.846L386.284 369.406ZM204.604 342.49C128.452 342.49 66.7187 280.756 66.7187 204.604H40.0313C40.0313 295.495 113.713 369.177 204.604 369.177V342.49ZM66.7187 204.604C66.7187 128.452 128.452 66.7187 204.604 66.7187V40.0313C113.713 40.0313 40.0313 113.713 40.0313 204.604H66.7187ZM204.604 66.7187C280.756 66.7187 342.49 128.452 342.49 204.604H369.177C369.177 113.713 295.495 40.0313 204.604 40.0313V66.7187ZM272.213 339.822C264.272 329.098 264.277 329.094 264.282 329.09C264.284 329.089 264.289 329.085 264.292 329.083C264.299 329.078 264.305 329.074 264.311 329.069C264.323 329.061 264.333 329.053 264.342 329.046C264.36 329.033 264.374 329.024 264.382 329.018C264.398 329.006 264.394 329.009 264.37 329.026C264.321 329.06 264.191 329.149 263.978 329.285C263.554 329.558 262.801 330.021 261.715 330.615C259.543 331.802 256.035 333.513 251.146 335.268C241.393 338.768 226.014 342.49 204.604 342.49V369.177C229.181 369.177 247.606 364.893 260.161 360.387C266.425 358.139 271.197 355.847 274.517 354.032C276.176 353.124 277.472 352.337 278.41 351.734C278.878 351.433 279.258 351.178 279.548 350.977C279.693 350.876 279.816 350.79 279.917 350.717C279.968 350.681 280.013 350.649 280.052 350.62C280.072 350.606 280.09 350.592 280.107 350.58C280.116 350.574 280.124 350.568 280.132 350.562C280.135 350.559 280.141 350.555 280.143 350.553C280.148 350.549 280.154 350.545 272.213 339.822ZM342.49 204.604C342.49 225.212 338.785 240.615 335.244 250.648C333.47 255.673 331.731 259.369 330.505 261.709C329.892 262.878 329.407 263.708 329.111 264.195C328.963 264.438 328.862 264.595 328.816 264.666C328.793 264.702 328.784 264.715 328.789 264.707C328.792 264.703 328.798 264.694 328.808 264.679C328.813 264.672 328.819 264.663 328.826 264.653C328.83 264.648 328.833 264.642 328.837 264.637C328.839 264.634 328.842 264.629 328.843 264.628C328.847 264.623 328.85 264.618 339.821 272.213C350.793 279.808 350.796 279.803 350.799 279.798C350.801 279.797 350.804 279.792 350.807 279.788C350.812 279.781 350.817 279.773 350.822 279.765C350.833 279.75 350.845 279.732 350.858 279.714C350.883 279.676 350.912 279.633 350.945 279.584C351.011 279.486 351.092 279.364 351.186 279.219C351.375 278.93 351.618 278.546 351.908 278.07C352.487 277.118 353.253 275.794 354.141 274.1C355.917 270.713 358.181 265.846 360.41 259.529C364.876 246.877 369.177 228.475 369.177 204.604H342.49Z"
+                        fill="white" fill-opacity="0.03" />
+                </svg>
+                <svg class="d-none d-xl-block recommendations__decoration" width="16" height="16" viewBox="0 0 16 16"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_290_3021)">
+                        <path
+                            d="M4.7002 14.8H11.1002M7.9002 14.8V11.6M7.9002 11.6C5.69106 11.6 3.9002 9.80909 3.9002 7.59995V1.19995H11.9002V7.59995C11.9002 9.80909 10.1093 11.6 7.9002 11.6ZM11.9002 2.79995H13.1002C14.2048 2.79995 15.1002 3.69538 15.1002 4.79995C15.1002 5.90452 14.2048 6.79995 13.1002 6.79995H11.9002M3.9002 6.79995H2.7002C1.59563 6.79995 0.700195 5.90452 0.700195 4.79995C0.700195 3.69538 1.59563 2.79995 2.7002 2.79995H3.9002"
+                            stroke="#E9CCA7" stroke-width="0.88" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M6.0808 7.99115C6.2536 7.99115 6.3784 7.98155 6.4552 7.96235C6.532 7.93835 6.58 7.89995 6.5992 7.84715C6.6232 7.79435 6.6352 7.70795 6.6352 7.58795V4.06715C6.6352 3.94235 6.6232 3.85355 6.5992 3.80075C6.5752 3.74795 6.5248 3.71195 6.448 3.69275C6.376 3.66875 6.2536 3.65675 6.0808 3.65675V3.44795H8.0176C8.4928 3.44795 8.8648 3.54635 9.1336 3.74315C9.4024 3.93995 9.5368 4.23275 9.5368 4.62155C9.5368 4.94795 9.4432 5.21195 9.256 5.41355C9.0736 5.61515 8.8264 5.75195 8.5144 5.82395V5.83835C8.7592 5.91035 8.9392 6.02795 9.0544 6.19115C9.1744 6.35435 9.2608 6.60395 9.3136 6.93995L9.3568 7.20635C9.4048 7.47515 9.472 7.67435 9.5584 7.80395C9.6448 7.92875 9.7792 7.99115 9.9616 7.99115V8.19995H9.0256C8.9008 8.08475 8.8048 7.86395 8.7376 7.53755L8.5648 6.65195C8.5168 6.41195 8.428 6.23915 8.2984 6.13355C8.1736 6.02315 7.9864 5.96795 7.7368 5.96795H7.2976V7.58795C7.2976 7.70795 7.3096 7.79675 7.3336 7.85435C7.3576 7.90715 7.4104 7.94315 7.492 7.96235C7.5736 7.98155 7.7056 7.99115 7.888 7.99115V8.19995H6.0808V7.99115ZM7.7512 5.70875C8.116 5.70875 8.3848 5.62955 8.5576 5.47115C8.7304 5.30795 8.8168 5.05355 8.8168 4.70795C8.8168 4.36235 8.728 4.10795 8.5504 3.94475C8.3728 3.78155 8.1016 3.69995 7.7368 3.69995C7.5544 3.69995 7.4344 3.72155 7.3768 3.76475C7.324 3.80315 7.2976 3.87035 7.2976 3.96635V5.70875H7.7512Z"
+                            fill="#E9CCA7" />
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_290_3021">
+                            <rect width="15.8" height="15.8" fill="white" />
+                        </clipPath>
+                    </defs>
+                </svg>
                 <h3 class="text-darkBrown fontSizeH4 lh-md text-center fw-bold">Rekomendacje <span
                         class="d-inline-block d-lg-inline"> prawdziwych osób</span></h3>
-                <div id="recommendationsSwiper" class="recommendations__swiper swiper px-4 my-5">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide recommendations__item">
-                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
-                                    fill="#DAAA63" />
-                            </svg>
-                            <div class="d-flex my-3">
-                                <picture>
-                                    <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
-                                        alt="opiniotwórca">
-                                </picture>
-                                <div class="d-flex flex-column">
-                                    <div class="fontSizeXSS text-grey"> 23 dni temu</div>
-                                    <div class="fontSizeXS text-lightBrown2 fw-semibold">Natalia Szaroch</div>
+                <div class="px-4 px-xl-0">
+                    <div class="recommendations__swiper-container">
+
+                        <div class="swiper-button-prev d-none d-xl-block"></div>
+                        <div id="recommendationsSwiper" class="recommendations__swiper swiper my-5">
+
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide recommendations__item">
+                                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
+                                            fill="#DAAA63" />
+                                    </svg>
+                                    <div class="d-flex my-3">
+                                        <picture>
+                                            <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
+                                                alt="opiniotwórca">
+                                        </picture>
+                                        <div class="d-flex flex-column">
+                                            <div class="fontSizeXSS text-grey"> 23 dni temu</div>
+                                            <div class="fontSizeXS lg-fontSizeS text-lightBrown2 fw-semibold">Natalia
+                                                Szaroch</div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="text-light fontSizeXSS lg-fontSizeXS fw-semibold lh-md">
+                                        Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
+                                        uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy
+                                        nie
+                                        ma
+                                        nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w
+                                        swoim
+                                        fachu! Polecam z czystym sumieniem!
+                                    </div>
+                                    <a href="#"
+                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
+                                        <span class="background"></span>
+
+                                        <span> Zobacz ogłoszenie</span>
+                                    </a>
                                 </div>
 
-                            </div>
+                                <div class="swiper-slide recommendations__item">
+                                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
+                                            fill="#DAAA63" />
+                                    </svg>
+                                    <div class="d-flex my-3">
+                                        <picture>
+                                            <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
+                                                alt="opiniotwórca">
+                                        </picture>
+                                        <div class="d-flex flex-column">
+                                            <div class="fontSizeXSS text-grey"> 23 dni temu</div>
+                                            <div class="fontSizeXS lg-fontSizeS text-lightBrown2 fw-semibold">2Natalia
+                                                Szaroch</div>
+                                        </div>
 
-                            <div class="text-light fontSizeXSS fw-semibold lh-md">
-                                Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
-                                ma
-                                nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
-                                fachu! Polecam z czystym sumieniem!
-                            </div>
-                            <a href="#"
-                                class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
-                                <span class="background"></span>
+                                    </div>
 
-                                <span> Zobacz ogłoszenie</span>
-                            </a>
-                        </div>
+                                    <div class="text-light fontSizeXSS lg-fontSizeXS fw-semibold lh-md">
+                                        Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
+                                        uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy
+                                        nie
+                                        ma
+                                        nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w
+                                        swoim
+                                        fachu! Polecam z czystym sumieniem!
+                                    </div>
+                                    <a href="#"
+                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
+                                        <span class="background"></span>
 
-                        <div class="swiper-slide recommendations__item">
-                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
-                                    fill="#DAAA63" />
-                            </svg>
-                            <div class="d-flex my-3">
-                                <picture>
-                                    <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
-                                        alt="opiniotwórca">
-                                </picture>
-                                <div class="d-flex flex-column">
-                                    <div class="fontSizeXSS text-grey"> 23 dni temu</div>
-                                    <div class="fontSizeXS text-lightBrown2 fw-semibold">2Natalia Szaroch</div>
+                                        <span> Zobacz ogłoszenie</span>
+                                    </a>
                                 </div>
 
-                            </div>
+                                <div class="swiper-slide recommendations__item">
+                                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
+                                            fill="#DAAA63" />
+                                    </svg>
+                                    <div class="d-flex my-3">
+                                        <picture>
+                                            <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
+                                                alt="opiniotwórca">
+                                        </picture>
+                                        <div class="d-flex flex-column">
+                                            <div class="fontSizeXSS text-grey"> 23 dni temu</div>
+                                            <div class="fontSizeXS lg-fontSizeS text-lightBrown2 fw-semibold">3Natalia
+                                                Szaroch</div>
+                                        </div>
 
-                            <div class="text-light fontSizeXSS fw-semibold lh-md">
-                                Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
-                                ma
-                                nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
-                                fachu! Polecam z czystym sumieniem!
-                            </div>
-                            <a href="#"
-                                class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
-                                <span class="background"></span>
+                                    </div>
 
-                                <span> Zobacz ogłoszenie</span>
-                            </a>
-                        </div>
+                                    <div class="text-light fontSizeXSS lg-fontSizeXS fw-semibold lh-md">
+                                        Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
+                                        uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy
+                                        nie
+                                        ma
+                                        nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w
+                                        swoim
+                                        fachu! Polecam z czystym sumieniem!
+                                    </div>
+                                    <a href="#"
+                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
+                                        <span class="background"></span>
 
-                        <div class="swiper-slide recommendations__item">
-                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
-                                    fill="#DAAA63" />
-                            </svg>
-                            <div class="d-flex my-3">
-                                <picture>
-                                    <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
-                                        alt="opiniotwórca">
-                                </picture>
-                                <div class="d-flex flex-column">
-                                    <div class="fontSizeXSS text-grey"> 23 dni temu</div>
-                                    <div class="fontSizeXS text-lightBrown2 fw-semibold">3Natalia Szaroch</div>
+                                        <span> Zobacz ogłoszenie</span>
+                                    </a>
                                 </div>
 
-                            </div>
+                                <div class="swiper-slide recommendations__item">
+                                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
+                                            fill="#DAAA63" />
+                                    </svg>
+                                    <div class="d-flex my-3">
+                                        <picture>
+                                            <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
+                                                alt="opiniotwórca">
+                                        </picture>
+                                        <div class="d-flex flex-column">
+                                            <div class="fontSizeXSS text-grey"> 23 dni temu</div>
+                                            <div class="fontSizeXS lg-fontSizeS text-lightBrown2 fw-semibold">4Natalia
+                                                Szaroch</div>
+                                        </div>
 
-                            <div class="text-light fontSizeXSS fw-semibold lh-md">
-                                Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
-                                ma
-                                nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
-                                fachu! Polecam z czystym sumieniem!
-                            </div>
-                            <a href="#"
-                                class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
-                                <span class="background"></span>
+                                    </div>
 
-                                <span> Zobacz ogłoszenie</span>
-                            </a>
-                        </div>
+                                    <div class="text-light fontSizeXSS lg-fontSizeXS fw-semibold lh-md">
+                                        Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
+                                        uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy
+                                        nie
+                                        ma
+                                        nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w
+                                        swoim
+                                        fachu! Polecam z czystym sumieniem!
+                                    </div>
+                                    <a href="#"
+                                        class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
+                                        <span class="background"></span>
 
-                        <div class="swiper-slide recommendations__item">
-                            <svg width="22" height="16" viewBox="0 0 22 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.5814 0C0.232559 8.20282 0 10.0507 0 11.1775C0 15.0535 2.88372 16 4.83721 16C7.53488 16 9.5814 14.1972 9.5814 11.493C9.5814 9.55493 8.51163 8.11268 6.83721 7.52676L10.6047 0H5.5814ZM18.2326 7.52676L22 0H16.9767C11.6279 8.20282 11.3953 10.0507 11.3953 11.1775C11.3953 15.0535 14.2791 16 16.2326 16C18.9302 16 20.9767 14.1972 20.9767 11.493C20.9767 9.55493 19.907 8.11268 18.2326 7.52676Z"
-                                    fill="#DAAA63" />
-                            </svg>
-                            <div class="d-flex my-3">
-                                <picture>
-                                    <img class="w-42 h-42 rounded-circle me-3" src="./assets/avatar.jpg"
-                                        alt="opiniotwórca">
-                                </picture>
-                                <div class="d-flex flex-column">
-                                    <div class="fontSizeXSS text-grey"> 23 dni temu</div>
-                                    <div class="fontSizeXS text-lightBrown2 fw-semibold">4Natalia Szaroch</div>
+                                        <span> Zobacz ogłoszenie</span>
+                                    </a>
                                 </div>
-
                             </div>
-
-                            <div class="text-light fontSizeXSS fw-semibold lh-md">
-                                Profesjonalizm w pełnym wydaniu. Monika jest osoba ciepłą, kontaktową, zawsze
-                                uśmiechniętą, a co najważniejsze z głową pełną pomysłów! Na sesjach z Nią nigdy nie
-                                ma
-                                nudy. Zawsze pomoże, doradzi, odpowiednio ustawi do zdjęcia. Jest mistrzynią w swoim
-                                fachu! Polecam z czystym sumieniem!
+                            <div class="swiper-pagination recommendations__pagination">
                             </div>
-                            <a href="#"
-                                class="btn btn-nice btn-white rounded-pill fontSizeXS d-inline-flex align-items-center py-2 px-4 mt-4">
-                                <span class="background"></span>
-
-                                <span> Zobacz ogłoszenie</span>
-                            </a>
                         </div>
-                    </div>
-
-                    <div class="swiper-pagination recommendations__pagination">
-
+                        <div class="swiper-button-next d-none d-xl-block"></div>
                     </div>
                 </div>
+
+
+
             </div>
         </section>
+
 
         <section>
             <div class="container-fluid">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="fw-semibold text-darkBrown my-0">Najnowsze zlecenia</h2>
-                    <button class="btn btn-display-settings" aria-label="open display settings one offcanvas"
-                        data-bs-toggle="offcanvas" href="#offcanvasDisplaySettingsOne" role="button"
-                        aria-controls="offcanvasDisplaySettingsOne">
-
+                    <h2 class="fw-semibold text-darkBrown my-0 p-3 bg-textBlack w-100 ">Najnowsze zlecenia
+                    </h2>
+                    <!-- <button
+                        class="btn btn-display-settings d-md-flex  flex-md-row-reverse align-items-center px-md-3 py-md-2 d-lg-none"
+                        aria-label="open display settings one offcanvas" data-bs-toggle="offcanvas"
+                        href="#offcanvasSettingsMenu" role="button" aria-controls="offcanvasSettingsMenu">
+                        <span class="background"></span>
+                        <span class="d-none d-md-inline ms-2">Ustawienia</span>
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3.5 3.71875C3.13756 3.71875 2.84375 4.01256 2.84375 4.375C2.84375 4.73744 3.13756 5.03125 3.5 5.03125L3.5 3.71875ZM8.75 4.375L9.40625 4.375L8.75 4.375ZM17.5 5.03125C17.8624 5.03125 18.1563 4.73744 18.1563 4.375C18.1563 4.01256 17.8624 3.71875 17.5 3.71875L17.5 5.03125ZM3.5 9.84375C3.13756 9.84375 2.84375 10.1376 2.84375 10.5C2.84375 10.8624 3.13756 11.1563 3.5 11.1563V9.84375ZM14 10.5L14.6563 10.5L14 10.5ZM17.5 17.2813C17.8624 17.2813 18.1563 16.9874 18.1563 16.625C18.1563 16.2626 17.8624 15.9688 17.5 15.9688V17.2813ZM5.25 14.875L5.25 15.5313L5.25 14.875ZM5.25 18.375L5.25 19.0313L5.25 18.375ZM3.5 16.625L4.15625 16.625L3.5 16.625ZM15.75 8.75L15.75 9.40625L15.75 8.75ZM17.5 10.5L18.1563 10.5L17.5 10.5ZM15.75 12.25L15.75 12.9063L15.75 12.25ZM10.5 2.625L10.5 3.28125L10.5 2.625ZM10.5 6.125L10.5 6.78125L10.5 6.125ZM3.5 5.03125L8.75 5.03125L8.75 3.71875L3.5 3.71875L3.5 5.03125ZM12.25 5.03125L17.5 5.03125L17.5 3.71875L12.25 3.71875L12.25 5.03125ZM3.5 11.1563H14V9.84375H3.5V11.1563ZM7 17.2813H17.5V15.9688H7V17.2813ZM5.25 15.5313C5.85406 15.5313 6.34375 16.0209 6.34375 16.625L7.65625 16.625C7.65625 15.2961 6.57894 14.2188 5.25 14.2188L5.25 15.5313ZM6.34375 16.625C6.34375 17.2291 5.85406 17.7188 5.25 17.7188L5.25 19.0313C6.57894 19.0313 7.65625 17.9539 7.65625 16.625L6.34375 16.625ZM5.25 17.7188C4.64594 17.7188 4.15625 17.2291 4.15625 16.625L2.84375 16.625C2.84375 17.9539 3.92106 19.0313 5.25 19.0313L5.25 17.7188ZM4.15625 16.625C4.15625 16.0209 4.64594 15.5313 5.25 15.5313L5.25 14.2188C3.92106 14.2188 2.84375 15.2961 2.84375 16.625L4.15625 16.625ZM15.75 9.40625C16.3541 9.40625 16.8438 9.89594 16.8438 10.5L18.1563 10.5C18.1563 9.17107 17.0789 8.09375 15.75 8.09375L15.75 9.40625ZM16.8438 10.5C16.8438 11.1041 16.3541 11.5938 15.75 11.5938L15.75 12.9063C17.0789 12.9063 18.1563 11.8289 18.1563 10.5L16.8438 10.5ZM15.75 11.5938C15.1459 11.5938 14.6563 11.1041 14.6563 10.5L13.3438 10.5C13.3438 11.8289 14.4211 12.9063 15.75 12.9063L15.75 11.5938ZM14.6563 10.5C14.6563 9.89594 15.1459 9.40625 15.75 9.40625L15.75 8.09375C14.4211 8.09375 13.3438 9.17107 13.3438 10.5L14.6563 10.5ZM10.5 3.28125C11.1041 3.28125 11.5938 3.77094 11.5938 4.375L12.9063 4.375C12.9063 3.04607 11.8289 1.96875 10.5 1.96875L10.5 3.28125ZM11.5938 4.375C11.5938 4.97906 11.1041 5.46875 10.5 5.46875L10.5 6.78125C11.8289 6.78125 12.9063 5.70394 12.9063 4.375L11.5938 4.375ZM10.5 5.46875C9.89594 5.46875 9.40625 4.97906 9.40625 4.375L8.09375 4.375C8.09375 5.70394 9.17107 6.78125 10.5 6.78125L10.5 5.46875ZM9.40625 4.375C9.40625 3.77094 9.89594 3.28125 10.5 3.28125L10.5 1.96875C9.17106 1.96875 8.09375 3.04607 8.09375 4.375L9.40625 4.375Z"
                                 fill="#BCA37B" />
                         </svg>
 
-                    </button>
-
-
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDisplaySettingsOne"
-                        aria-labelledby="offcanvasDisplaySettingsOneLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasDisplaySettingsOneLabel">Ustawienia jeden</h5>
-                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div>
-                                Some text as placeholder. In real life you can have the elements you have chosen.
-                                Like, text, images, lists, etc.
-                            </div>
-                            <div class="dropdown mt-3">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown">
-                                    Dropdown button
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    </button> -->
                 </div>
 
-
-                <div class="d-flex flex-wrap mx-0 my-4 column-gap-half-rem ">
+                <!-- 
+                <div class="d-flex flex-wrap mx-0 my-4 mt-xl-0 column-gap-half-rem ">
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
-                        <span class="me-2"> +15 km</span>
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        <span class="me-2"> +100 km</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1675,7 +1900,7 @@
                     </div>
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
                         <span class="me-2">Trener personalny</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -1690,7 +1915,7 @@
                     </div>
 
                     <div
-                        class=" mb-2 rounded-pill bg-darkBrown d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
+                        class=" mb-2 rounded-pill bg-darkBrown  d-inline-flex align-items-center  justify-content-between text-white ps-3 pe-2 py-1">
                         <span class="me-2"> Lublin</span>
                         <a href="#" class="d-flex">
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none"
@@ -1705,23 +1930,24 @@
                     </div>
 
 
-                </div>
+                </div> -->
 
-                <div class="row row-cols-1 g-3 list">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 g-3 list">
                     <div class="col ">
-                        <a href="#" class="d-flex list__item">
+                        <a href="#" class="d-flex flex-lg-column list__item">
                             <div class="list__img-container" data-reco-number="18">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/mudzin.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column overflow-hidden p-3">
+                            <div class="d-flex flex-column overflow-hidden p-3 list__content">
 
                                 <h3 class="fw-semibold fontSizeXS lh-md">1Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1732,12 +1958,104 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-width="1.85"
+                                                d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span class="one-line list__city">Częstochowa </span>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col ">
+                        <a href="#" class="d-flex flex-lg-column list__item">
+                            <div class="list__img-container" data-reco-number="18">
+                                <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/mudzin.jpg">
+                                    <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
+                                </picture>
+                            </div>
+                            <div class="d-flex flex-column overflow-hidden p-3 list__content">
+
+                                <h3 class="fw-semibold fontSizeXS lh-md">1Wdrożenie narzędzia do
+                                    branżowych
+                                    gier
+                                    biznesowych</h3>
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
+
+                                    <div
+                                        class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
                                         <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.75 8C12.75 7.58579 12.4142 7.25 12 7.25C11.5858 7.25 11.25 7.58579 11.25 8H12.75ZM12 12H11.25C11.25 12.1989 11.329 12.3897 11.4697 12.5303L12 12ZM13.4697 14.5303C13.7626 14.8232 14.2374 14.8232 14.5303 14.5303C14.8232 14.2374 14.8232 13.7626 14.5303 13.4697L13.4697 14.5303ZM11.25 8V12H12.75V8H11.25ZM11.4697 12.5303L13.4697 14.5303L14.5303 13.4697L12.5303 11.4697L11.4697 12.5303ZM20.25 12C20.25 16.5563 16.5563 20.25 12 20.25V21.75C17.3848 21.75 21.75 17.3848 21.75 12H20.25ZM12 20.25C7.44365 20.25 3.75 16.5563 3.75 12H2.25C2.25 17.3848 6.61522 21.75 12 21.75V20.25ZM3.75 12C3.75 7.44365 7.44365 3.75 12 3.75V2.25C6.61522 2.25 2.25 6.61522 2.25 12H3.75ZM12 3.75C16.5563 3.75 20.25 7.44365 20.25 12H21.75C21.75 6.61522 17.3848 2.25 12 2.25V3.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span>1h temu</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-width="1.85"
+                                                d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span class="one-line list__city">Częstochowa </span>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col ">
+                        <a href="#" class="d-flex flex-lg-column list__item">
+                            <div class="list__img-container" data-reco-number="18">
+                                <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/mudzin.jpg">
+                                    <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
+                                </picture>
+                            </div>
+                            <div class="d-flex flex-column overflow-hidden p-3 list__content">
+
+                                <h3 class="fw-semibold fontSizeXS lh-md">1Wdrożenie narzędzia do
+                                    branżowych
+                                    gier
+                                    biznesowych</h3>
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
+
+                                    <div
+                                        class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
+                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.75 8C12.75 7.58579 12.4142 7.25 12 7.25C11.5858 7.25 11.25 7.58579 11.25 8H12.75ZM12 12H11.25C11.25 12.1989 11.329 12.3897 11.4697 12.5303L12 12ZM13.4697 14.5303C13.7626 14.8232 14.2374 14.8232 14.5303 14.5303C14.8232 14.2374 14.8232 13.7626 14.5303 13.4697L13.4697 14.5303ZM11.25 8V12H12.75V8H11.25ZM11.4697 12.5303L13.4697 14.5303L14.5303 13.4697L12.5303 11.4697L11.4697 12.5303ZM20.25 12C20.25 16.5563 16.5563 20.25 12 20.25V21.75C17.3848 21.75 21.75 17.3848 21.75 12H20.25ZM12 20.25C7.44365 20.25 3.75 16.5563 3.75 12H2.25C2.25 17.3848 6.61522 21.75 12 21.75V20.25ZM3.75 12C3.75 7.44365 7.44365 3.75 12 3.75V2.25C6.61522 2.25 2.25 6.61522 2.25 12H3.75ZM12 3.75C16.5563 3.75 20.25 7.44365 20.25 12H21.75C21.75 6.61522 17.3848 2.25 12 2.25V3.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span>1h temu</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1755,18 +2073,19 @@
                     </div>
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--featured">
+                        <a href="#" class="d-flex flex-lg-column  list__item list__item--featured">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1777,12 +2096,12 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1800,18 +2119,19 @@
 
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--new">
+                        <a href="#" class="d-flex  flex-lg-column   list__item list__item--new">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1822,12 +2142,12 @@
                                                 fill="currentColor" />
                                         </svg>
 
-                                        <span>godz. temu</span>
+                                        <span>1h temu</span>
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1846,18 +2166,19 @@
 
 
                     <div class="col ">
-                        <a href="#" class="d-flex list__item list__item--ending">
+                        <a href="#" class="d-flex flex-lg-column  list__item list__item--ending">
                             <div class="list__img-container">
                                 <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
                                     <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
                                 </picture>
                             </div>
-                            <div class="d-flex flex-column  overflow-hidden p-3">
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
-                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4">
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
 
                                     <div
                                         class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
@@ -1872,8 +2193,8 @@
                                     </div>
 
                                     <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
-                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-width="1.85"
                                                 d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
                                                 fill="currentColor" />
@@ -1892,58 +2213,68 @@
 
                 <div class="d-flex justify-content-center my-4">
                     <a href="#"
-                        class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS">
+                        class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS lg-fontSizeM">
                         <span class="me-2">
                             Pokaż więcej</span>
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="d-lg-none" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5"
                                 stroke="currentColor" stroke-width="1.66667" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-
+                        <svg class="d-none d-lg-inline" width="27" height="27" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5"
+                                stroke="currentColor" stroke-width="1.66667" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
                     </a>
                 </div>
             </div>
         </section>
-
-        <section class="about">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
+        <div class="container-fluid">
+            <hr>
+        </div>
+        <section class="about mt-4 mt-lg-5 pt-lg-5">
+            <div class="container-fluid pb-lg-5">
+                <div class="row pb-lg-5">
+                    <div class="col-12 col-lg-6 col-xl-5">
                         <div class="about__img-container">
                             <picture>
+                                <source media="(min-width: 992px)" srcset="./assets/man-coffee-big.jpg">
                                 <img class="about__img img-fluid" src="./assets/man-coffee.jpg"
                                     alt="man is recommending!">
                             </picture>
                         </div>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 col-lg-6 col-xl-7 ps-xl-5 ps-xxl-0">
                         <h3 class="font-circular text-gradient-black-to-brown about__heading mt-5 pt-4">recommend
                             me!
                         </h3>
-                        <p>
+                        <p class="mt-3 w-max-520">
                             <strong>recome</strong> to nowa, rewolucyjna usługa opierająca się na ilości
                             rekomendacji
                             realnych użytkowników. Codziennie dbamy o to, aby wyszukiwarka dostarczała tylko
                             sprawdzone
                             informacje.
                         </p>
-                        <p>
+                        <p class="mt-3 w-max-520">
                             Dzięki recome za darmo ogłosisz chęć zlecenia usługi innym a także znajdziesz klientów
                             na
-                            swoje usługi, rozwijając firmę i zwiększając swoje zasięgi.
+                            swoje usługi, rozwijając firmę <span class="d-inline-block"> i zwiększając</span> swoje
+                            zasięgi.
                         </p>
-                        <div>
+                        <div class="mt-4">
 
 
-                            <svg class="me-3" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                            <svg class="me-3 me-lg-4" width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M0 1.79063C0 0.801563 0.821875 0 1.83594 0H23.1641C24.1781 0 25 0.801563 25 1.79063V23.2094C25 24.1984 24.1781 25 23.1641 25H1.83594C0.821875 25 0 24.1984 0 23.2094V1.79063ZM7.72344 20.9281V9.63906H3.97188V20.9281H7.72344ZM5.84844 8.09688C7.15625 8.09688 7.97031 7.23125 7.97031 6.14687C7.94687 5.03906 7.15781 4.19688 5.87344 4.19688C4.58906 4.19688 3.75 5.04063 3.75 6.14687C3.75 7.23125 4.56406 8.09688 5.82344 8.09688H5.84844ZM13.5172 20.9281V14.6234C13.5172 14.2859 13.5422 13.9484 13.6422 13.7078C13.9125 13.0344 14.5297 12.3359 15.5672 12.3359C16.925 12.3359 17.4672 13.3703 17.4672 14.8891V20.9281H21.2188V14.4531C21.2188 10.9844 19.3687 9.37187 16.9 9.37187C14.9094 9.37187 14.0172 10.4656 13.5172 11.2359V11.275H13.4922C13.5005 11.262 13.5088 11.2489 13.5172 11.2359V9.63906H9.76719C9.81406 10.6984 9.76719 20.9281 9.76719 20.9281H13.5172Z"
                                     fill="#5E564D" />
                             </svg>
 
-                            <svg class="me-3" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                            <svg class="me-3 me-lg-4" width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_277_2972)">
                                     <path
@@ -1956,14 +2287,14 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <svg class="me-3" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                            <svg class="me-3 me-lg-4" width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M12.5 0C9.10781 0 8.68125 0.015625 7.34844 0.075C6.01562 0.1375 5.10781 0.346875 4.3125 0.65625C3.47827 0.97003 2.72264 1.46223 2.09844 2.09844C1.46262 2.72296 0.97048 3.4785 0.65625 4.3125C0.346875 5.10625 0.135937 6.01562 0.075 7.34375C0.015625 8.67969 0 9.10469 0 12.5016C0 15.8953 0.015625 16.3203 0.075 17.6531C0.1375 18.9844 0.346875 19.8922 0.65625 20.6875C0.976562 21.5094 1.40313 22.2062 2.09844 22.9016C2.79219 23.5969 3.48906 24.025 4.31094 24.3438C5.10781 24.6531 6.01406 24.8641 7.34531 24.925C8.67969 24.9844 9.10469 25 12.5 25C15.8953 25 16.3188 24.9844 17.6531 24.925C18.9828 24.8625 19.8938 24.6531 20.6891 24.3438C21.5228 24.0298 22.2778 23.5376 22.9016 22.9016C23.5969 22.2062 24.0234 21.5094 24.3438 20.6875C24.6516 19.8922 24.8625 18.9844 24.925 17.6531C24.9844 16.3203 25 15.8953 25 12.5C25 9.10469 24.9844 8.67969 24.925 7.34531C24.8625 6.01563 24.6516 5.10625 24.3438 4.3125C24.0296 3.47848 23.5374 2.72293 22.9016 2.09844C22.2775 1.46199 21.5219 0.969758 20.6875 0.65625C19.8906 0.346875 18.9813 0.135937 17.6516 0.075C16.3172 0.015625 15.8938 0 12.4969 0H12.5016H12.5ZM11.3797 2.25312H12.5016C15.8391 2.25312 16.2344 2.26406 17.5516 2.325C18.7703 2.37969 19.4328 2.58437 19.8734 2.75469C20.4562 2.98125 20.8734 3.25312 21.3109 3.69062C21.7484 4.12813 22.0188 4.54375 22.2453 5.12813C22.4172 5.56719 22.6203 6.22969 22.675 7.44844C22.7359 8.76562 22.7484 9.16094 22.7484 12.4969C22.7484 15.8328 22.7359 16.2297 22.675 17.5469C22.6203 18.7656 22.4156 19.4266 22.2453 19.8672C22.0449 20.4099 21.725 20.9007 21.3094 21.3031C20.8719 21.7406 20.4563 22.0109 19.8719 22.2375C19.4344 22.4094 18.7719 22.6125 17.5516 22.6688C16.2344 22.7281 15.8391 22.7422 12.5016 22.7422C9.16406 22.7422 8.76719 22.7281 7.45 22.6688C6.23125 22.6125 5.57031 22.4094 5.12969 22.2375C4.58672 22.0374 4.09551 21.7181 3.69219 21.3031C3.27617 20.9001 2.95582 20.4088 2.75469 19.8656C2.58437 19.4266 2.37969 18.7641 2.325 17.5453C2.26562 16.2281 2.25312 15.8328 2.25312 12.4937C2.25312 9.15625 2.26562 8.7625 2.325 7.44531C2.38125 6.22656 2.58438 5.56406 2.75625 5.12344C2.98281 4.54063 3.25469 4.12344 3.69219 3.68594C4.12969 3.24844 4.54531 2.97813 5.12969 2.75156C5.57031 2.57969 6.23125 2.37656 7.45 2.32031C8.60313 2.26719 9.05 2.25156 11.3797 2.25V2.25312ZM19.1734 4.32812C18.9765 4.32812 18.7814 4.36692 18.5994 4.44231C18.4174 4.51769 18.2521 4.62818 18.1128 4.76746C17.9735 4.90675 17.863 5.07211 17.7876 5.2541C17.7122 5.43609 17.6734 5.63114 17.6734 5.82812C17.6734 6.02511 17.7122 6.22016 17.7876 6.40215C17.863 6.58414 17.9735 6.7495 18.1128 6.88879C18.2521 7.02807 18.4174 7.13856 18.5994 7.21394C18.7814 7.28933 18.9765 7.32812 19.1734 7.32812C19.5713 7.32812 19.9528 7.17009 20.2341 6.88879C20.5154 6.60748 20.6734 6.22595 20.6734 5.82812C20.6734 5.4303 20.5154 5.04877 20.2341 4.76746C19.9528 4.48616 19.5713 4.32812 19.1734 4.32812ZM12.5016 6.08125C11.6501 6.06797 10.8045 6.2242 10.014 6.54085C9.22353 6.85749 8.50393 7.32824 7.89711 7.92566C7.29029 8.52309 6.80838 9.23526 6.47944 10.0207C6.1505 10.8062 5.98109 11.6492 5.98109 12.5008C5.98109 13.3523 6.1505 14.1954 6.47944 14.9808C6.80838 15.7663 7.29029 16.4785 7.89711 17.0759C8.50393 17.6733 9.22353 18.1441 10.014 18.4607C10.8045 18.7774 11.6501 18.9336 12.5016 18.9203C14.1868 18.894 15.7941 18.2061 16.9765 17.0051C18.159 15.804 18.8217 14.1862 18.8217 12.5008C18.8217 10.8154 18.159 9.19752 16.9765 7.99648C15.7941 6.79545 14.1868 6.10754 12.5016 6.08125ZM12.5016 8.33281C13.6068 8.33281 14.6667 8.77185 15.4482 9.55335C16.2297 10.3349 16.6688 11.3948 16.6688 12.5C16.6688 13.6052 16.2297 14.6651 15.4482 15.4466C14.6667 16.2281 13.6068 16.6672 12.5016 16.6672C11.3964 16.6672 10.3364 16.2281 9.55492 15.4466C8.77342 14.6651 8.33438 13.6052 8.33438 12.5C8.33438 11.3948 8.77342 10.3349 9.55492 9.55335C10.3364 8.77185 11.3964 8.33281 12.5016 8.33281Z"
                                     fill="#5E564D" />
                             </svg>
 
-                            <svg class="me-3" width="25" height="25" viewBox="0 0 25 25" fill="none"
+                            <svg class="" width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M7.85313 23.4376C17.2875 23.4376 22.4484 15.6204 22.4484 8.85323C22.4484 8.63448 22.4484 8.41261 22.4391 8.19386C23.4438 7.46649 24.311 6.56597 25 5.53448C24.0614 5.94831 23.0668 6.22105 22.0484 6.34386C23.1211 5.70267 23.9246 4.69381 24.3094 3.50479C23.3015 4.10186 22.1985 4.521 21.0484 4.74386C20.2753 3.92046 19.2522 3.37498 18.1376 3.19192C17.0231 3.00885 15.8793 3.19842 14.8833 3.73126C13.8874 4.2641 13.095 5.11046 12.6288 6.13926C12.1626 7.16806 12.0487 8.32188 12.3047 9.42198C10.2652 9.31972 8.27003 8.7899 6.4485 7.86689C4.62698 6.94388 3.01982 5.6483 1.73125 4.06417C1.07709 5.19399 0.877459 6.53042 1.17288 7.80208C1.46831 9.07375 2.23665 10.1853 3.32187 10.911C2.50866 10.8834 1.71331 10.665 1 10.2735V10.3439C1.0014 11.5274 1.41142 12.6742 2.16074 13.5904C2.91006 14.5065 3.95273 15.1358 5.1125 15.372C4.67229 15.4933 4.21755 15.5537 3.76094 15.5517C3.43904 15.5526 3.11778 15.5228 2.80156 15.4626C3.12935 16.4814 3.76761 17.3722 4.62695 18.0102C5.48628 18.6482 6.52365 19.0014 7.59375 19.0204C5.77587 20.4482 3.53031 21.2226 1.21875 21.2189C0.811439 21.2206 0.404411 21.1971 0 21.1485C2.34612 22.6443 5.07078 23.4385 7.85313 23.4376Z"
@@ -1978,49 +2309,117 @@
             </div>
         </section>
 
-        <div class="newsletter mt-5 mb-4">
-            <div class="container newsletter__container bg-brown ">
-                <h4 class="fw-semibold fontSizeH4 mt-4">Bądź na bieżąco!</h4>
-                <p class="fw-light fontSizeXS">Zapisz się do naszego newslettera i otrzymuj najnowsze informacje o
-                    aktualizacjach
-                    naszego serwisu i
-                    porady jak zdobyć więcej rekomendacji.</p>
+        <div class="newsletter mt-5 mb-4 py-xl-5">
+            <div class="mx-auto newsletter__container bg-brown ">
+                <div class="w-max-480 ms-lg-5 px-4 px-lg-0">
+                    <h4 class="fw-semibold fontSizeH4 mt-4 mb-lg-3">Bądź na bieżąco!</h4>
+                    <p class="fw-light fontSizeXS lg-fontSizeS mb-lg-4 mt-lg-2 pb-lg-3">Zapisz się do naszego
+                        newslettera i otrzymuj
+                        najnowsze
+                        informacje o
+                        aktualizacjach
+                        naszego serwisu i
+                        porady jak zdobyć więcej rekomendacji.</p>
 
 
 
-                <div class="form-group position-relative rounded-pill border-0 my-3">
-                    <input class="form-control rounded-pill fontSizeXS pe-4 ps-4 border-0 mt-2" type="email"
-                        placeholder="Twój adres e-mail">
-                    <button class="btn btn-secondary newsletter__button" type="submit" aria-label="wyślij">
-                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M11.3139 9.89945L11.6024 9.20715C11.3236 9.091 11.0024 9.15336 10.7874 9.36535C10.5724 9.57734 10.5054 9.89763 10.6176 10.178L11.3139 9.89945ZM28.2845 16.9705L28.5729 17.6628C28.8524 17.5464 29.0345 17.2733 29.0345 16.9705C29.0345 16.6677 28.8524 16.3947 28.5729 16.2782L28.2845 16.9705ZM11.3139 24.0416L10.6176 23.763C10.5054 24.0434 10.5724 24.3637 10.7874 24.5757C11.0024 24.7877 11.3236 24.85 11.6024 24.7339L11.3139 24.0416ZM11.0255 10.5918L27.996 17.6628L28.5729 16.2782L11.6024 9.20715L11.0255 10.5918ZM27.996 16.2782L11.0255 23.3493L11.6024 24.7339L28.5729 17.6628L27.996 16.2782ZM12.0103 24.3201L14.8387 17.2491L13.446 16.692L10.6176 23.763L12.0103 24.3201ZM14.8387 16.692L12.0103 9.62091L10.6176 10.178L13.446 17.2491L14.8387 16.692ZM28.2845 16.2205L14.1424 16.2205L14.1424 17.7205L28.2845 17.7205L28.2845 16.2205Z"
-                                fill="white" />
-                        </svg>
-                    </button>
+                    <div class="form-group position-relative rounded-pill border-0 my-3">
+                        <input class="form-control rounded-pill fontSizeXS pe-4 ps-4 border-0 mt-2" type="email"
+                            placeholder="Twój adres e-mail">
+                        <button class="btn btn-secondary newsletter__button" type="submit" aria-label="wyślij">
+                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.3139 9.89945L11.6024 9.20715C11.3236 9.091 11.0024 9.15336 10.7874 9.36535C10.5724 9.57734 10.5054 9.89763 10.6176 10.178L11.3139 9.89945ZM28.2845 16.9705L28.5729 17.6628C28.8524 17.5464 29.0345 17.2733 29.0345 16.9705C29.0345 16.6677 28.8524 16.3947 28.5729 16.2782L28.2845 16.9705ZM11.3139 24.0416L10.6176 23.763C10.5054 24.0434 10.5724 24.3637 10.7874 24.5757C11.0024 24.7877 11.3236 24.85 11.6024 24.7339L11.3139 24.0416ZM11.0255 10.5918L27.996 17.6628L28.5729 16.2782L11.6024 9.20715L11.0255 10.5918ZM27.996 16.2782L11.0255 23.3493L11.6024 24.7339L28.5729 17.6628L27.996 16.2782ZM12.0103 24.3201L14.8387 17.2491L13.446 16.692L10.6176 23.763L12.0103 24.3201ZM14.8387 16.692L12.0103 9.62091L10.6176 10.178L13.446 17.2491L14.8387 16.692ZM28.2845 16.2205L14.1424 16.2205L14.1424 17.7205L28.2845 17.7205L28.2845 16.2205Z"
+                                    fill="white" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid py-lg-5 mt-lg-5">
             <div class="row">
-                <section class="popular-categories d-none">
+                <section class="col-lg-8 popular-categories d-none d-lg-block pe-xl-5">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="fontSizeH4 fw-bold">Popularne kategorie</h3>
+                        <a href="#" class="text-darkBrown">zobacz wszystkie</a>
+                    </div>
+                    <div class="popular-categories__swiper-container">
 
+                        <div class="swiper-button-prev d-none d-lg-block"></div>
+                        <div id="popular-categoriesSwiper" class="popular-categories__swiper swiper my-4">
+
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide popular-categories__item">
+
+                                    <picture>
+                                        <img class="popular-categories__img" src="https://placekitten.com/900/900"
+                                            alt="">
+                                    </picture>
+                                    <a href="#" class="btn btn-nice btn-white-brown rounded-pill fontSizeXS">
+                                        <span class="background"></span>
+
+                                        <span> Najdłuższa nazwa kategorii</span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide popular-categories__item">
+
+                                    <picture>
+                                        <img class="popular-categories__img"
+                                            src="./assets/popular-categories-learning-languages.jpg" alt="">
+                                    </picture>
+                                    <a href="#" class="btn btn-nice btn-white-brown rounded-pill fontSizeXS">
+                                        <span class="background"></span>
+
+                                        <span> Trener personalny</span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide popular-categories__item">
+
+                                    <picture>
+                                        <img class="popular-categories__img" src="https://placekitten.com/200/300"
+                                            alt="">
+                                    </picture>
+                                    <a href="#" class="btn btn-nice btn-white-brown rounded-pill fontSizeXS">
+                                        <span class="background"></span>
+
+                                        <span> 2Trener personalny</span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide popular-categories__item">
+
+                                    <picture>
+                                        <img class="popular-categories__img"
+                                            src="./assets/popular-categories-learning-languages.jpg" alt="">
+                                    </picture>
+                                    <a href="#" class="btn btn-nice btn-white-brown rounded-pill fontSizeXS">
+                                        <span class="background"></span>
+
+                                        <span> 3Trener personalny</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                        </div>
+                        <div class="swiper-button-next d-none d-lg-block"></div>
+                    </div>
                 </section>
-                <section class="col-12">
+                <section class="col-12 col-lg-4">
                     <div class="col premium-advertisement ">
                         <picture>
                             <img class="premium-advertisement__bg" src="./assets/premium-bg.png" loading="lazy"
                                 alt="background">
                         </picture>
-                        <div class="px-3 py-5 lp-small">
+                        <div class="px-3 py-5 px-lg-4 lp-small">
 
                             <h4 class="text-uppercase text-white-50 fw-bold fontSizeXS">Rozwijaj swoją firmę</h4>
                             <p class="fw-light text-light mt-4">
                                 Już za 19,00 miesięcznie wykup pakiet premium i maksymalizuj zyski!
                             </p>
                             <a href="#"
-                                class="btn btn-nice btn-dark rounded-pill fontSizeXS d-inline-flex align-items-center py-1 px-3 mt-3">
+                                class="btn btn-nice btn-dark rounded-pill fontSizeXS d-inline-flex align-items-center py-1 py-lg-2 px-3 px-lg-4 mt-3">
                                 <span class="background"></span>
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -2039,150 +2438,197 @@
             </div>
         </div>
 
-        <section class="blog-section mt-5">
+        <section class="blog-section mt-5 py-lg-5">
             <div class="container-fluid">
-                <h4 class="fw-semibold fontSizeH2">Blog</h4>
-                <p class="fontSizeXS mb-4">
-                    Na naszym blogu znajdziesz między innymi porady jak zdobyć więcej rekomendacji, instrukcje
-                    wystawiania ogłoszenia czy wskazówki jak dogadać się z klientem.
-                </p>
-
+                <div
+                    class="d-flex flex-column flex-xl-row align-items-xl-center mt-xl-5 mb-xl-5 justify-content-xl-center">
+                    <h4 class="fw-semibold fontSizeH2 blog-section__heading my-xl-0 pe-xl-4">Blog</h4>
+                    <p class="fontSizeXS lg-fontSizeS mb-4 my-xl-0 blog-section__description w-max-520 ms-xl-4">
+                        Na naszym blogu znajdziesz między innymi porady jak zdobyć więcej rekomendacji, instrukcje
+                        wystawiania ogłoszenia czy wskazówki jak dogadać się z klientem.
+                    </p>
+                </div>
 
             </div>
 
+            <div class="blog-section__swiper-container">
+                <div id="blogSwiper" class="blog-section__swiper swiper">
+                    <div class="swiper-wrapper">
 
-            <div id="blogSwiper" class="blog-section__swiper swiper">
-                <div class="swiper-wrapper">
+                        <div class="swiper-slide blog-section__slide hot">
 
-                    <div class="swiper-slide blog-section__slide hot">
+                            <div class="blog-section__card d-flex flex-column">
+                                <div class="blog-section__img-container" data-text="gorący wątek">
+                                    <picture>
+                                        <img class="blog-section__img" src="https://placekitten.com/200/300"
+                                            alt="ad img">
+                                    </picture>
 
-                        <div class="blog-section__card d-flex flex-column">
-                            <div class="blog-section__img-container" data-text="gorący wątek">
-                                <picture>
-                                    <img class="blog-section__img" src="./assets/cat.jpg" alt="ad img">
-                                </picture>
-
-                            </div>
-                            <div class="d-flex flex-column blog-section__card-content p-3">
-                                <div>
-
-                                    <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
-                                        swojego kota w
-                                        Twoje
-                                        przedsiębiorstwo</h5>
-                                    <p class="blog-section__card-subtext fontSizeXSS fw-light">
-                                        Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
-                                        niezbędne
-                                        do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
-                                    </p>
                                 </div>
-                                <div class="mt-auto">
-                                    <a href="#"
-                                        class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
-                                        <span class="background"></span>
+                                <div class="d-flex flex-column blog-section__card-content p-3">
+                                    <div>
 
-                                        <span> Zobacz</span>
-                                    </a>
+                                        <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
+                                            swojego kota w
+                                            Twoje
+                                            przedsiębiorstwo</h5>
+                                        <p class="blog-section__card-subtext fontSizeXSS fw-light">
+                                            Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
+                                            specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                            niezbędne
+                                            do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
+                                        </p>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#"
+                                            class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
+                                            <span class="background"></span>
+
+                                            <span> Zobacz</span>
+                                        </a>
+                                    </div>
+
+
                                 </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="swiper-slide blog-section__slide new">
-
-                        <div class="blog-section__card d-flex flex-column">
-                            <div class="blog-section__img-container" data-text="świeży artykuł">
-                                <picture>
-                                    <img class="blog-section__img" src="./assets/cat.jpg" alt="ad img">
-                                </picture>
-
-                            </div>
-                            <div class="d-flex flex-column blog-section__card-content p-3">
-                                <div>
-
-                                    <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
-                                        swojego kota w
-                                        Twoje
-                                        przedsiębiorstwo</h5>
-                                    <p class="blog-section__card-subtext fontSizeXSS fw-light">
-                                        Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
-                                        niezbędne
-                                        do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
-                                    </p>
-                                </div>
-                                <div class="mt-auto">
-                                    <a href="#"
-                                        class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
-                                        <span class="background"></span>
-
-                                        <span> Zobacz</span>
-                                    </a>
-                                </div>
-
-
                             </div>
                         </div>
-                    </div>
 
 
-                    <div class="swiper-slide blog-section__slide ">
+                        <div class="swiper-slide blog-section__slide new">
 
-                        <div class="blog-section__card d-flex flex-column">
-                            <div class="blog-section__img-container">
-                                <picture>
-                                    <img class="blog-section__img" src="./assets/cat.jpg" alt="ad img">
-                                </picture>
+                            <div class="blog-section__card d-flex flex-column">
+                                <div class="blog-section__img-container" data-text="świeży artykuł">
+                                    <picture>
+                                        <img class="blog-section__img" src="./assets/cat.jpg" alt="ad img">
+                                    </picture>
 
-                            </div>
-                            <div class="d-flex flex-column blog-section__card-content p-3">
-                                <div>
-
-                                    <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
-                                        swojego kota w
-                                        Twoje
-                                        przedsiębiorstwo</h5>
-                                    <p class="blog-section__card-subtext fontSizeXSS fw-light">
-                                        Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
-                                        specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
-                                        niezbędne
-                                        do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
-                                    </p>
                                 </div>
-                                <div class="mt-auto">
-                                    <a href="#"
-                                        class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
-                                        <span class="background"></span>
+                                <div class="d-flex flex-column blog-section__card-content p-3">
+                                    <div>
 
-                                        <span> Zobacz</span>
-                                    </a>
+                                        <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
+                                            swojego kota w
+                                            Twoje
+                                            przedsiębiorstwo</h5>
+                                        <p class="blog-section__card-subtext fontSizeXSS fw-light">
+                                            Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
+                                            specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                            niezbędne
+                                            do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
+                                        </p>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#"
+                                            class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
+                                            <span class="background"></span>
+
+                                            <span> Zobacz</span>
+                                        </a>
+                                    </div>
+
+
                                 </div>
-
-
                             </div>
                         </div>
-                    </div>
 
+                        <div class="swiper-slide blog-section__slide new">
+
+                            <div class="blog-section__card d-flex flex-column">
+                                <div class="blog-section__img-container" data-text="świeży artykuł">
+                                    <picture>
+                                        <img class="blog-section__img" src="https://placekitten.com/g/1200/300"
+                                            alt="ad img">
+                                    </picture>
+
+                                </div>
+                                <div class="d-flex flex-column blog-section__card-content p-3">
+                                    <div>
+
+                                        <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
+                                            swojego kota w
+                                            Twoje
+                                            przedsiębiorstwo</h5>
+                                        <p class="blog-section__card-subtext fontSizeXSS fw-light">
+                                            Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
+                                            specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                            niezbędne
+                                            do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
+                                        </p>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#"
+                                            class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
+                                            <span class="background"></span>
+
+                                            <span> Zobacz</span>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide blog-section__slide ">
+
+                            <div class="blog-section__card d-flex flex-column">
+                                <div class="blog-section__img-container">
+                                    <picture>
+                                        <img class="blog-section__img" src="./assets/cat.jpg" alt="ad img">
+                                    </picture>
+
+                                </div>
+                                <div class="d-flex flex-column blog-section__card-content p-3">
+                                    <div>
+
+                                        <h5 class="fw-semibold fontSizeXS lh-md blog-section__card-heading">Zaangażuj
+                                            swojego kota w
+                                            Twoje
+                                            przedsiębiorstwo</h5>
+                                        <p class="blog-section__card-subtext fontSizeXSS fw-light">
+                                            Na skuteczną firmę remontowo-budowalną składają się fachowcy, którzy mają
+                                            specjalistyczną wiedzę i umiejętności, a także zaawansowane narzędzia,
+                                            niezbędne
+                                            do pracy. Z czego powinno składać się zaplecze narzędziowe i jak o nie dbać?
+                                        </p>
+                                    </div>
+                                    <div class="mt-auto">
+                                        <a href="#"
+                                            class="btn btn-nice btn-dark rounded-pill mt-auto fontSizeXS d-inline-flex align-items-center py-1 px-3">
+                                            <span class="background"></span>
+
+                                            <span> Zobacz</span>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
 
 
                 </div>
-
-
             </div>
-
             <div class="d-flex justify-content-center my-4">
-                <a href="#" class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS">
+                <a href="#"
+                    class="text-darkBrown py-2 never-decoration align-items-center d-flex fw-bold fontSizeXS lg-fontSizeM">
                     <span class="me-2">
                         Wejdź na naszego bloga</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="d-lg-none" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5" stroke="currentColor"
                             stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-
+                    <svg class="d-none d-lg-inline" width="27" height="27" viewBox="0 0 20 20" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.6668 10L3.3335 10M16.6668 10L11.6668 15M16.6668 10L11.6668 5" stroke="currentColor"
+                            stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </a>
             </div>
         </section>

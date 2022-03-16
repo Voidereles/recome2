@@ -1,7 +1,7 @@
 import "bootstrap";
 // core version + navigation, pagination modules:
-import Swiper, { Autoplay, Scrollbar, Pagination } from "swiper";
-Swiper.use([Autoplay, Pagination]);
+import Swiper, { Autoplay, Scrollbar, Pagination, Navigation } from "swiper";
+Swiper.use([Autoplay, Pagination, Navigation, Scrollbar]);
 // import Swiper and modules styles
 // import "swiper/css";
 // import "swiper/css/a11y";
@@ -45,6 +45,26 @@ const recommendationsSwiper = new Swiper("#recommendationsSwiper", {
     clickable: true,
     type: "bullets",
   },
+  breakpoints: {
+    // when window width is >= 480px
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 60,
+    },
+    // when window width is >= 640px
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 70,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 70,
+      navigation: {
+        prevEl: ".recommendations__swiper-container .swiper-button-prev",
+        nextEl: ".recommendations__swiper-container .swiper-button-next",
+      },
+    },
+  },
 });
 
 const blogSwiper = new Swiper("#blogSwiper", {
@@ -58,28 +78,50 @@ const blogSwiper = new Swiper("#blogSwiper", {
     delay: 3500,
     disableOnInteraction: false,
   },
+  breakpoints: {
+    // when window width is >= 480px
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 34,
+    },
+  },
 });
 
 const history = [];
 
+const cityConfig = {};
+
+const citiesData = [
+  "Poręba, zawierciański, Śląskie",
+  "Poręba, pszczyński, Śląskie",
+  "Poręba Dzierżna, olkuski, Małopolskie",
+  "Poręba, myślenicki, Małopolskie",
+  "Poręba Spytkowska, brzeski, Małopolskie",
+  "Poręba test",
+  "Poręba test1",
+  "Poręba test2",
+  "Poręba test3",
+  "Poręba test4",
+  "Poręba test5",
+  "Poręba test6",
+];
+
+const categoryData = [
+  "Matematyka, Nauka",
+  "Chemia, Nauka",
+  "Fizyka, Nauka",
+  "Biologia, Nauka",
+  "Historia, Nauka",
+  "Geografia, Nauka",
+  "Paznokcie, Salon kosmetyczny",
+  "Rzęsy i brwi, Salon kosmetyczny",
+];
+
 const autoCompleteJS = new autoComplete({
-  selector: ".autoCompleteCity",
+  selector: "#autoCompleteMainSearch",
   placeHolder: "miejscowość",
   data: {
-    src: [
-      "Poręba, zawierciański, Śląskie",
-      "Poręba, pszczyński, Śląskie",
-      "Poręba Dzierżna, olkuski, Małopolskie",
-      "Poręba, myślenicki, Małopolskie",
-      "Poręba Spytkowska, brzeski, Małopolskie",
-      "Poręba test",
-      "Poręba test1",
-      "Poręba test2",
-      "Poręba test3",
-      "Poręba test4",
-      "Poręba test5",
-      "Poręba test6",
-    ],
+    src: citiesData,
     cache: true,
   },
   resultItem: {
@@ -136,6 +178,114 @@ const autoCompleteJS = new autoComplete({
         const inputValue = autoCompleteJS.input.value;
 
         if (inputValue.length) autoCompleteJS.start();
+      },
+    },
+  },
+});
+
+const autoCompleteJSadvSettings = new autoComplete({
+  selector: "#autoCompleteAdvertisementsSettings",
+  placeHolder: "miejscowość",
+  data: {
+    src: citiesData,
+    cache: true,
+  },
+  resultItem: {
+    highlight: {
+      render: true,
+    },
+  },
+  events: {
+    input: {
+      selection(event) {
+        const selection = event.detail.selection.value;
+        autoCompleteJSadvSettings.input.value = selection;
+      },
+      focus() {
+        const inputValue = autoCompleteJSadvSettings.input.value;
+
+        if (inputValue.length) autoCompleteJSadvSettings.start();
+      },
+    },
+  },
+});
+
+const autoCompleteJSadvSettingsCategory = new autoComplete({
+  selector: "#autoCompleteAdvertisementsSettingsCategory",
+  placeHolder: "szukaj kategorii",
+  data: {
+    src: categoryData,
+    cache: true,
+  },
+  resultItem: {
+    highlight: {
+      render: true,
+    },
+  },
+  events: {
+    input: {
+      selection(event) {
+        const selection = event.detail.selection.value;
+        autoCompleteJSadvSettingsCategory.input.value = selection;
+      },
+      focus() {
+        const inputValue = autoCompleteJSadvSettingsCategory.input.value;
+
+        if (inputValue.length) autoCompleteJSadvSettingsCategory.start();
+      },
+    },
+  },
+});
+
+const autoCompleteJSorderSettings = new autoComplete({
+  selector: "#autoCompleteOrderSettings",
+  placeHolder: "miejscowość",
+  data: {
+    src: citiesData,
+    cache: true,
+  },
+  resultItem: {
+    highlight: {
+      render: true,
+    },
+  },
+  events: {
+    input: {
+      selection(event) {
+        const selection = event.detail.selection.value;
+        autoCompleteJSorderSettings.input.value = selection;
+      },
+      focus() {
+        const inputValue = autoCompleteJSorderSettings.input.value;
+
+        if (inputValue.length) autoCompleteJSorderSettings.start();
+      },
+    },
+  },
+});
+
+const autoCompleteJSorderSettingsCategory = new autoComplete({
+  selector: "#autoCompleteOrderSettingsCategory",
+  placeHolder: "szukaj kategorii",
+  data: {
+    src: categoryData,
+    cache: true,
+  },
+  resultItem: {
+    highlight: {
+      render: true,
+    },
+  },
+  events: {
+    input: {
+      selection(event) {
+        const selection = event.detail.selection.value;
+        autoCompleteJSorderSettingsCategory.input.value = selection;
+      },
+      focus() {
+        const inputValue = autoCompleteJSorderSettingsCategory.input.value;
+
+        if (inputValue.length) autoCompleteJSorderSettingsCategory.start();
       },
     },
   },
@@ -355,29 +505,6 @@ if (
   typeof document.getElementsByClassName("itemToSearch")[0] != "undefined" &&
   document.getElementsByClassName("itemToSearch")[0] != null
 ) {
-  // document.getElementById("searchFavourite").oninput = function () {
-  //   var matcher = new RegExp(
-  //     document.getElementById("searchFavourite").value,
-  //     "gi"
-  //   );
-  //   for (
-  //     var i = 0;
-  //     i < document.getElementsByClassName("itemToSearch").length;
-  //     i++
-  //   ) {
-  //     const favouriteItemIndex =
-  //       document.getElementsByClassName("itemToSearch")[i];
-  //     if (matcher.test(favouriteItemIndex.getAttribute("data-text"))) {
-  //       if (favouriteItemIndex.classList.contains("d-none")) {
-  //         favouriteItemIndex.classList.remove("d-none");
-  //       }
-  //       favouriteItemIndex.classList.add("d-flex");
-  //     } else {
-  //       favouriteItemIndex.classList.add("d-none");
-  //     }
-  //   }
-  // };
-
   document.querySelectorAll(".searchOnInput").forEach((element) => {
     element.oninput = function () {
       var matcher = new RegExp(element.value, "gi");
@@ -411,5 +538,58 @@ if (
     heartBtn.addEventListener("click", () => {
       heartBtn.parentNode.classList.toggle("favourite");
     });
+  });
+}
+
+let maxXl = window.innerWidth < 1200;
+let maxLg = window.innerWidth < 992;
+let maxMd = window.innerWidth < 768;
+let minLg = window.innerWidth >= 992;
+
+if (maxMd) {
+  const headerRightButtons = document.getElementsByClassName(
+    "header__right-buttons"
+  )[0];
+  const mobileMenuOffcanvasBody = document.querySelector(
+    "#offcanvasMenu .offcanvas-body"
+  );
+  mobileMenuOffcanvasBody.appendChild(headerRightButtons);
+  headerRightButtons.classList.remove("d-none");
+}
+
+if (maxLg) {
+  const searchBar = document.getElementsByClassName("search")[0];
+  const searchOffcanvasBody = document.querySelector(
+    "#searchModal .modal-body"
+  );
+  searchOffcanvasBody.appendChild(searchBar);
+  searchBar.classList.remove("d-none");
+}
+
+if (minLg) {
+  const popularCategoriesSwiper = new Swiper("#popular-categoriesSwiper", {
+    // configure Swiper to use modules
+    //   loop: true,
+    direction: "horizontal",
+    slidesPerView: 3,
+    spaceBetween: 16,
+    loop: false,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".popular-categories__pagination",
+      clickable: true,
+      type: "bullets",
+    },
+    navigation: {
+      prevEl: ".popular-categories__swiper-container .swiper-button-prev",
+      nextEl: ".popular-categories__swiper-container .swiper-button-next",
+    },
+    scrollbar: {
+      el: ".popular-categories__swiper-container .swiper-scrollbar",
+      draggable: true,
+    },
   });
 }

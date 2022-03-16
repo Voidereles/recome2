@@ -11445,6 +11445,10 @@ span {
   }
 }
 @media (min-width: 1200px) {
+  .rounded-xl-0 {
+    border-radius: 0 !important;
+  }
+
   .xl-fontSizeH1 {
     font-size: 3.75rem;
   }
@@ -11577,6 +11581,12 @@ a.text-darkBrown {
 a.text-darkBrown:hover {
   color: #cdbb9d;
 }
+a.text-darkerBrown {
+  color: #8b7046;
+}
+a.text-darkerBrown:hover {
+  color: #BCA37B;
+}
 a.text-brown {
   color: #E9CCA7;
 }
@@ -11611,8 +11621,16 @@ a.text-black:hover {
   width: 100px;
 }
 
+.w-max-480 {
+  max-width: 480px;
+}
+
 .w-max-520 {
   max-width: 520px;
+}
+
+.w-max-930 {
+  max-width: 930px;
 }
 
 .column-gap-half-rem {
@@ -11763,6 +11781,17 @@ a.text-black:hover {
 .btn-white div.background::after {
   background: #4C4C4D;
 }
+.btn-white-brown {
+  background: white;
+  color: #242527;
+}
+.btn-white-brown:hover {
+  color: #E9CCA7;
+}
+.btn-white-brown span.background::after,
+.btn-white-brown div.background::after {
+  background: #37383A;
+}
 .btn-transparent {
   background: transparent;
 }
@@ -11812,10 +11841,11 @@ a.text-black:hover {
   background: #CFBDA0;
 }
 .btn-close {
-  background: transparent url("../assets/cancel.svg") center/1em auto no-repeat;
+  background: transparent url("../assets/cancel.svg") center/32px auto no-repeat;
   border-radius: 50%;
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   box-shadow: none !important;
+  opacity: 1;
 }
 .btn-close:hover {
   transform: rotate(180deg);
@@ -11832,7 +11862,7 @@ a.text-black:hover {
   padding: 4px;
 }
 .additional-plus path {
-  fill: #ECEAE7;
+  fill: #e9e6e2;
 }
 
 .form-check {
@@ -12040,6 +12070,200 @@ input[type=search].dark::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
+.form-check {
+  display: block;
+  position: relative;
+  padding-left: 31px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  line-height: 21px;
+}
+.form-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.form-check input:checked ~ .checkmark {
+  border-color: #4C4C4D;
+}
+.form-check input[type=radio] ~ .checkmark {
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: 0 0 0 10px inset #4C4C4D;
+}
+.form-check .checkmark {
+  position: absolute;
+  top: 1.6px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 0;
+  background-color: transparent;
+  border: 2px solid #4C4C4D;
+  transition: 400ms;
+  box-shadow: inset 0 0 0 1px #4C4C4D;
+}
+.form-check:hover input ~ .checkmark {
+  background-color: #A5A4A2;
+  border-color: #A5A4A2;
+}
+.form-check input[type=radio]:checked ~ .checkmark {
+  background-color: #e9e6e2;
+  border-color: #4C4C4D;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 6px #4C4C4D;
+}
+.form-check input:checked ~ .checkmark {
+  background-color: #4C4C4D;
+  border-color: #4C4C4D;
+  border-radius: 3px;
+}
+.form-check input:checked ~ .checkmark:after {
+  display: block;
+}
+.form-check .checkmark:after {
+  left: 5.5px;
+  top: 2.49px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(43deg) scale(1);
+}
+
+.form-options .form-check {
+  background: white;
+  border-radius: 0;
+  padding: 1rem;
+}
+.form-options .form-check .checkmark {
+  display: none !important;
+}
+.form-options .form-check input ~ .d-flex::before {
+  content: "";
+  border: 1px solid #4C4C4D;
+  transition: 400ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+.form-options .form-check input:checked ~ .d-flex {
+  color: #4C4C4D;
+}
+.form-options .form-check input:checked ~ .d-flex::before {
+  border: 1px solid #4C4C4D;
+}
+.form-options .form-check input:disabled ~ .d-flex {
+  cursor: default;
+}
+.form-options .form-check input:disabled ~ .d-flex > div {
+  z-index: 2;
+  position: relative;
+}
+.form-options .form-check input:disabled ~ .d-flex::before {
+  border: 1px solid #DBC4A1;
+  background: #DBC4A1;
+}
+
+.timepicker .form-check {
+  background: white;
+  border: 1px solid #4C4C4D;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.timepicker .form-check .checkmark {
+  display: none !important;
+}
+.timepicker .form-check input ~ .d-flex {
+  padding: 0.5rem;
+  transition: 300ms;
+  cursor: pointer;
+}
+.timepicker .form-check input:checked ~ .d-flex {
+  background: #4C4C4D;
+  color: white;
+}
+.timepicker .form-check input:disabled ~ .d-flex {
+  background: #bdbdbd;
+  color: #A5A4A2;
+}
+.timepicker .form-check input:disabled ~ .d-flex {
+  cursor: default;
+}
+.timepicker .form-check input:disabled ~ .d-flex > div {
+  z-index: 2;
+  position: relative;
+}
+.timepicker .form-check input:disabled ~ .d-flex::before {
+  border: 1px solid #A5A4A2;
+  background: #4C4C4D;
+}
+
+.variants .form-check {
+  background: white;
+}
+.variants .form-check .checkmark {
+  display: none !important;
+}
+.variants .form-check input ~ .d-flex {
+  padding: 0.5rem;
+  transition: 300ms;
+  cursor: pointer;
+  border: 1px solid #4C4C4D;
+}
+.variants .form-check input:checked ~ .d-flex {
+  background: #4C4C4D;
+  color: white;
+}
+.variants .form-check input:disabled ~ .d-flex {
+  background: #bdbdbd;
+  color: #A5A4A2;
+}
+.variants .form-check input:disabled ~ .d-flex {
+  cursor: default;
+  border: 1px solid #A5A4A2;
+}
+.variants .form-check input:disabled ~ .d-flex > div {
+  z-index: 2;
+  position: relative;
+}
+.variants .form-check input:disabled ~ .d-flex::before {
+  background: #4C4C4D;
+}
+
+.form-control {
+  border-radius: 0;
+  border: none !important;
+}
+.form-control:hover, .form-control:focus {
+  box-shadow: inset 0 0 0 1px #4C4C4D;
+  outline: none;
+}
+.form-control--grey-bg {
+  background: #A5A4A2;
+  border: 1px solid #A5A4A2;
+}
+.form-control.border-grey {
+  border: 1px solid #4C4C4D !important;
+}
+
 .offcanvas {
   background: #ECEAE7;
   box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.07);
@@ -12071,4 +12295,89 @@ input[type=search].dark::-webkit-search-cancel-button {
 }
 .offcanvas-message .not-read .message__last-words {
   color: #BCA37B;
+}
+.offcanvas .favourites-item {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.offcanvas .favourites-item__img {
+  height: 68px;
+  width: 60px;
+  min-width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.offcanvas .favourites-item:hover::before {
+  width: calc(100% + 14px);
+}
+.offcanvas .favourites-item:hover a {
+  color: #BDBEBE;
+}
+.offcanvas .favourites-item:hover svg,
+.offcanvas .favourites-item:hover svg path {
+  stroke: #BDBEBE;
+  opacity: 1;
+}
+.offcanvas .favourites-item::before {
+  background: #242527;
+  content: "";
+  width: 0;
+  transition: 0.3s ease;
+  left: -7px;
+  top: -10px;
+  height: calc(100% + 20px);
+  position: absolute;
+  z-index: -1;
+}
+.offcanvas .favourites-item svg,
+.offcanvas .favourites-item svg path {
+  transition: 0.4s ease-out;
+  stroke: #242527;
+  opacity: 0.8;
+  fill: transparent;
+}
+.offcanvas .favourites-item a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: 0.2s;
+}
+.offcanvas .favourites-item .btn {
+  z-index: 1;
+  position: relative;
+}
+.offcanvas .favourites-item .btn:hover {
+  transform: scale(1.1);
+}
+.offcanvas .favourites-item.favourite svg,
+.offcanvas .favourites-item.favourite svg path, .offcanvas .favourites-item.favourite:hover svg,
+.offcanvas .favourites-item.favourite:hover svg path {
+  stroke: #901111;
+  opacity: 1;
+  fill: #901111;
+}
+.offcanvas-settings .accordion-body {
+  padding: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+.offcanvas-settings .accordion-item {
+  border: none;
+  background: transparent;
+}
+.offcanvas-settings .accordion-button {
+  background: transparent;
+  box-shadow: none !important;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.offcanvas-settings .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }/*# sourceMappingURL=predefinied.css.map */

@@ -16,9 +16,10 @@
 
 
 
-$headerBg: #ECEAE7;
+$headerBg: hsl(36, 12%, 90%);
 $white90:#FDFDFD;
 $textBlack: #242527;
+$backgroundBlack: #37383A;
 $searchDarkBg:#4C4C4D;
 $textGrey: #9A9EAD;
 $greyMessage: #A5A4A2;
@@ -225,6 +226,11 @@ $spaceLetters:0.4px;
 
 
 @media (min-width: 1200px) {
+
+    .rounded-xl-0 {
+        border-radius: 0 !important;
+    }
+
     .xl-fontSizeH1 {
         font-size: $fontSizeH1;
     }
@@ -373,6 +379,16 @@ a {
         }
     }
 
+
+    &.text-darkerBrown {
+        color: darken($color: $darkBrown, $amount: 20%);
+
+        &:hover {
+            color: $darkBrown;
+        }
+    }
+
+
     &.text-brown {
         color: $brown;
 
@@ -417,8 +433,17 @@ a {
     // width: max-content;
 }
 
+.w-max-480 {
+    max-width: 480px;
+}
+
 .w-max-520 {
     max-width: 520px;
+}
+
+
+.w-max-930 {
+    max-width: 930px;
 }
 
 // .max-width-930 {
@@ -609,6 +634,23 @@ a {
 
     }
 
+    &-white-brown {
+        background: white;
+        color: $textBlack;
+
+        &:hover {
+            color: $brown;
+        }
+
+        span.background,
+        div.background {
+            &::after {
+                background: $backgroundBlack;
+            }
+        }
+
+    }
+
     &-transparent {
         background: transparent;
 
@@ -673,10 +715,11 @@ a {
     }
 
     &-close {
-        background: transparent url('../assets/cancel.svg') center/1em auto no-repeat;
+        background: transparent url('../assets/cancel.svg') center/32px auto no-repeat;
         border-radius: 50%;
         transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
         box-shadow: none !important;
+        opacity: 1;
 
         &:hover {
             transform: rotate(180deg);
@@ -729,7 +772,7 @@ a {
 
         &:checked {
             &~.checkmark {
-                border-color: $darkBrown
+                border-color: $darkBrown;
             }
         }
 
@@ -951,6 +994,261 @@ input[type="search"].dark::-webkit-search-cancel-button {
     cursor: pointer;
 }
 
+
+.form-check {
+    display: block;
+    position: relative;
+    padding-left: 31px;
+    cursor: pointer;
+    font-size: $fontSizeXSS;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    line-height: 21px;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        &:checked {
+            &~.checkmark {
+                border-color: $searchDarkBg;
+            }
+        }
+
+        &[type="radio"]~.checkmark {
+            border-radius: 50% !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 !important;
+            border: none !important;
+            box-shadow: 0 0 0 10px inset $searchDarkBg;
+        }
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 1.6px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        border-radius: 0;
+        background-color: transparent;
+        border: 2px solid $searchDarkBg;
+        transition: $durationM;
+        box-shadow: inset 0 0 0 1px $searchDarkBg;
+
+    }
+
+    &:hover input~.checkmark {
+        background-color: $greyMessage;
+        border-color: $greyMessage;
+    }
+
+    & input[type="radio"]:checked~.checkmark {
+        background-color: $headerBg;
+        border-color: $searchDarkBg;
+        border-radius: 3px;
+        box-shadow: inset 0 0 0 6px $searchDarkBg;
+    }
+
+    & input:checked~.checkmark {
+        background-color: $searchDarkBg;
+        border-color: $searchDarkBg;
+        border-radius: 3px;
+    }
+
+    & input:checked~.checkmark:after {
+        display: block;
+    }
+
+    & .checkmark:after {
+        left: 5.5px;
+        top: 2.49px;
+        width: 5px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(43deg) scale(1);
+    }
+}
+
+.form-options {
+
+    .form-check {
+        background: white;
+        border-radius: 0;
+        padding: 1rem;
+
+        .checkmark {
+            display: none !important;
+        }
+
+        input~.d-flex {
+            &::before {
+                content: '';
+                border: 1px solid $searchDarkBg;
+                transition: $durationM;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+        }
+
+        input:checked~.d-flex {
+            color: $searchDarkBg;
+
+            &::before {
+                border: 1px solid $searchDarkBg;
+            }
+        }
+
+        input:disabled~.d-flex {
+            cursor: default;
+
+            &>div {
+                z-index: 2;
+                position: relative;
+            }
+
+            &::before {
+                border: 1px solid $lightBrown2;
+                background: $lightBrown2;
+            }
+        }
+    }
+}
+
+
+.timepicker {
+    .form-check {
+        background: white;
+        border: 1px solid $searchDarkBg;
+        padding: 0;
+        margin-bottom: 0;
+        margin-top: 1rem;
+
+        .checkmark {
+            display: none !important;
+        }
+
+        input~.d-flex {
+            padding: 0.5rem;
+            transition: $durationS;
+            cursor: pointer;
+        }
+
+        input:checked~.d-flex {
+            background: $searchDarkBg;
+            color: white;
+
+        }
+
+
+        input:disabled~.d-flex {
+            background: rgb(189, 189, 189);
+            color: $greyMessage;
+        }
+
+
+        input:disabled~.d-flex {
+            cursor: default;
+
+            &>div {
+                z-index: 2;
+                position: relative;
+            }
+
+            &::before {
+                border: 1px solid $greyMessage;
+                background: $searchDarkBg;
+            }
+        }
+    }
+
+
+}
+
+
+.variants {
+    .form-check {
+        background: white;
+
+
+        .checkmark {
+            display: none !important;
+        }
+
+        input~.d-flex {
+            padding: 0.5rem;
+            transition: $durationS;
+            cursor: pointer;
+            border: 1px solid $searchDarkBg;
+        }
+
+        input:checked~.d-flex {
+            background: $searchDarkBg;
+            color: white;
+
+        }
+
+
+        input:disabled~.d-flex {
+            background: rgb(189, 189, 189);
+            color: $greyMessage;
+        }
+
+
+        input:disabled~.d-flex {
+            cursor: default;
+            border: 1px solid $greyMessage;
+
+            &>div {
+                z-index: 2;
+                position: relative;
+            }
+
+            &::before {
+                background: $searchDarkBg;
+            }
+        }
+    }
+
+
+}
+
+.form-control {
+    border-radius: 0;
+    border: none !important;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 0 0 1px $searchDarkBg;
+        outline: none;
+    }
+
+    &--grey-bg {
+        background: $greyMessage;
+        border: 1px solid $greyMessage;
+    }
+
+    &.border-grey {
+        border: 1px solid $searchDarkBg !important;
+
+    }
+}
+
 .offcanvas {
     background: #ECEAE7;
     box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.07);
@@ -1000,5 +1298,120 @@ input[type="search"].dark::-webkit-search-cancel-button {
                 color: $darkBrown;
             }
         }
+    }
+
+    .favourites-item {
+        margin-bottom: 1rem;
+        position: relative;
+
+        &__img {
+            height: 68px;
+            width: 60px;
+            min-width: 60px;
+            object-fit: cover;
+        }
+
+        &:hover {
+            &::before {
+                width: calc(100% + 14px);
+            }
+
+            a {
+                color: #BDBEBE;
+            }
+
+            svg,
+            svg path {
+                stroke: #BDBEBE;
+                opacity: 1;
+            }
+
+        }
+
+        &::before {
+            background: $textBlack;
+            content: '';
+            width: 0;
+            transition: 0.3s ease;
+            left: -7px;
+            top: -10px;
+            height: calc(100% + 20px);
+            position: absolute;
+            z-index: -1;
+        }
+
+        svg,
+        svg path {
+            transition: 0.4s ease-out;
+            stroke: $textBlack;
+            opacity: 0.8;
+            fill: transparent;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: $fontSizeXS;
+            line-height: 1.6;
+            display: block;
+            position: relative;
+            z-index: 1;
+            transition: 0.2s;
+
+        }
+
+        .btn {
+            z-index: 1;
+            position: relative;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        &.favourite,
+        &.favourite:hover {
+
+
+            svg,
+            svg path {
+                stroke: #901111;
+                opacity: 1;
+                fill: #901111;
+            }
+        }
+
+    }
+
+    &-settings {
+        .accordion {
+            &-body {
+                padding: 0;
+                padding-top: 0.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            &-item {
+                border: none;
+                background: transparent;
+            }
+
+            &-button {
+                background: transparent;
+                box-shadow: none !important;
+                color: rgba(0, 0, 0, .7);
+                padding: 0;
+                margin-top: 1rem;
+                font-weight: 600;
+
+                &:not(.collapsed)::after {
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+                }
+            }
+        }
+
+
+
     }
 }
