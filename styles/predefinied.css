@@ -11498,6 +11498,10 @@ span {
   color: #BCA37B;
 }
 
+.text-almostWhite {
+  color: #F0EFEE;
+}
+
 .text-grey2 {
   color: #707070;
 }
@@ -11516,6 +11520,10 @@ span {
 
 .text-brown2 {
   color: #e2dfda;
+}
+
+.text-white-70 {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .text-grey {
@@ -11692,6 +11700,14 @@ a.text-black:hover {
   width: 36px;
 }
 
+.w-40 {
+  width: 40px;
+}
+
+.h-40 {
+  height: 40px;
+}
+
 .w-100px {
   width: 100px;
 }
@@ -11716,10 +11732,18 @@ a.text-black:hover {
   max-width: 930px;
 }
 
+.h-max-482 {
+  max-height: 482px;
+}
+
 .h-min-content {
   height: -webkit-min-content;
   height: -moz-min-content;
   height: min-content;
+}
+
+.h-min-420 {
+  min-height: 420px;
 }
 
 .column-gap-half-rem {
@@ -11751,6 +11775,10 @@ a.text-black:hover {
 
 .rounded-4 {
   border-radius: 0.625rem;
+}
+
+.bg-headerBg {
+  background: #e9e6e2;
 }
 
 .bg-searchBg {
@@ -11794,6 +11822,10 @@ a.text-black:hover {
 }
 .bg-textBlack .swiper-slide {
   width: auto;
+}
+
+.bg-textBlack--lighter {
+  background: #303234;
 }
 
 .z-index-1 {
@@ -11917,6 +11949,34 @@ a.text-black:hover {
 .btn-transparent div.background::after {
   background: #4C4C4D;
 }
+.btn-darkBrown {
+  color: #242527;
+  background: #BCA37B;
+  border-color: #BCA37B;
+}
+.btn-darkBrown:hover {
+  color: #242527;
+  background: #BCA37B;
+  border-color: #BCA37B;
+}
+.btn-darkBrown span.background::after,
+.btn-darkBrown div.background::after {
+  background: #ab8b59;
+}
+.btn-green {
+  color: white;
+  background: #55a714;
+  border-color: #55a714;
+}
+.btn-green:hover {
+  color: white;
+  background: #55a714;
+  border-color: #55a714;
+}
+.btn-green span.background::after,
+.btn-green div.background::after {
+  background: #6cd519;
+}
 .btn-secondary {
   background: #4C4C4D;
   border-color: #4C4C4D;
@@ -11993,18 +12053,18 @@ a.text-black:hover {
 .btn-footer:hover svg {
   background: #CFBDA0;
 }
-.btn-close {
+.btn-close--dark {
   background: transparent url("../assets/cancel.svg") center/32px auto no-repeat;
   border-radius: 50%;
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
   box-shadow: none !important;
   opacity: 1;
 }
-.btn-close:hover {
+.btn-close--dark:hover {
   transform: rotate(180deg);
 }
 .btn-link.text-darkerBrown {
-  color: #8b7046;
+  color: #ab8b59;
 }
 .btn-link.text-darkerBrown:hover {
   color: #BCA37B;
@@ -12013,7 +12073,16 @@ a.text-black:hover {
   color: #BCA37B;
 }
 .btn-link.text-darkBrown:hover {
-  color: #695535;
+  color: #ab8b59;
+}
+.btn-gigantic-dark {
+  background: #242527;
+  border: 1px solid #242527;
+  color: #E9CCA7;
+}
+.btn-gigantic-dark:hover {
+  color: #242527;
+  background: transparent;
 }
 
 .additional-plus {
@@ -12310,9 +12379,9 @@ input[type=search].dark::-webkit-search-cancel-button {
   width: 20px;
   border-radius: 0;
   background-color: transparent;
-  border: 2px solid #4C4C4D;
+  border: 0;
   transition: 400ms;
-  box-shadow: inset 0 0 0 1px #4C4C4D;
+  box-shadow: inset 0 0 0 2px #4C4C4D;
 }
 .form-check:hover input ~ .checkmark {
   background-color: #A5A4A2;
@@ -12333,10 +12402,10 @@ input[type=search].dark::-webkit-search-cancel-button {
   display: block;
 }
 .form-check .checkmark:after {
-  left: 5.5px;
-  top: 2.49px;
-  width: 5px;
-  height: 9px;
+  left: 7.5px;
+  top: 3.49px;
+  width: 5.5px;
+  height: 11px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(43deg) scale(1);
@@ -12379,73 +12448,6 @@ input[type=search].dark::-webkit-search-cancel-button {
   background: #DBC4A1;
 }
 
-.timepicker .form-check {
-  background: white;
-  border: 1px solid #4C4C4D;
-  padding: 0;
-  margin-bottom: 0;
-  margin-top: 1rem;
-}
-.timepicker .form-check .checkmark {
-  display: none !important;
-}
-.timepicker .form-check input ~ .d-flex {
-  padding: 0.5rem;
-  transition: 300ms;
-  cursor: pointer;
-}
-.timepicker .form-check input:checked ~ .d-flex {
-  background: #4C4C4D;
-  color: white;
-}
-.timepicker .form-check input:disabled ~ .d-flex {
-  background: #bdbdbd;
-  color: #A5A4A2;
-}
-.timepicker .form-check input:disabled ~ .d-flex {
-  cursor: default;
-}
-.timepicker .form-check input:disabled ~ .d-flex > div {
-  z-index: 2;
-  position: relative;
-}
-.timepicker .form-check input:disabled ~ .d-flex::before {
-  border: 1px solid #A5A4A2;
-  background: #4C4C4D;
-}
-
-.variants .form-check {
-  background: white;
-}
-.variants .form-check .checkmark {
-  display: none !important;
-}
-.variants .form-check input ~ .d-flex {
-  padding: 0.5rem;
-  transition: 300ms;
-  cursor: pointer;
-  border: 1px solid #4C4C4D;
-}
-.variants .form-check input:checked ~ .d-flex {
-  background: #4C4C4D;
-  color: white;
-}
-.variants .form-check input:disabled ~ .d-flex {
-  background: #bdbdbd;
-  color: #A5A4A2;
-}
-.variants .form-check input:disabled ~ .d-flex {
-  cursor: default;
-  border: 1px solid #A5A4A2;
-}
-.variants .form-check input:disabled ~ .d-flex > div {
-  z-index: 2;
-  position: relative;
-}
-.variants .form-check input:disabled ~ .d-flex::before {
-  background: #4C4C4D;
-}
-
 .form-control {
   border-radius: 0;
   border: none !important;
@@ -12461,17 +12463,27 @@ input[type=search].dark::-webkit-search-cancel-button {
 .form-control.border-grey {
   border: 1px solid #4C4C4D !important;
 }
+.form-control--48 {
+  height: 48px;
+  line-height: 48px;
+}
+.form-control.no-spin::-webkit-inner-spin-button {
+  display: none;
+}
 
 .offcanvas {
   background: #ECEAE7;
   box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.07);
 }
-.offcanvas .btn-close {
+.offcanvas .btn-close--dark {
   background-size: 38px 38px;
   opacity: 1;
 }
-.offcanvas .btn-close:hover {
+.offcanvas .btn-close--dark:hover {
   opacity: 0.8;
+}
+.offcanvas .autoComplete_wrapper > input {
+  border-left: none;
 }
 .offcanvas-menu a.text-black:hover {
   margin-left: translateX(0.5rem);

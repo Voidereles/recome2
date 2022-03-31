@@ -391,7 +391,7 @@
         }
     }
 
-    .btn-close {
+    .btn-close--dark {
         background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
     }
 }
@@ -507,8 +507,46 @@
         &:hover {
             color: $textBlack;
             transform: scale(1.05);
+
+            .btn-favourite-heart {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
+        .btn-favourite-heart {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            background: white;
+            padding: 10px;
+            border-radius: 0;
+            border-radius: 50%;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.7);
+
+
+            svg,
+            svg path {
+                transition: 0.4s ease-out;
+                stroke: $textBlack;
+                opacity: 0.8;
+                fill: transparent;
+            }
+
+            &.favourited-btn,
+            &.favourited-btn:hover {
+
+                svg,
+                svg path {
+                    stroke: #901111;
+                    opacity: 1;
+                    fill: #901111;
+                }
+
+            }
+        }
 
 
         &--featured {
@@ -535,6 +573,18 @@
 
         &--new {
             background: $newGreen;
+
+            &>div:last-child {
+                &::before {
+                    content: 'Nowe';
+                    text-transform: uppercase;
+                    color: #31382E;
+                    letter-spacing: 2.6px;
+                    font-weight: 300;
+                    font-size: $fontSizeXS;
+                    margin-bottom: 4px;
+                }
+            }
         }
 
         &--ending {
@@ -838,7 +888,8 @@
         max-width: 330px;
 
         &.hot,
-        &.new {
+        &.new,
+        &.normal {
 
 
             .blog-section {
@@ -1107,6 +1158,32 @@
 
         &>svg path {
             fill: $brown;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+
+    .list {
+        &__item {
+
+            .btn-favourite-heart {
+                opacity: 0.7;
+                visibility: visible;
+                background: none;
+                right: 0;
+                top: 0;
+            }
+
+            &--featured {
+                .btn-favourite-heart {
+
+                    svg,
+                    svg path {
+                        stroke: $textGrey;
+                    }
+                }
+            }
         }
     }
 }

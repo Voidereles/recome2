@@ -433,7 +433,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="searchModalLabel">Wyszukiwanie</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        <button type="button" class="btn-close btn-close--dark" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
@@ -558,7 +558,8 @@
 
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <h2 class="fontSizeH6 md-fontSizeH4 fw-semibold my-0"> Pssst...</h2>
-                <button data-dismiss="parent" type="button" class="btn-close" aria-label="Close"></button>
+                <button data-dismiss="parent" type="button" class="btn-close btn-close--dark"
+                    aria-label="Close"></button>
 
             </div>
             <div data-scrollbar>
@@ -987,7 +988,7 @@
                             </div>
                             <div class="d-flex flex-column overflow-hidden p-3 list__content">
 
-                                <h3 class="fw-semibold fontSizeXS lh-md">1Wdrożenie narzędzia do
+                                <h3 class="fw-semibold fontSizeXS lh-md">11Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
@@ -1887,19 +1888,41 @@
                         porady jak zdobyć więcej rekomendacji.</p>
 
 
+                    <form action="">
 
-                    <div class="form-group position-relative rounded-pill border-0 my-3">
-                        <input class="form-control rounded-pill fontSizeXS pe-4 ps-4 border-0 mt-2" type="email"
-                            placeholder="Twój adres e-mail">
-                        <button class="btn btn-secondary newsletter__button" type="submit" aria-label="wyślij">
-                            <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M11.3139 9.89945L11.6024 9.20715C11.3236 9.091 11.0024 9.15336 10.7874 9.36535C10.5724 9.57734 10.5054 9.89763 10.6176 10.178L11.3139 9.89945ZM28.2845 16.9705L28.5729 17.6628C28.8524 17.5464 29.0345 17.2733 29.0345 16.9705C29.0345 16.6677 28.8524 16.3947 28.5729 16.2782L28.2845 16.9705ZM11.3139 24.0416L10.6176 23.763C10.5054 24.0434 10.5724 24.3637 10.7874 24.5757C11.0024 24.7877 11.3236 24.85 11.6024 24.7339L11.3139 24.0416ZM11.0255 10.5918L27.996 17.6628L28.5729 16.2782L11.6024 9.20715L11.0255 10.5918ZM27.996 16.2782L11.0255 23.3493L11.6024 24.7339L28.5729 17.6628L27.996 16.2782ZM12.0103 24.3201L14.8387 17.2491L13.446 16.692L10.6176 23.763L12.0103 24.3201ZM14.8387 16.692L12.0103 9.62091L10.6176 10.178L13.446 17.2491L14.8387 16.692ZM28.2845 16.2205L14.1424 16.2205L14.1424 17.7205L28.2845 17.7205L28.2845 16.2205Z"
-                                    fill="white" />
-                            </svg>
-                        </button>
-                    </div>
+                        <div class="form-group position-relative rounded-pill border-0 my-3">
+                            <input class="form-control rounded-pill fontSizeXS pe-4 ps-4 border-0 mt-2" type="email"
+                                placeholder="Twój adres e-mail">
+                            <button class="btn btn-secondary newsletter__button" type="submit" aria-label="wyślij">
+                                <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.3139 9.89945L11.6024 9.20715C11.3236 9.091 11.0024 9.15336 10.7874 9.36535C10.5724 9.57734 10.5054 9.89763 10.6176 10.178L11.3139 9.89945ZM28.2845 16.9705L28.5729 17.6628C28.8524 17.5464 29.0345 17.2733 29.0345 16.9705C29.0345 16.6677 28.8524 16.3947 28.5729 16.2782L28.2845 16.9705ZM11.3139 24.0416L10.6176 23.763C10.5054 24.0434 10.5724 24.3637 10.7874 24.5757C11.0024 24.7877 11.3236 24.85 11.6024 24.7339L11.3139 24.0416ZM11.0255 10.5918L27.996 17.6628L28.5729 16.2782L11.6024 9.20715L11.0255 10.5918ZM27.996 16.2782L11.0255 23.3493L11.6024 24.7339L28.5729 17.6628L27.996 16.2782ZM12.0103 24.3201L14.8387 17.2491L13.446 16.692L10.6176 23.763L12.0103 24.3201ZM14.8387 16.692L12.0103 9.62091L10.6176 10.178L13.446 17.2491L14.8387 16.692ZM28.2845 16.2205L14.1424 16.2205L14.1424 17.7205L28.2845 17.7205L28.2845 16.2205Z"
+                                        fill="white" />
+                                </svg>
+                            </button>
+
+
+
+                        </div>
+                        <label class="form-check fontSizeXSS mt-3 mb-xl-1 mt-xl-4">
+
+
+
+                            <input type="checkbox" required>
+                            <span class="checkmark"></span>
+                            <span class="form-check-label font-greyWithOpacity fontSizeXSS" for="inlineCheckbox1">
+                                Oświadczam, że zapoznałem się z <span role="button" data-bs-toggle="modal"
+                                    data-bs-target="#modal"
+                                    class="font-white font-hover-white text-decoration-underline">
+                                    obowiązkiem
+                                    informacyjnym</span> i wyrażam zgodę na przetwarzanie moich
+                                danych osobowych
+                                zgodnie z nim.
+                            </span>
+
+                        </label>
+                    </form>
                 </div>
             </div>
         </div>
@@ -2341,7 +2364,8 @@
 
 
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close--dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <p class="fontSizeXS bg-brown2 p-3 rounded-4"><strong class="fw-600"> W recome każdy
@@ -2719,7 +2743,8 @@
 
 
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close--dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
 
@@ -2749,7 +2774,8 @@
 
 
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close--dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <h6 class="text-darkBrown fontSizeH5">105 rekomendacji</h6>
@@ -2816,7 +2842,8 @@
 
 
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close--dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
 
@@ -2916,7 +2943,8 @@
 
 
             </h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close--dark text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
 

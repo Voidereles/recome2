@@ -35,10 +35,12 @@ $lighterBrown3: #EDECEB;
 $darkBrown: #BCA37B;
 $newGreen: #C5D2C0;
 $strongGreen: #357403;
+$likeGreen: #55a714;
 $endingRed: #D82543;
 $darkRed: #7E2626;
 $freshGreen:#C5D2C0;
 $redAlarm: #e41e3f;
+$almostWhite: #F0EFEE;
 
 
 body {
@@ -293,6 +295,10 @@ $spaceLetters:0.4px;
     color: $darkBrown;
 }
 
+.text-almostWhite {
+    color: $almostWhite;
+}
+
 .text-grey2 {
     color: $grey2;
 }
@@ -311,6 +317,10 @@ $spaceLetters:0.4px;
 
 .text-brown2 {
     color: $brown2;
+}
+
+.text-white-70 {
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .text-grey {
@@ -505,6 +515,14 @@ a {
     width: 36px;
 }
 
+.w-40 {
+    width: 40px;
+}
+
+.h-40 {
+    height: 40px;
+}
+
 .w-100px {
     width: 100px;
 }
@@ -533,8 +551,16 @@ a {
     max-width: 930px;
 }
 
+.h-max-482 {
+    max-height: 482px;
+}
+
 .h-min-content {
     height: min-content;
+}
+
+.h-min-420 {
+    min-height: 420px;
 }
 
 // .max-width-930 {
@@ -568,6 +594,10 @@ a {
 
 .rounded-4 {
     border-radius: calc(10rem / 16);
+}
+
+.bg-headerBg {
+    background: $headerBg;
 }
 
 .bg-searchBg {
@@ -612,6 +642,10 @@ a {
     .swiper-slide {
         width: auto;
     }
+}
+
+.bg-textBlack--lighter {
+    background: lighten($color: $textBlack, $amount: 5%);
 }
 
 .z-index-1 {
@@ -786,6 +820,47 @@ a {
         }
     }
 
+    &-darkBrown {
+        color: $textBlack;
+        background: $darkBrown;
+        border-color: $darkBrown;
+
+
+        &:hover {
+            color: $textBlack;
+            background: $darkBrown;
+            border-color: $darkBrown;
+        }
+
+        span.background,
+        div.background {
+            &::after {
+                background: darken($color: $darkBrown, $amount: 10%);
+            }
+        }
+    }
+
+
+    &-green {
+        color: white;
+        background: $likeGreen;
+        border-color: $likeGreen;
+
+
+        &:hover {
+            color: white;
+            background: $likeGreen;
+            border-color: $likeGreen;
+        }
+
+        span.background,
+        div.background {
+            &::after {
+                background: lighten($color:$likeGreen, $amount: 10%);
+            }
+        }
+    }
+
     &-secondary {
         background: $searchDarkBg;
         border-color: $searchDarkBg;
@@ -881,7 +956,7 @@ a {
         }
     }
 
-    &-close {
+    &-close--dark {
         background: transparent url('../assets/cancel.svg') center/32px auto no-repeat;
         border-radius: 50%;
         transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -895,7 +970,7 @@ a {
 
     &-link {
         &.text-darkerBrown {
-            color: darken($color: $darkBrown, $amount: 20%);
+            color: darken($color: $darkBrown, $amount: 10%);
 
             &:hover {
                 color: $darkBrown;
@@ -906,8 +981,20 @@ a {
             color: $darkBrown;
 
             &:hover {
-                color: darken($color: $darkBrown, $amount: 30%);
+                color: darken($color: $darkBrown, $amount: 10%);
             }
+        }
+    }
+
+
+    &-gigantic-dark {
+        background: $textBlack;
+        border: 1px solid $textBlack;
+        color: $brown;
+
+        &:hover {
+            color: $textBlack;
+            background: transparent;
         }
     }
 
@@ -1262,9 +1349,9 @@ input[type="search"].dark::-webkit-search-cancel-button {
         width: 20px;
         border-radius: 0;
         background-color: transparent;
-        border: 2px solid $searchDarkBg;
+        border: 0;
         transition: $durationM;
-        box-shadow: inset 0 0 0 1px $searchDarkBg;
+        box-shadow: inset 0 0 0 2px $searchDarkBg;
 
     }
 
@@ -1291,10 +1378,10 @@ input[type="search"].dark::-webkit-search-cancel-button {
     }
 
     & .checkmark:after {
-        left: 5.5px;
-        top: 2.49px;
-        width: 5px;
-        height: 9px;
+        left: 7.5px;
+        top: 3.49px;
+        width: 5.5px;
+        height: 11px;
         border: solid white;
         border-width: 0 2px 2px 0;
         transform: rotate(43deg) scale(1);
@@ -1351,103 +1438,6 @@ input[type="search"].dark::-webkit-search-cancel-button {
 }
 
 
-.timepicker {
-    .form-check {
-        background: white;
-        border: 1px solid $searchDarkBg;
-        padding: 0;
-        margin-bottom: 0;
-        margin-top: 1rem;
-
-        .checkmark {
-            display: none !important;
-        }
-
-        input~.d-flex {
-            padding: 0.5rem;
-            transition: $durationS;
-            cursor: pointer;
-        }
-
-        input:checked~.d-flex {
-            background: $searchDarkBg;
-            color: white;
-
-        }
-
-
-        input:disabled~.d-flex {
-            background: rgb(189, 189, 189);
-            color: $greyMessage;
-        }
-
-
-        input:disabled~.d-flex {
-            cursor: default;
-
-            &>div {
-                z-index: 2;
-                position: relative;
-            }
-
-            &::before {
-                border: 1px solid $greyMessage;
-                background: $searchDarkBg;
-            }
-        }
-    }
-
-
-}
-
-
-.variants {
-    .form-check {
-        background: white;
-
-
-        .checkmark {
-            display: none !important;
-        }
-
-        input~.d-flex {
-            padding: 0.5rem;
-            transition: $durationS;
-            cursor: pointer;
-            border: 1px solid $searchDarkBg;
-        }
-
-        input:checked~.d-flex {
-            background: $searchDarkBg;
-            color: white;
-
-        }
-
-
-        input:disabled~.d-flex {
-            background: rgb(189, 189, 189);
-            color: $greyMessage;
-        }
-
-
-        input:disabled~.d-flex {
-            cursor: default;
-            border: 1px solid $greyMessage;
-
-            &>div {
-                z-index: 2;
-                position: relative;
-            }
-
-            &::before {
-                background: $searchDarkBg;
-            }
-        }
-    }
-
-
-}
-
 .form-control {
     border-radius: 0;
     border: none !important;
@@ -1467,19 +1457,35 @@ input[type="search"].dark::-webkit-search-cancel-button {
         border: 1px solid $searchDarkBg !important;
 
     }
+
+    &--48 {
+        height: 48px;
+        line-height: 48px;
+    }
+
+    &.no-spin {
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+
+    }
 }
 
 .offcanvas {
     background: $offcanvasBg;
     box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.07);
 
-    .btn-close {
+    .btn-close--dark {
         background-size: 38px 38px;
         opacity: 1;
 
         &:hover {
             opacity: 0.8;
         }
+    }
+
+    .autoComplete_wrapper>input {
+        border-left: none;
     }
 
     &-menu {

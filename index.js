@@ -111,173 +111,183 @@ const citiesData = [
 
 const categoryData = ["Matematyka, Nauka", "Chemia, Nauka", "Fizyka, Nauka", "Biologia, Nauka", "Historia, Nauka", "Geografia, Nauka", "Paznokcie, Salon kosmetyczny", "Rzęsy i brwi, Salon kosmetyczny"];
 
-const autoCompleteJS = new autoComplete({
-  selector: "#autoCompleteMainSearch",
-  placeHolder: "miejscowość",
-  data: {
-    src: citiesData,
-    cache: true,
-  },
-  resultItem: {
-    highlight: {
-      render: true,
+if (typeof document.getElementById("autoCompleteMainSearch") != "undefined" && document.getElementById("autoCompleteMainSearch") != null) {
+  const autoCompleteJS = new autoComplete({
+    selector: "#autoCompleteMainSearch",
+    placeHolder: "miejscowość",
+    data: {
+      src: citiesData,
+      cache: true,
     },
-  },
-  resultsList: {
-    element: (list) => {
-      const recentSearch = history.reverse();
-      const historyLength = recentSearch.length;
-
-      // Check if there are recent searches
-      if (historyLength) {
-        const historyBlock = document.createElement("div");
-        historyBlock.setAttribute("style", "display: flex; flex-direction: column; margin: .3rem; padding: .3rem .5rem;");
-        historyBlock.innerHTML = "Ostatnie wyszukiwania";
-        // Limit displayed searched to only last "2"
-        recentSearch.slice(0, 2).forEach((item) => {
-          const recentItem = document.createElement("span");
-          recentItem.setAttribute("style", "display: flex; margin: .2rem; color: rgba(0, 0, 0, .2);");
-          recentItem.innerHTML = item;
-          historyBlock.append(recentItem);
-        });
-
-        const separator = document.createElement("hr");
-        separator.setAttribute("style", "margin: 5px 0 0 0;");
-        historyBlock.append(separator);
-
-        list.prepend(historyBlock);
-      }
-    },
-  },
-  events: {
-    input: {
-      selection(event) {
-        const feedback = event.detail;
-        const input = autoCompleteJS.input;
-        const selection = event.detail.selection.value;
-        // Get selected Value
-        // const selection = feedback.selection.value.trim();
-        // Add selected value to "history" array
-        history.push(selection);
-        // const selection = event.detail.selection.value;
-        autoCompleteJS.input.value = selection;
-      },
-      focus() {
-        const inputValue = autoCompleteJS.input.value;
-
-        if (inputValue.length) autoCompleteJS.start();
+    resultItem: {
+      highlight: {
+        render: true,
       },
     },
-  },
-});
+    resultsList: {
+      element: (list) => {
+        const recentSearch = history.reverse();
+        const historyLength = recentSearch.length;
 
-const autoCompleteJSadvSettings = new autoComplete({
-  selector: "#autoCompleteAdvertisementsSettings",
-  placeHolder: "miejscowość",
-  data: {
-    src: citiesData,
-    cache: true,
-  },
-  resultItem: {
-    highlight: {
-      render: true,
-    },
-  },
-  events: {
-    input: {
-      selection(event) {
-        const selection = event.detail.selection.value;
-        autoCompleteJSadvSettings.input.value = selection;
-      },
-      focus() {
-        const inputValue = autoCompleteJSadvSettings.input.value;
+        // Check if there are recent searches
+        if (historyLength) {
+          const historyBlock = document.createElement("div");
+          historyBlock.setAttribute("style", "display: flex; flex-direction: column; margin: .3rem; padding: .3rem .5rem;");
+          historyBlock.innerHTML = "Ostatnie wyszukiwania";
+          // Limit displayed searched to only last "2"
+          recentSearch.slice(0, 2).forEach((item) => {
+            const recentItem = document.createElement("span");
+            recentItem.setAttribute("style", "display: flex; margin: .2rem; color: rgba(0, 0, 0, .2);");
+            recentItem.innerHTML = item;
+            historyBlock.append(recentItem);
+          });
 
-        if (inputValue.length) autoCompleteJSadvSettings.start();
-      },
-    },
-  },
-});
+          const separator = document.createElement("hr");
+          separator.setAttribute("style", "margin: 5px 0 0 0;");
+          historyBlock.append(separator);
 
-const autoCompleteJSadvSettingsCategory = new autoComplete({
-  selector: "#autoCompleteAdvertisementsSettingsCategory",
-  placeHolder: "szukaj kategorii",
-  data: {
-    src: categoryData,
-    cache: true,
-  },
-  resultItem: {
-    highlight: {
-      render: true,
-    },
-  },
-  events: {
-    input: {
-      selection(event) {
-        const selection = event.detail.selection.value;
-        autoCompleteJSadvSettingsCategory.input.value = selection;
-      },
-      focus() {
-        const inputValue = autoCompleteJSadvSettingsCategory.input.value;
-
-        if (inputValue.length) autoCompleteJSadvSettingsCategory.start();
+          list.prepend(historyBlock);
+        }
       },
     },
-  },
-});
+    events: {
+      input: {
+        selection(event) {
+          const feedback = event.detail;
+          const input = autoCompleteJS.input;
+          const selection = event.detail.selection.value;
+          // Get selected Value
+          // const selection = feedback.selection.value.trim();
+          // Add selected value to "history" array
+          history.push(selection);
+          // const selection = event.detail.selection.value;
+          autoCompleteJS.input.value = selection;
+        },
+        focus() {
+          const inputValue = autoCompleteJS.input.value;
 
-const autoCompleteJSorderSettings = new autoComplete({
-  selector: "#autoCompleteOrderSettings",
-  placeHolder: "miejscowość",
-  data: {
-    src: citiesData,
-    cache: true,
-  },
-  resultItem: {
-    highlight: {
-      render: true,
-    },
-  },
-  events: {
-    input: {
-      selection(event) {
-        const selection = event.detail.selection.value;
-        autoCompleteJSorderSettings.input.value = selection;
-      },
-      focus() {
-        const inputValue = autoCompleteJSorderSettings.input.value;
-
-        if (inputValue.length) autoCompleteJSorderSettings.start();
+          if (inputValue.length) autoCompleteJS.start();
+        },
       },
     },
-  },
-});
+  });
+}
 
-const autoCompleteJSorderSettingsCategory = new autoComplete({
-  selector: "#autoCompleteOrderSettingsCategory",
-  placeHolder: "szukaj kategorii",
-  data: {
-    src: categoryData,
-    cache: true,
-  },
-  resultItem: {
-    highlight: {
-      render: true,
+if (typeof document.getElementById("autoCompleteAdvertisementsSettings") != "undefined" && document.getElementById("autoCompleteAdvertisementsSettings") != null) {
+  const autoCompleteJSadvSettings = new autoComplete({
+    selector: "#autoCompleteAdvertisementsSettings",
+    placeHolder: "miejscowość",
+    data: {
+      src: citiesData,
+      cache: true,
     },
-  },
-  events: {
-    input: {
-      selection(event) {
-        const selection = event.detail.selection.value;
-        autoCompleteJSorderSettingsCategory.input.value = selection;
-      },
-      focus() {
-        const inputValue = autoCompleteJSorderSettingsCategory.input.value;
-
-        if (inputValue.length) autoCompleteJSorderSettingsCategory.start();
+    resultItem: {
+      highlight: {
+        render: true,
       },
     },
-  },
-});
+    events: {
+      input: {
+        selection(event) {
+          const selection = event.detail.selection.value;
+          autoCompleteJSadvSettings.input.value = selection;
+        },
+        focus() {
+          const inputValue = autoCompleteJSadvSettings.input.value;
+
+          if (inputValue.length) autoCompleteJSadvSettings.start();
+        },
+      },
+    },
+  });
+}
+
+if (typeof document.getElementById("autoCompleteAdvertisementsSettingsCategory") != "undefined" && document.getElementById("autoCompleteAdvertisementsSettingsCategory") != null) {
+  const autoCompleteJSadvSettingsCategory = new autoComplete({
+    selector: "#autoCompleteAdvertisementsSettingsCategory",
+    placeHolder: "szukaj kategorii",
+    data: {
+      src: categoryData,
+      cache: true,
+    },
+    resultItem: {
+      highlight: {
+        render: true,
+      },
+    },
+    events: {
+      input: {
+        selection(event) {
+          const selection = event.detail.selection.value;
+          autoCompleteJSadvSettingsCategory.input.value = selection;
+        },
+        focus() {
+          const inputValue = autoCompleteJSadvSettingsCategory.input.value;
+
+          if (inputValue.length) autoCompleteJSadvSettingsCategory.start();
+        },
+      },
+    },
+  });
+}
+
+if (typeof document.getElementById("autoCompleteOrderSettings") != "undefined" && document.getElementById("autoCompleteOrderSettings") != null) {
+  const autoCompleteJSorderSettings = new autoComplete({
+    selector: "#autoCompleteOrderSettings",
+    placeHolder: "miejscowość",
+    data: {
+      src: citiesData,
+      cache: true,
+    },
+    resultItem: {
+      highlight: {
+        render: true,
+      },
+    },
+    events: {
+      input: {
+        selection(event) {
+          const selection = event.detail.selection.value;
+          autoCompleteJSorderSettings.input.value = selection;
+        },
+        focus() {
+          const inputValue = autoCompleteJSorderSettings.input.value;
+
+          if (inputValue.length) autoCompleteJSorderSettings.start();
+        },
+      },
+    },
+  });
+}
+
+if (typeof document.getElementById("autoCompleteOrderSettingsCategory") != "undefined" && document.getElementById("autoCompleteOrderSettingsCategory") != null) {
+  const autoCompleteJSorderSettingsCategory = new autoComplete({
+    selector: "#autoCompleteOrderSettingsCategory",
+    placeHolder: "szukaj kategorii",
+    data: {
+      src: categoryData,
+      cache: true,
+    },
+    resultItem: {
+      highlight: {
+        render: true,
+      },
+    },
+    events: {
+      input: {
+        selection(event) {
+          const selection = event.detail.selection.value;
+          autoCompleteJSorderSettingsCategory.input.value = selection;
+        },
+        focus() {
+          const inputValue = autoCompleteJSorderSettingsCategory.input.value;
+
+          if (inputValue.length) autoCompleteJSorderSettingsCategory.start();
+        },
+      },
+    },
+  });
+}
 
 myScrollbar.initAll();
 // const scrollbarAutoComplete = () => {
@@ -461,9 +471,10 @@ if (typeof document.getElementsByClassName("itemToSearch")[0] != "undefined" && 
 
 if (typeof document.getElementsByClassName("btn-favourite-heart")[0] != "undefined" && document.getElementsByClassName("btn-favourite-heart")[0] != null) {
   document.querySelectorAll(".btn-favourite-heart").forEach((heartBtn) => {
-    heartBtn.addEventListener("click", () => {
+    heartBtn.addEventListener("click", (event) => {
       heartBtn.parentNode.classList.toggle("favourite");
       heartBtn.classList.toggle("favourited-btn");
+      event.preventDefault();
     });
   });
 }
@@ -528,11 +539,13 @@ moveCategoriesInMobile();
 
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const handleMobileMenuToggle = () => {
-  if (maxMd) {
-    mobileMenuToggle.addEventListener("click", () => {
-      mobileMenuToggle.classList.toggle("opened");
-      mobileMenuOffcanvas.classList.toggle("opened");
-    });
+  if (typeof document.querySelector("#mobileMenuToggle") != "undefined" && document.querySelector("#mobileMenuToggle") != null) {
+    if (maxMd) {
+      mobileMenuToggle.addEventListener("click", () => {
+        mobileMenuToggle.classList.toggle("opened");
+        mobileMenuOffcanvas.classList.toggle("opened");
+      });
+    }
   }
 };
 
@@ -542,12 +555,14 @@ handleMobileMenuToggle();
 const searchBar = document.getElementsByClassName("search")[0];
 const searchOffcanvasBody = document.querySelector("#searchModal .modal-body");
 const moveSearchToOffcanvas = () => {
-  if (maxLg) {
-    searchOffcanvasBody.appendChild(searchBar);
-    searchBar.classList.remove("d-none");
-  } else {
-    if (afterLoaded) {
-      document.querySelector(".header__nav-content").insertBefore(searchBar, headerRightButtons);
+  if (searchOffcanvasBody != "undefined" && searchOffcanvasBody != null) {
+    if (maxLg) {
+      searchOffcanvasBody.appendChild(searchBar);
+      searchBar.classList.remove("d-none");
+    } else {
+      if (afterLoaded) {
+        document.querySelector(".header__nav-content").insertBefore(searchBar, headerRightButtons);
+      }
     }
   }
 };
@@ -734,5 +749,21 @@ if (typeof document.querySelector(".product__my-comment-editable") != "undefined
         myCommentForm.classList.add("d-none");
       });
     });
+  });
+}
+
+if (typeof document.querySelector("[data-maxlengthDisplay='true']") != "undefined" && document.querySelector("[data-maxlengthDisplay]") != null) {
+  document.querySelectorAll("[data-maxlengthDisplay='true']").forEach((element) => {
+    console.log("dasd");
+    const maxValueContainer = document.createElement("small");
+    maxValueContainer.classList.add("d-block", "text-end");
+    let maxValue = element.getAttribute("maxlength");
+    maxValueContainer.innerHTML = element.value.length + " / " + maxValue;
+
+    element.addEventListener("keyup", () => {
+      maxValueContainer.innerHTML = element.value.length + " / " + maxValue;
+    });
+
+    element.parentNode.append(maxValueContainer);
   });
 }
