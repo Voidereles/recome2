@@ -61,6 +61,8 @@
             outline: none !important;
         }
 
+
+        .offcanvas-account-menu-button,
         .offcanvas-message-menu-button,
         .offcanvas-favourites-button {
             position: relative;
@@ -124,6 +126,8 @@
         transition: $durationXS;
         border-right: 1px solid rgba(36, 37, 39, 0.3);
 
+
+
         &:focus {
             border-right: 1px solid white;
         }
@@ -178,6 +182,7 @@
                 background: white;
             }
         }
+
 
         &>ul {
             overflow-y: auto;
@@ -587,6 +592,24 @@
             }
         }
 
+
+
+        &--online {
+            background: #C6D5DD;
+
+            &>div:last-child {
+                &::before {
+                    content: 'Zdalnie';
+                    text-transform: uppercase;
+                    color: #31382E;
+                    letter-spacing: 2.6px;
+                    font-weight: 300;
+                    font-size: $fontSizeXS;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
         &--ending {
             &>div:last-child {
                 &::before {
@@ -750,7 +773,7 @@
 
         div:last-of-type span {
             margin-left: -321px;
-            animation: slidein 5s infinite alternate;
+            animation: slidein 6s infinite alternate ease-in-out;
         }
 
 
@@ -1498,6 +1521,7 @@
             border-radius: 0;
             height: 250px;
             max-height: 250px;
+            background: white;
 
             &-container {
                 height: 250px;
@@ -1690,7 +1714,7 @@
             &:focus {
                 background: white;
 
-                &+.autoComplete_wrapper::after {
+                &~.autoComplete_wrapper::after {
                     display: none;
                 }
             }

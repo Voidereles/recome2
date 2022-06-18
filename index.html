@@ -302,8 +302,8 @@
                                 </div>
 
                                 <div>
-                                    <input id="autoCompleteMainSearch" class="autoCompleteCity" type="search" dir="ltr"
-                                        spellcheck=false autocorrect="off" autocomplete="
+                                    <input id="autoCompleteMainSearch" class="auto-complete-city" type="search"
+                                        dir="ltr" spellcheck=false autocorrect="off" autocomplete="
                                         off" autocapitalize="off" maxlength="2048" tabindex="1">
                                     <div class="position-relative"></div>
                                 </div>
@@ -459,8 +459,8 @@
                         </button>
                         <div class="header__right-buttons d-none d-md-flex">
 
-                            <button
-                                class="btn btn-secondary w-36 h-36 me-md-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent rounded-circle d-flex align-items-center justify-content-center"
+                            <button data-unread="5"
+                                class="btn btn-secondary offcanvas-account-menu-button w-36 h-36 me-md-2 me-xl-3 p-0 bg-searchBackground border-0 bg-transparent rounded-circle d-flex align-items-center justify-content-center"
                                 aria-label="open menu offcanvas" data-bs-toggle="offcanvas" href="#offcanvasAccountMenu"
                                 role="button" aria-controls="offcanvasAccountMenu">
 
@@ -599,25 +599,57 @@
                     <div class="hero__categories-all mt-4 pb-5">
                         <p class="fw-bold mb-1">Kategorie</p>
                         <div>
-
+                            <div class="accordion-item">
+                                <a class="hero__category-link collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#category_id_46" aria-expanded="true"
+                                    aria-controls="category_id_46">
+                                    <span>Zdrowie</span>
+                                </a>
+                                <div id="category_id_46" class="accordion-collapse collapse">
+                                    <ul class="hero__inner-categories">
+                                        <li class="hero__inner-categories-li">
+                                            <a href="/ad/index/48/dietetyk-konsultacje-dietetyczne" title=""
+                                                class="hero__category-link"><span>Dietetyk, konsultacje
+                                                    dietetyczne</span></a>
+                                        </li>
+                                        <li class="hero__inner-categories-li">
+                                            <a href="/ad/index/49/catering-dietetyczny" title=""
+                                                class="hero__category-link"><span>Catering dietetyczny</span></a>
+                                        </li>
+                                        <li class="hero__inner-categories-li">
+                                            <a href="/ad/index/84/masaze-i-fizjoterapia" title=""
+                                                class="hero__category-link"><span>Masaże i fizjoterapia</span></a>
+                                        </li>
+                                        <li class="hero__inner-categories-li">
+                                            <a href="/ad/index/69/medycyna-estetyczna" title=""
+                                                class="hero__category-link"><span>Medycyna estetyczna</span></a>
+                                        </li>
+                                        <li class="hero__inner-categories-li">
+                                            <a href="/ad/index/127/wynajem-sprzetu-rehabilitacyjnego" title=""
+                                                class="hero__category-link"><span>Wynajem sprzętu
+                                                    rehabilitacyjnego</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="accordion-item">
                                 <a class="hero__category-link collapsed" data-bs-toggle="collapse"
                                     data-bs-target="#fizjoterapiaCollapse" aria-expanded="true"
                                     aria-controls="fizjoterapiaCollapse">
-                                    <span> Bardzo długa nazwa kategorii</span>
+                                    <span> Nauka i edukacja</span>
                                 </a>
                                 <div id="fizjoterapiaCollapse" class="accordion-collapse collapse">
                                     <ul class="hero__inner-categories">
                                         <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
-                                                <span>Fizjoterapia</span>
+                                                <span>Nauka</span>
 
                                             </a></li>
                                         <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
-                                                <span>Długa nazwa kategorii</span>
+                                                <span>Języki obce</span>
 
                                             </a></li>
                                         <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
-                                                <span>subFizjoterapia2</span>
+                                                <span>Tłumaczenia, pisanie i redagowanie tekstów</span>
 
                                             </a></li>
                                         <li class="hero__inner-categories-li"> <a href="#" class="hero__category-link">
@@ -1081,6 +1113,52 @@
                             </div>
                             <div class="d-flex flex-column  overflow-hidden p-3 list__content">
                                 <h3 class="fw-semibold fontSizeXS lh-md">Wdrożenie narzędzia do
+                                    branżowych
+                                    gier
+                                    biznesowych</h3>
+                                <div class="d-flex mt-auto opacity-50 overflow-hidden pt-4 pt-lg-2">
+
+                                    <div
+                                        class="d-flex align-items-center fw-semibold fontSizeXSS me-2 pe-1 w-max-content list__info-container ">
+                                        <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M12.75 8C12.75 7.58579 12.4142 7.25 12 7.25C11.5858 7.25 11.25 7.58579 11.25 8H12.75ZM12 12H11.25C11.25 12.1989 11.329 12.3897 11.4697 12.5303L12 12ZM13.4697 14.5303C13.7626 14.8232 14.2374 14.8232 14.5303 14.5303C14.8232 14.2374 14.8232 13.7626 14.5303 13.4697L13.4697 14.5303ZM11.25 8V12H12.75V8H11.25ZM11.4697 12.5303L13.4697 14.5303L14.5303 13.4697L12.5303 11.4697L11.4697 12.5303ZM20.25 12C20.25 16.5563 16.5563 20.25 12 20.25V21.75C17.3848 21.75 21.75 17.3848 21.75 12H20.25ZM12 20.25C7.44365 20.25 3.75 16.5563 3.75 12H2.25C2.25 17.3848 6.61522 21.75 12 21.75V20.25ZM3.75 12C3.75 7.44365 7.44365 3.75 12 3.75V2.25C6.61522 2.25 2.25 6.61522 2.25 12H3.75ZM12 3.75C16.5563 3.75 20.25 7.44365 20.25 12H21.75C21.75 6.61522 17.3848 2.25 12 2.25V3.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span>1h temu</span>
+                                    </div>
+
+                                    <div class="d-flex align-items-center fw-semibold fontSizeXSS overflow-hidden">
+                                        <svg class="me-1 list__city-icon" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-width="1.85"
+                                                d="M12 3L12.4939 2.43557C12.2111 2.18814 11.7889 2.18814 11.5061 2.43557L12 3ZM4 10L3.50612 9.43557C3.34336 9.57798 3.25 9.78373 3.25 10L4 10ZM20 10L20.75 10C20.75 9.78373 20.6566 9.57798 20.4939 9.43557L20 10ZM20 20V20.75C20.1989 20.75 20.3897 20.671 20.5303 20.5303C20.671 20.3897 20.75 20.1989 20.75 20H20ZM15 20H14.25C14.25 20.4142 14.5858 20.75 15 20.75V20ZM14.1213 13.8787L14.6517 13.3483L14.6517 13.3483L14.1213 13.8787ZM9 20V20.75C9.41422 20.75 9.75 20.4142 9.75 20H9ZM4 20H3.25C3.25 20.4142 3.58579 20.75 4 20.75V20ZM11.5061 2.43557L3.50612 9.43557L4.49388 10.5644L12.4939 3.56443L11.5061 2.43557ZM20.4939 9.43557L12.4939 2.43557L11.5061 3.56443L19.5061 10.5644L20.4939 9.43557ZM19.25 10L19.25 20H20.75L20.75 10L19.25 10ZM20 19.25H15V20.75H20V19.25ZM15.75 20V16H14.25V20H15.75ZM15.75 16C15.75 15.0054 15.3549 14.0516 14.6517 13.3483L13.591 14.409C14.013 14.831 14.25 15.4033 14.25 16H15.75ZM14.6517 13.3483C13.9484 12.6451 12.9946 12.25 12 12.25V13.75C12.5967 13.75 13.169 13.9871 13.591 14.409L14.6517 13.3483ZM12 12.25C11.0054 12.25 10.0516 12.6451 9.34835 13.3483L10.409 14.409C10.831 13.9871 11.4033 13.75 12 13.75V12.25ZM9.34835 13.3483C8.64509 14.0516 8.25 15.0054 8.25 16H9.75C9.75 15.4033 9.98706 14.831 10.409 14.409L9.34835 13.3483ZM8.25 16V20H9.75V16H8.25ZM9 19.25H4V20.75H9V19.25ZM4.75 20L4.75 10L3.25 10L3.25 20H4.75Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                        <span class="one-line list__city">Częstochowa </span>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="col ">
+                        <a href="#" class="d-flex flex-lg-column  list__item list__item--online">
+                            <div class="list__img-container">
+                                <picture>
+                                    <source media="(min-width: 992px)" srcset="./assets/list-woman.jpg">
+                                    <img class="list__img" src="./assets/small-list-img.jpg" alt="ad img">
+                                </picture>
+                            </div>
+                            <div class="d-flex flex-column  overflow-hidden p-3 list__content">
+                                <h3 class="fw-semibold fontSizeXS lh-md">555Wdrożenie narzędzia do
                                     branżowych
                                     gier
                                     biznesowych</h3>
@@ -1814,8 +1892,9 @@
                     </div>
                     <div class="col-12 col-lg-6 col-xl-7 ps-xl-5 ps-xxl-0">
                         <h3 class="font-circular about__heading mt-5 pt-4 mb-0">
-                            <div>reco</div>
-                            <div><span>mmend me!</span></div>
+                            <div class="d-xl-none">recommend me!</div>
+                            <div class="d-none d-xl-inline-block">reco</div>
+                            <div class="d-none d-xl-inline-block"><span>mmend me!</span></div>
                         </h3>
                         <p class="mt-0 w-max-520 xl-fontSizeM">
                             <strong>recome</strong> to nowa, rewolucyjna usługa opierająca się na ilości
@@ -2434,7 +2513,7 @@
 
                             <div class="d-flex ">
 
-                                <input id="autoCompleteAdvertisementsSettings" class="autoCompleteCity" type="search"
+                                <input id="autoCompleteAdvertisementsSettings" class="auto-complete-city" type="search"
                                     dir="ltr" spellcheck=false autocorrect="off" autocomplete="
                             off" autocapitalize="off" maxlength="128" tabindex="1">
 
@@ -2539,7 +2618,7 @@
                             </div>
                             <div class="d-flex align-items-center mt-2">
 
-                                <input id="autoCompleteAdvertisementsSettingsCategory" class="autoCompleteCategory"
+                                <input id="autoCompleteAdvertisementsSettingsCategory" class="auto-complete-category"
                                     type="search" dir="ltr" spellcheck=false autocorrect="off" autocomplete="
                             off" autocapitalize="off" maxlength="128" tabindex="1">
                                 <a href="#"
@@ -2600,7 +2679,7 @@
 
                         <div class="d-flex ">
 
-                            <input id="autoCompleteOrderSettings" class="autoCompleteCity" type="search" dir="ltr"
+                            <input id="autoCompleteOrderSettings" class="auto-complete-city" type="search" dir="ltr"
                                 spellcheck=false autocorrect="off" autocomplete="
                         off" autocapitalize="off" maxlength="128" tabindex="1">
 
@@ -2696,7 +2775,7 @@
                         </div>
                         <div class="d-flex align-items-center mt-2">
 
-                            <input id="autoCompleteOrderSettingsCategory" class="autoCompleteCategory" type="search"
+                            <input id="autoCompleteOrderSettingsCategory" class="auto-complete-category" type="search"
                                 dir="ltr" spellcheck=false autocorrect="off" autocomplete="
                         off" autocapitalize="off" maxlength="128" tabindex="1">
                             <button type="submit"
@@ -2780,46 +2859,131 @@
         <div class="offcanvas-body">
             <h6 class="text-darkBrown fontSizeH5">105 rekomendacji</h6>
             <hr>
-            <div class="mt-3" role="nav">
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Twoje ogłoszenia
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Twoje zlecenia
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Twoje rekomendacje
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Twoje ulubione
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Twój profil
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Przedłuż konto premium
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Dodaj ogłoszenie
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Zleć usługę innym
-                </a>
-                <a href="#" class="d-flex justify-content-between fw-bold text-black never-decoration mb-2">
-                    Skontaktuj się z recome
-                </a>
-                <hr class="mt-lg-5">
-                <a href="#" class="d-flex fw-500 text-black never-decoration mt-3">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <span class="ms-3">
 
-                        Wyloguj się
-                    </span>
-                </a>
+
+            <h6 class="fontSizeS fw-bold d-flex justify-content-between">Najnowsze powiadomienia <a
+                    title="przejdź do panelu powiadomień" class="text-darkBrown fontSizeXS fw-500 no-decoration"
+                    href="#">
+                    więcej</a></h6>
+            <div class="mt-4">
+                <!-- Nazwa wystawiającego ogłoszenie/zlecenie + nazwa ogłoszenia/zlecenia musi
+        znaleźć się w data-text, aby możliwe było wyszukiwanie. Sugeruję też by był
+        limit np. 10 ostatnich rozmów a reszta w panelu wiadomości, przy czym trzeba dać
+        informację użytkownikowi, że więcej wiadomości w panelu wiadomości.
+
+        Jeśli wiadomo, że dana wiadomość nie została odczytana przez użytkownika, należy do tagu "a" dodać klasę "not-read" dzięki temu za pomocą brązowego koloru tekstu użytkownik będzie informowany, że tego jeszcze nie przeczytał.
+
+        Po kliknięciu na dany "a", użytkownik powinien zostać przekierowany do danej rozmowy w panelu wiadomości. -->
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a href="#" class="not-read d-flex align-items-center me-4 never-decoration">
+                        <img class="message__img" src="./assets/no-photo.svg" loading="lazy" alt="">
+                        <div class="ms-3 d-flex flex-column">
+                            <div class="d-flex flex-column"><span class="fontSizeXS fw-normal text-black message__who">
+                                    <span class="fw-600"> Adam Nowak</span>
+                                    rekomenduje XYZ i jeszcze jakiś tekst
+                                </span>
+                                <span class="d-flex message__content fontSizeXSS fw-500">
+                                    <span> 1 min temu</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a href="#" class="not-read d-flex align-items-center me-4 never-decoration">
+                        <img class="message__img" src="./assets/logo-favicon.svg" loading="lazy" alt="">
+                        <div class="ms-3 d-flex flex-column">
+                            <div class="d-flex flex-column"><span class="fontSizeXS fw-normal text-black message__who">
+                                    <span class="fw-600">Pozostały tylko 3 dni premium</span>
+
+                                </span>
+                                <span class="d-flex message__content fontSizeXSS fw-500">
+                                    <span> 25 dni temu</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a href="#" class="not-read d-flex align-items-center me-4 never-decoration">
+                        <img class="message__img" src="./assets/slider-image4.jpg" loading="lazy" alt="">
+                        <div class="ms-3 d-flex flex-column">
+                            <div class="d-flex flex-column"><span class="fontSizeXS fw-normal text-black message__who">
+                                    Otrzymałeś <span class="fw-600">8 ofert</span>
+                                    do zlecenia "szukam opieki dla osoby starszej"
+
+                                </span>
+                                <span class="d-flex message__content fontSizeXSS fw-500">
+                                    <span> 3 mc temu</span>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+            <a href="#" title="przejdź do panelu powiadomień"
+                class="text-white-70 fontSizeXS d-flex justify-content-center never-decoration  bg-textBlack mt-4 py-2 ">
+                <div>+ <strong> 5</strong> nieprzeczytanych powiadomień</div>
+
+            </a>
+            <hr>
+            <div class=" bg-brown2 px-3 py-4">
+                <h6 class="fontSizeS fw-bold d-flex justify-content-between">Nawigacja</h6>
+                <div class="mt-3" role="nav">
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Twoje ogłoszenia
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Twoje zlecenia
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Twoje rekomendacje
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Twoje ulubione
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Edytuj profil
+                    </a> <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Przedłuż konto premium
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Historia i faktury
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Dodaj ogłoszenie
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Zleć usługę innym
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Skontaktuj się z recome
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Powiadomienia
+                    </a>
+                    <a href="#" class="d-flex justify-content-between fw-500 text-black never-decoration mb-2">
+                        Panel wiadomości
+                    </a>
+                    <hr class="mt-lg-4">
+                    <a href="#" class="d-flex fw-500 text-black never-decoration mt-3 mb-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H15M8 8L4 12M4 12L8 16M4 12L16 12"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span class="ms-3">
+
+                            Wyloguj się
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

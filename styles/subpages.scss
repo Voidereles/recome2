@@ -7,7 +7,10 @@
     .people {
 
         max-width: 100%;
-        width: 375px;
+
+        @media (min-width:768px) {
+            width: 375px;
+        }
     }
 
     .search__input {
@@ -51,16 +54,25 @@
     // width: 644px;
     position: relative;
     flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+
 
     &__content {
         padding-right: 1rem;
         max-width: 100%;
         height: calc(100% - 33px - 50px - 2.5rem);
+
+        @media (pointer:corase) and (max-width:767px) {
+            height: calc(100% - 33px - 50px - 4.5rem);
+            padding-bottom: 4.5rem;
+        }
     }
 
     &__message {
         max-width: 80%;
         margin-top: 1rem;
+
 
         &-time {
             margin-left: 1.5rem;
@@ -76,13 +88,67 @@
             line-height: 1.6;
         }
 
-
-
         &--me {
             margin-left: auto;
 
             .chat__message-text {
                 background: $brown;
+            }
+        }
+
+        &-status {
+            font-size: $fontSizeXSS;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            text-decoration: none;
+
+            svg,
+            img {
+                margin: 4px;
+            }
+
+            &--read {
+                img {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    margin-left: 6px;
+                }
+            }
+
+            &--sent {
+                color: $searchDarkBg;
+
+                svg {
+                    width: 14px;
+                    height: 14px;
+                }
+
+                svg path,
+                svg rect,
+                img {
+                    fill: $searchDarkBg;
+                }
+            }
+
+            &--error {
+                color: $redAlarm;
+                cursor: pointer;
+
+                &:hover {
+                    color: $redAlarm;
+                }
+
+                svg,
+                img {
+
+                    path,
+                    rect {
+                        fill: $redAlarm;
+                    }
+                }
             }
         }
     }
@@ -118,6 +184,11 @@
                 max-height: 500px;
                 transition: $durationM;
 
+                @media (max-width:767px) and (pointer: coarse) {
+                    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+                }
+
+
                 &:hover {
                     box-shadow: none;
                 }
@@ -128,11 +199,13 @@
                     padding-left: 1.5rem;
                     padding-top: 1rem;
                     padding-bottom: 40px;
-                    height: calc(100vh - 200px);
+                    min-height: 200px;
+                    height: calc(40vh - 90px);
                     box-shadow: -2px -2px 14px 0 rgba(0, 0, 0, 0.1);
 
+
                     &~.btn {
-                        transform: translateX(50px);
+                        // transform: translateX(50px);
                     }
                 }
             }
@@ -160,12 +233,52 @@
         }
     }
 
+    @media (min-width: 768px) {
+        // max-width: calc(100% - 375px);
+    }
+
+    @media (max-width:1199px) {
+        .chat__writing {
+            // max-width: calc(100% - 3rem);
+        }
+    }
+}
+
+.messages-list .message__who {
+    width: 300px;
+}
+
+
+.notifications {
+    .message {
+        &__img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+
+
+        &__content {
+            color: $greyMessage;
+        }
+
+    }
 }
 
 .offcanvas-chat {
     max-width: 100%;
     width: 992px;
     overflow: hidden;
+
+    .offcanvas-header {
+        position: fixed;
+        z-index: 3;
+        right: 1rem;
+        top: 1rem;
+        padding: 0;
+    }
 
     .chat {
         height: calc(100vh - 40px - 3rem);
@@ -186,7 +299,11 @@
 
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:767px) {
+    .chat {
+        // max-width: calc(100% - 375px - 1.5rem);
+    }
+
     .messages-panel .message {
 
         &__who,
@@ -196,6 +313,8 @@
         }
     }
 }
+
+@media screen and (min-width:768px) and (max-width:991px) {}
 
 //#endregion
 
@@ -473,7 +592,8 @@
 
 //#region list 
 
-.filters {
+.filters,
+.bg-overflow-light {
     .autoComplete {
         &_wrapper {
             width: 100%;
@@ -522,6 +642,12 @@
         }
     }
 
+
+
+}
+
+.filters {
+
     .btn-dark {
         height: 48px;
     }
@@ -531,7 +657,6 @@
         padding-left: 1.25rem;
         padding-right: 1.25rem;
     }
-
 }
 
 //#endregion
@@ -747,3 +872,87 @@
 }
 
 //#endregion
+
+//#region add-product
+.add-product {
+    .file-label {
+        width: 100%;
+        padding: 3rem 0;
+        cursor: pointer;
+    }
+
+    input[type="file"] {
+        background: none;
+        border: none !important;
+        box-shadow: none !important;
+        font-size: 0;
+        padding: 0;
+        visibility: hidden;
+
+        &::-webkit-file-upload-button {
+            display: none;
+        }
+
+    }
+}
+
+//#endregion
+
+
+//my-list-errand-announcment
+.bg-overflow-light {
+    position: relative;
+
+    &::before {
+        background: $offcanvasBg;
+        width: calc(100% + 32px);
+        height: calc(100% + 32px);
+        top: -16px;
+        left: -16px;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: $durationM;
+        will-change: transform opacity;
+        opacity: 0;
+        transform: translateX(-110%);
+        opacity: 1;
+        transform: none;
+    }
+
+    // &:hover {
+    //     &::before {
+    //         opacity: 1;
+    //         transform: none;
+    //     }
+    // }
+}
+
+.bg-overflow-white {
+    position: relative;
+
+    &::before {
+        background: white;
+        width: calc(100% + 32px);
+        height: calc(100% + 32px);
+        top: -16px;
+        left: -16px;
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: $durationM;
+        will-change: transform opacity;
+        opacity: 0;
+        transform: translateX(-110%);
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.big-square {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

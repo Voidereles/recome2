@@ -32,7 +32,7 @@ $brown2: #e2dfda;
 $lightBrown: #CFBDA0;
 $lightBrown2: #DBC4A1;
 $lighterBrown3: #EDECEB;
-$darkBrown: #BCA37B;
+$darkBrown: #AD8F5C;
 $newGreen: #C5D2C0;
 $strongGreen: #357403;
 $likeGreen: #55a714;
@@ -303,6 +303,8 @@ $spaceLetters:0.4px;
     color: $grey2;
 }
 
+
+
 .text-lighterBrown {
     color: $lighterBrown;
 }
@@ -459,6 +461,12 @@ a {
         }
     }
 
+    &.text-white-70 {
+        &:hover {
+            color: $lighterBrown;
+        }
+    }
+
 
     &.text-brown {
         color: $brown;
@@ -471,6 +479,25 @@ a {
     &.text-black {
         &:hover {
             color: $darkBrown !important;
+        }
+    }
+
+    &.text-red {
+        color: $redAlarm;
+
+        svg path,
+        svg rect {
+            fill: darken($color: $redAlarm, $amount: 10%);
+        }
+
+        &:hover {
+            color: darken($color: $redAlarm, $amount: 10%);
+
+
+            svg path,
+            svg rect {
+                fill: darken($color: $redAlarm, $amount: 10%);
+            }
         }
     }
 }
@@ -511,6 +538,10 @@ a {
     line-height: 1.7;
 }
 
+.h-28 {
+    height: 28px;
+}
+
 .w-36 {
     width: 36px;
 }
@@ -525,6 +556,15 @@ a {
 
 .w-100px {
     width: 100px;
+}
+
+
+.w-65 {
+    width: 65px;
+}
+
+.h-65 {
+    height: 65px;
 }
 
 .w-max-content {
@@ -590,6 +630,10 @@ a {
 
 .object-fit-cover {
     object-fit: cover;
+}
+
+.object-position-top {
+    object-position: top;
 }
 
 .rounded-4 {
@@ -1163,7 +1207,7 @@ a {
 .form-options {
 
     .form-check {
-        background: white;
+        background: $almostWhite;
         border-radius: 0;
         padding: 1rem;
 
@@ -1171,7 +1215,7 @@ a {
             display: none !important;
         }
 
-        input~.d-flex {
+        input~.content {
             &::before {
                 content: '';
                 border: 1px solid $gray-300;
@@ -1185,7 +1229,11 @@ a {
             }
         }
 
-        input:checked~.d-flex {
+        .change-to-brown {
+            transition: $durationM;
+        }
+
+        input:checked~.content {
             color: $darkBrown;
 
             &::before {
@@ -1193,7 +1241,7 @@ a {
             }
         }
 
-        input:disabled~.d-flex {
+        input:disabled~.content {
             cursor: default;
 
             &>div {
@@ -1437,10 +1485,30 @@ input[type="search"].dark::-webkit-search-cancel-button {
     }
 }
 
+.form-select {
+    border: none !important;
+    color: $textBlack;
+
+    &:required:invalid {
+        color: #6c757d;
+    }
+
+    option[disabled] {
+        color: #6c757d;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        box-shadow: inset 0 0 0 1px $searchDarkBg;
+    }
+}
+
 
 .form-control {
     border-radius: 0;
     border: none !important;
+    color: $textBlack;
 
     &:hover,
     &:focus {
@@ -1448,9 +1516,9 @@ input[type="search"].dark::-webkit-search-cancel-button {
         outline: none;
     }
 
-    &--grey-bg {
-        background: $greyMessage;
-        border: 1px solid $greyMessage;
+    &--brown2 {
+        background-color: $brown2;
+        border: 1px solid $brown2;
     }
 
     &.border-grey {
@@ -1470,6 +1538,7 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
     }
 }
+
 
 .offcanvas {
     background: $offcanvasBg;
@@ -1496,12 +1565,38 @@ input[type="search"].dark::-webkit-search-cancel-button {
         }
     }
 
+    &-account {
+        .message {
+            &__img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            &__who,
+            &__content {
+                white-space: nowrap;
+                max-width: calc(100% - 1.5rem);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 300px;
+            }
+
+            &__content {
+                color: $greyMessage;
+            }
+
+        }
+    }
+
     &-message {
         .message {
             &__img {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
+                object-fit: cover;
             }
 
             &__who,
@@ -1524,6 +1619,30 @@ input[type="search"].dark::-webkit-search-cancel-button {
                 color: $darkBrown;
             }
         }
+    }
+
+    [data-unread] {
+        position: relative;
+        align-items: center;
+    }
+
+    [data-unread]::after {
+        content: attr(data-unread);
+
+        position: relative;
+        width: 19px;
+        height: 19px;
+        margin-left: 5px;
+        margin-right: auto;
+        border-radius: 50%;
+        background: $redAlarm;
+        color: white;
+        font-weight: 600;
+        font-size: $fontSizeXSS;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
     }
 
     .favourites-item {
@@ -1693,5 +1812,46 @@ input[type="search"].dark::-webkit-search-cancel-button {
 
 
 
+    }
+}
+
+.accordion {
+    &-body {
+        padding: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &-item {
+        border: none;
+        background: transparent;
+    }
+
+    &-button {
+        background: transparent;
+        box-shadow: none !important;
+        color: rgba(0, 0, 0, .7);
+        padding: 0;
+        margin-top: 1rem;
+        font-weight: 600;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        &::after {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+
+
+        &:not(.collapsed),
+        &:focus {
+            background: transparent;
+            border: none;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        &:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
     }
 }
