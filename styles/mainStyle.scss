@@ -23,6 +23,54 @@
 //         opacity: 0;
 //     }
 // }
+
+body>.alert {
+    z-index: 99999999999 !important;
+}
+
+.alert {
+    max-width: calc(1470px - 24px);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+    border: 0;
+
+    .growl-close {
+        background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+        color: transparent;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 1px;
+        background-size: 0.7rem;
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    &.alert-danger {
+        color: white;
+        background-color: $redAlarm;
+        border-color: $redAlarm;
+
+        .growl-close {
+            filter: invert(1);
+        }
+    }
+
+    [data-notify="title"] {
+        padding-right: 2.5rem;
+        display: block;
+    }
+
+    [data-notify="message"] {
+        opacity: 0.8;
+    }
+
+    &.animated {
+        box-shadow: 0px 2px 57px rgba(35, 32, 28, 0.15);
+    }
+}
+
 .modal {
     &.first-time {
         .modal {
@@ -105,10 +153,61 @@
         width: 100%;
     }
 
+    #headerSearchInput {
+        padding-right: 15px;
+    }
+
     .select-dropdown__absolute {
         max-width: 50%;
         margin-right: 1rem;
         margin-bottom: 0 !important;
+    }
+
+
+    #searchform-location {
+        @media (min-width: 992px) {
+            padding-left: 15px;
+            border-left: 1px solid rgba(36, 37, 39, 0.3) !important;
+            border-radius: 0 !important;
+            padding-right: 15px;
+        }
+
+
+        @media (min-width: 120px) {
+            min-width: 230px;
+        }
+    }
+
+    .select-dropdown__absolute {
+
+        select,
+        .was-validated .form-control:valid,
+        .form-control.is-valid {
+            border-radius: 0 !important;
+
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e") !important;
+            background-repeat: no-repeat !important;
+            padding-right: 15px !important;
+            padding-left: 15px !important;
+            background-size: 16px 16px !important;
+            background-position: center right !important;
+            width: calc(100% - 5px);
+
+            @media (min-width: 992px) {
+                border-left: 1px solid rgba(36, 37, 39, 0.3) !important;
+            }
+
+            &:focus {
+                background: transparent;
+            }
+
+        }
+    }
+
+
+    .was-validated .form-control:valid,
+    .form-control.is-valid {
+        background-image: none !important;
     }
 
     &__input {
@@ -155,6 +254,10 @@
         min-height: 36px;
         align-self: center;
     }
+}
+
+.pac-container::after {
+    content: none;
 }
 
 
@@ -609,6 +712,25 @@
                 }
             }
         }
+
+
+
+        &--online-also {
+            background: #C6D5DD;
+
+            &>div:last-child {
+                &::before {
+                    content: 'Zdalnie i lokalnie';
+                    text-transform: uppercase;
+                    color: #31382E;
+                    letter-spacing: 2.6px;
+                    font-weight: 300;
+                    font-size: $fontSizeXS;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+
 
         &--ending {
             &>div:last-child {
@@ -1692,12 +1814,12 @@
     }
 
     .search {
-        max-width: 550px;
+        max-width: 600px;
 
 
 
         .select-dropdown__absolute {
-            max-width: 130px;
+            max-width: 125px;
 
 
         }

@@ -106,7 +106,10 @@ myScrollbar.initAll();
 // });
 
 // setTimeout(scrollbarAutoComplete, 1000);
-if (typeof document.getElementsByClassName("select-dropdown__items")[0] != "undefined" && document.getElementsByClassName("select-dropdown__items")[0] != null) {
+if (
+  typeof document.getElementsByClassName("select-dropdown__items")[0] != "undefined" &&
+  document.getElementsByClassName("select-dropdown__items")[0] != null
+) {
   document.querySelectorAll(".select-dropdown__items").forEach((element) => {
     myScrollbar.init(element, {
       alwaysShowTracks: true,
@@ -139,7 +142,10 @@ if (typeof document.getElementsByClassName("select-dropdown__items")[0] != "unde
       }
     });
 
-    if (inputItems.querySelector('input[type="radio"]') != "undefined" && inputItems.querySelector('input[type="radio"]') != null) {
+    if (
+      inputItems.querySelector('input[type="radio"]') != "undefined" &&
+      inputItems.querySelector('input[type="radio"]') != null
+    ) {
       const formChecks = inputItems.querySelectorAll(".form-check");
       formChecks.forEach((element) => {
         element.addEventListener("click", () => {
@@ -168,13 +174,20 @@ if (typeof document.getElementsByClassName("select-dropdown__items")[0] != "unde
         selectDropdownValue.textContent = selectedRadioValue;
 
         if (selectedRadioValue == null || selectedRadioValue == "undefined") {
-          selectDropdownValue.textContent = inputItems.querySelector('.form-check:first-child input[type="radio"]').value;
+          selectDropdownValue.textContent = inputItems.querySelector(
+            '.form-check:first-child input[type="radio"]'
+          ).value;
         }
 
-        if (selectDropdownValue.textContent == inputItems.querySelector('.form-check:first-child input[type="radio"]').value) {
+        if (
+          selectDropdownValue.textContent ==
+          inputItems.querySelector('.form-check:first-child input[type="radio"]').value
+        ) {
           selectDropdownValue.classList.remove("font-darkBrown");
           selectDropdownValue.classList.remove("fw-bold");
-          selectDropdownValue.textContent = inputItems.querySelector('.form-check:first-child input[type="radio"]').value;
+          selectDropdownValue.textContent = inputItems.querySelector(
+            '.form-check:first-child input[type="radio"]'
+          ).value;
         } else {
           selectDropdownValue.classList.add("font-darkBrown");
           selectDropdownValue.classList.add("fw-bold");
@@ -211,10 +224,13 @@ if (typeof document.getElementsByClassName("select-dropdown__items")[0] != "unde
 
         const selectDropdownCheckedContainer = mainInput.querySelector(".select-dropdown__checked");
 
-        selectDropdownCheckedContainer.innerHTML = '<span class="font-darkBrown fw-bold"> Wybrane opcje: </span>' + selectedItems;
+        selectDropdownCheckedContainer.innerHTML =
+          '<span class="font-darkBrown fw-bold"> Wybrane opcje: </span>' + selectedItems;
 
         if (selectDropdownValue == null || selectDropdownValue == "undefined") {
-          selectDropdownValue.textContent = inputItems.querySelector('.form-check:first-child input[type="checkbox"]').value;
+          selectDropdownValue.textContent = inputItems.querySelector(
+            '.form-check:first-child input[type="checkbox"]'
+          ).value;
         }
       };
 
@@ -242,7 +258,10 @@ if (typeof document.getElementsByClassName("select-dropdown__items")[0] != "unde
   });
 }
 
-if (typeof document.getElementsByClassName("itemToSearch")[0] != "undefined" && document.getElementsByClassName("itemToSearch")[0] != null) {
+if (
+  typeof document.getElementsByClassName("itemToSearch")[0] != "undefined" &&
+  document.getElementsByClassName("itemToSearch")[0] != null
+) {
   document.querySelectorAll(".searchOnInput").forEach((element) => {
     element.oninput = function () {
       var matcher = new RegExp(element.value, "gi");
@@ -262,7 +281,10 @@ if (typeof document.getElementsByClassName("itemToSearch")[0] != "undefined" && 
   });
 }
 
-if (typeof document.getElementsByClassName("btn-favourite-heart")[0] != "undefined" && document.getElementsByClassName("btn-favourite-heart")[0] != null) {
+if (
+  typeof document.getElementsByClassName("btn-favourite-heart")[0] != "undefined" &&
+  document.getElementsByClassName("btn-favourite-heart")[0] != null
+) {
   document.querySelectorAll(".btn-favourite-heart").forEach((heartBtn) => {
     heartBtn.addEventListener("click", (event) => {
       heartBtn.parentNode.classList.toggle("favourite");
@@ -272,7 +294,10 @@ if (typeof document.getElementsByClassName("btn-favourite-heart")[0] != "undefin
   });
 }
 
-if (typeof document.querySelector("[data-dismiss]") != "undefined" && document.querySelector("[data-dismiss]") != null) {
+if (
+  typeof document.querySelector("[data-dismiss]") != "undefined" &&
+  document.querySelector("[data-dismiss]") != null
+) {
   document.querySelectorAll('[data-dismiss="parent"]').forEach((element) => {
     console.log(element);
     element.addEventListener("click", () => {
@@ -282,7 +307,10 @@ if (typeof document.querySelector("[data-dismiss]") != "undefined" && document.q
   });
 }
 
-if (typeof document.querySelector(".remove-hide-on-start") != "undefined" && document.querySelector(".remove-hide-on-start") != null) {
+if (
+  typeof document.querySelector(".remove-hide-on-start") != "undefined" &&
+  document.querySelector(".remove-hide-on-start") != null
+) {
   document.querySelectorAll(".remove-hide-on-start").forEach((element) => {
     element.classList.remove("hide");
   });
@@ -317,7 +345,10 @@ const moveHeaderRightButtonsToOffcanvas = () => {
 const mobileCategoriesOffcanvas = document.querySelector("#offcanvasCategories .offcanvas-body");
 const categoriesContainer = document.querySelector(".hero__categories-container");
 const moveCategoriesInMobile = () => {
-  if (typeof document.querySelector(".hero__categories-container") != "undefined" && document.querySelector(".hero__categories-container") != null) {
+  if (
+    typeof document.querySelector(".hero__categories-container") != "undefined" &&
+    document.querySelector(".hero__categories-container") != null
+  ) {
     if (maxMd) {
       mobileCategoriesOffcanvas.appendChild(categoriesContainer);
       categoriesContainer.classList.remove("d-none");
@@ -332,7 +363,10 @@ moveCategoriesInMobile();
 
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const handleMobileMenuToggle = () => {
-  if (typeof document.querySelector("#mobileMenuToggle") != "undefined" && document.querySelector("#mobileMenuToggle") != null) {
+  if (
+    typeof document.querySelector("#mobileMenuToggle") != "undefined" &&
+    document.querySelector("#mobileMenuToggle") != null
+  ) {
     if (maxMd) {
       mobileMenuToggle.addEventListener("click", () => {
         mobileMenuToggle.classList.toggle("opened");
@@ -360,6 +394,8 @@ const moveSearchToOffcanvas = () => {
   }
 };
 moveSearchToOffcanvas();
+
+//coś z resizem!
 
 const popularCategoriesSwiper = new Swiper("#popular-categoriesSwiper", {
   // configure Swiper to use modules
@@ -394,7 +430,10 @@ const doneResizing = () => {
   minLg = window.innerWidth >= 992;
   afterLoaded = true;
 
-  if (typeof document.querySelector(".hero__categories-container") != "undefined" && document.querySelector(".hero__categories-container") != null) {
+  if (
+    typeof document.querySelector(".hero__categories-container") != "undefined" &&
+    document.querySelector(".hero__categories-container") != null
+  ) {
     moveCategoriesInMobile();
   }
   moveHeaderRightButtonsToOffcanvas();
@@ -407,11 +446,17 @@ const doneResizing = () => {
 let rtime;
 let timeout = false;
 const delta = 200;
+let prevWidth = window.width;
+
 window.addEventListener("resize", () => {
-  rtime = new Date();
-  if (timeout === false) {
-    timeout = true;
-    setTimeout(resizeend, delta);
+  if (window.width !== prevWidth) {
+    prevWidth = width;
+
+    rtime = new Date();
+    if (timeout === false) {
+      timeout = true;
+      setTimeout(resizeend, delta);
+    }
   }
 });
 
@@ -533,7 +578,10 @@ const productThumbnailsSwiper = new Swiper("#productThumbnailsSwiper", {
   },
 });
 
-if (typeof document.querySelector(".product__my-comment-editable") != "undefined" && document.querySelector(".product__my-comment-editable") != null) {
+if (
+  typeof document.querySelector(".product__my-comment-editable") != "undefined" &&
+  document.querySelector(".product__my-comment-editable") != null
+) {
   document.querySelectorAll(".product__my-comment-btn-edit").forEach((element) => {
     element.addEventListener("click", () => {
       const myCommentForm = element.parentNode.parentNode.querySelector(".product__my-comment-editable");
@@ -547,7 +595,10 @@ if (typeof document.querySelector(".product__my-comment-editable") != "undefined
   });
 }
 
-if (typeof document.querySelector("[data-maxlengthDisplay='true']") != "undefined" && document.querySelector("[data-maxlengthDisplay]") != null) {
+if (
+  typeof document.querySelector("[data-maxlengthDisplay='true']") != "undefined" &&
+  document.querySelector("[data-maxlengthDisplay]") != null
+) {
   document.querySelectorAll("[data-maxlengthDisplay='true']").forEach((element) => {
     console.log("dasd");
     const maxValueContainer = document.createElement("small");
@@ -564,7 +615,10 @@ if (typeof document.querySelector("[data-maxlengthDisplay='true']") != "undefine
 }
 
 const switchChatLinksOffcanvas = () => {
-  if (typeof document.querySelector(".messages-list") != "undefined" && document.querySelector(".messages-list") != null) {
+  if (
+    typeof document.querySelector(".messages-list") != "undefined" &&
+    document.querySelector(".messages-list") != null
+  ) {
     const links = document.querySelectorAll('.messages-list a[href="#offcanvasChat"]');
 
     if (!maxMd) {
@@ -579,3 +633,20 @@ const switchChatLinksOffcanvas = () => {
   }
 };
 switchChatLinksOffcanvas();
+
+const filePreview = document.querySelector(".add-product .file-preview");
+const filePreviewThumbnails = document.querySelector(".file-preview-thumbnails");
+let imagesCount, filePreviewMax;
+const checkGalleryCount = () => {
+  if (typeof filePreview != "undefined" && filePreview != null) {
+    imagesCount = document.querySelectorAll(".file-drop-zone .file-preview-thumbnails .kv-preview-thumb").length;
+    filePreviewThumbnails.setAttribute("images-count", imagesCount);
+    filePreviewMax = filePreview.getAttribute("maxitems");
+    if (imagesCount <= 0 || imagesCount >= filePreviewMax) {
+      filePreviewThumbnails.classList.remove("add-available");
+    } else {
+      filePreviewThumbnails.classList.add("add-available");
+    }
+  }
+};
+checkGalleryCount();
