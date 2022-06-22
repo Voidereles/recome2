@@ -389,6 +389,8 @@ $spaceLetters:0.4px;
     text-overflow: ellipsis;
 }
 
+
+
 .fw-normal,
 .fw-400 {
     font-weight: 400;
@@ -412,6 +414,8 @@ $spaceLetters:0.4px;
 .lh-md {
     line-height: 1.5;
 }
+
+
 
 .breadcrumb {
     &-container {
@@ -572,7 +576,11 @@ a {
 }
 
 .w-max-content {
-    // width: max-content;
+    width: max-content;
+}
+
+.w-min-content {
+    width: min-content;
 }
 
 .w-max-340 {

@@ -268,7 +268,7 @@ if (
       const inputParent = element.parentNode;
       for (var i = 0; i < inputParent.getElementsByClassName("itemToSearch").length; i++) {
         const favouriteItemIndex = inputParent.getElementsByClassName("itemToSearch")[i];
-        if (matcher.test(favouriteItemIndex.getAttribute("data-text"))) {
+        if (matcher.test(favouriteItemIndex.innerText)) {
           if (favouriteItemIndex.classList.contains("d-none")) {
             favouriteItemIndex.classList.remove("d-none");
           }
@@ -650,3 +650,15 @@ const checkGalleryCount = () => {
   }
 };
 checkGalleryCount();
+
+const article = document.querySelector(".article");
+function readingTime() {
+  if (typeof article != "undefined" && article != null) {
+    const articleText = article.innerText;
+    const wpm = 225;
+    const words = articleText.trim().split(/\s+/).length;
+    const time = Math.ceil(words / wpm);
+    document.getElementById("howLongRead").innerText = time;
+  }
+}
+readingTime();

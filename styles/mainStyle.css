@@ -11745,6 +11745,18 @@ a.text-red:hover svg rect {
   height: 65px;
 }
 
+.w-max-content {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.w-min-content {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
 .w-max-340 {
   max-width: 340px;
 }
@@ -12992,7 +13004,7 @@ body > .alert {
   padding-left: 15px !important;
   background-size: 16px 16px !important;
   background-position: center right !important;
-  width: calc(100% - 5px);
+  width: calc(100% - 10px);
 }
 @media (min-width: 992px) {
   .search .select-dropdown__absolute select,
