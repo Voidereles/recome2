@@ -143,20 +143,20 @@
         &::-webkit-scrollbar {
             // width: 10px;
             /* Mostly for vertical scrollbars */
-            height: 10px;
+            height: 8px;
             /* Mostly for horizontal scrollbars */
             // border-radius: 1000px;
         }
 
         &::-webkit-scrollbar-thumb {
             /* Foreground */
-            background: $brown2;
-            // border-radius: 1000px;
+            background: #7a7772;
+            border-radius: 1000px;
         }
 
         &::-webkit-scrollbar-track {
             /* Background */
-            background: #333;
+            background: #a3a3a3;
             // border-radius: 1000px;
         }
     }

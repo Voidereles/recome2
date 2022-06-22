@@ -14520,16 +14520,17 @@ body > .alert {
 }
 .chat__bullets-container::-webkit-scrollbar {
   /* Mostly for vertical scrollbars */
-  height: 10px;
+  height: 8px;
   /* Mostly for horizontal scrollbars */
 }
 .chat__bullets-container::-webkit-scrollbar-thumb {
   /* Foreground */
-  background: #e2dfda;
+  background: #7a7772;
+  border-radius: 1000px;
 }
 .chat__bullets-container::-webkit-scrollbar-track {
   /* Background */
-  background: #333;
+  background: #a3a3a3;
 }
 .chat__message {
   max-width: 80%;
