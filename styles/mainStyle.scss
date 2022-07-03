@@ -166,7 +166,6 @@ body>.alert {
     .tt-menu {
         max-width: calc(100vw - 30px);
         transform: translate(15px, -5px);
-        display: block !important;
         border: 0 !important;
         border-radius: 0 0 17px 17px !important;
         transition: 0.3s;
@@ -178,6 +177,9 @@ body>.alert {
         background: #f6f5f4;
         box-shadow: 0 6px 20px rgb(143, 143, 143, 0.22);
         z-index: 2 !important;
+
+        padding: 4px 0 !important;
+        max-height: 150px !important;
 
         .tt-dataset {
             padding: 0;
@@ -192,7 +194,7 @@ body>.alert {
             text-overflow: ellipsis;
             white-space: normal;
             margin-bottom: 3px;
-            padding-left: 0px;
+            padding-left: 13px;
             padding-right: 4px;
 
             &:first-of-type {
@@ -214,10 +216,6 @@ body>.alert {
         }
     }
 
-    .search__input:focus~.tt-menu:not(.tt-empty) {
-        padding: 4px 0 !important;
-        max-height: 150px !important;
-    }
 
 
     #searchform-location {

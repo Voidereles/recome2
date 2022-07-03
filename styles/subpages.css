@@ -12998,7 +12998,7 @@ body > .alert {
   z-index: 2 !important;
 }
 .search .tt-menu .tt-dataset {
-  padding: 10px 6px 0 4px;
+  padding: 0;
   overflow-y: auto;
   height: auto;
   max-height: 142px;
