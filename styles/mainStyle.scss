@@ -180,7 +180,7 @@ body>.alert {
         z-index: 2 !important;
 
         .tt-dataset {
-            padding: 10px 6px 0 4px;
+            padding: 0;
             overflow-y: auto;
             height: auto;
             max-height: 142px;
@@ -191,7 +191,17 @@ body>.alert {
             cursor: pointer !important;
             text-overflow: ellipsis;
             white-space: normal;
-            margin-bottom: 2px;
+            margin-bottom: 3px;
+            padding-left: 0px;
+            padding-right: 4px;
+
+            &:first-of-type {
+                margin-top: 10px;
+            }
+
+            &:last-of-type {
+                margin-bottom: 6px;
+            }
 
             &.tt-cursor,
             &.tt-selectable:hover {

@@ -13008,7 +13008,15 @@ body > .alert {
   cursor: pointer !important;
   text-overflow: ellipsis;
   white-space: normal;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  padding-left: 0px;
+  padding-right: 4px;
+}
+.search .tt-menu .tt-suggestion:first-of-type {
+  margin-top: 10px;
+}
+.search .tt-menu .tt-suggestion:last-of-type {
+  margin-bottom: 6px;
 }
 .search .tt-menu .tt-suggestion.tt-cursor, .search .tt-menu .tt-suggestion.tt-selectable:hover {
   background: #EEEBE8;
