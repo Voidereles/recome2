@@ -313,9 +313,17 @@ body>.alert {
 
     .btn__desktop-submit {
         z-index: 4;
+
+        &:hover,
+        &:focus {
+            &~.search__where-to-search {
+                width: 316px;
+                padding: 0 72px 0 32px;
+            }
+        }
     }
 
-    #errandOrAdv {
+    &__where-to-search {
         position: absolute;
         left: initial;
         display: flex;
@@ -340,13 +348,12 @@ body>.alert {
         width: 0;
         overflow: hidden;
         padding: 0;
-    }
 
-    .btn__desktop-submit:hover~#errandOrAdv,
-    .btn__desktop-submit:focus~#errandOrAdv,
-    #errandOrAdv:hover {
-        width: 316px !important;
-        padding: 0 72px 0 30px !important;
+        &:hover,
+        &:focus {
+            width: 316px;
+            padding: 0 72px 0 32px;
+        }
     }
 }
 

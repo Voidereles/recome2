@@ -13107,7 +13107,14 @@ body > .alert {
   min-height: 36px;
   align-self: center;
 }
-.search #errandorAdv {
+.search .btn__desktop-submit {
+  z-index: 4;
+}
+.search .btn__desktop-submit:hover ~ .search__where-to-search, .search .btn__desktop-submit:focus ~ .search__where-to-search {
+  width: 316px;
+  padding: 0 72px 0 32px;
+}
+.search__where-to-search {
   position: absolute;
   left: initial;
   display: flex;
@@ -13135,12 +13142,9 @@ body > .alert {
   overflow: hidden;
   padding: 0;
 }
-.search .btn__desktop-submit:hover ~ #errandOrAdv,
-.search #errandOrAdv {
-  width: -webkit-fit-content !important;
-  width: -moz-fit-content !important;
-  width: fit-content !important;
-  padding: 0 72px 0 30px !important;
+.search__where-to-search:hover, .search__where-to-search:focus {
+  width: 316px;
+  padding: 0 72px 0 32px;
 }
 
 .pac-container {
